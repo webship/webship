@@ -1,0 +1,35 @@
+uuid: baa74b88-79e4-4dbe-a66f-4279648633c5
+langcode: en
+status: true
+dependencies:
+  config:
+    - page_manager.page.front_page
+    - views.view.content_recent
+  module:
+    - views
+id: front_page-block_display-0
+label: 'Front Page'
+variant: block_display
+variant_settings:
+  blocks:
+    96a2ce18-6ba0-44cc-a430-7bbe55f4425b:
+      id: 'views_block:content_recent-block_1'
+      label: ''
+      provider: views
+      label_display: '0'
+      views_label: ''
+      items_per_page: none
+      region: top
+      weight: -10
+      uuid: 96a2ce18-6ba0-44cc-a430-7bbe55f4425b
+      context_mapping: {  }
+  id: block_display
+  uuid: 38f30db0-4fc3-4f94-9238-e206110bc2a0
+  label: null
+  weight: 0
+  page_title: ''
+page: front_page
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

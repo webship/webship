@@ -1,0 +1,67 @@
+name: Webship
+type: profile
+description: 'Webship helps in speeding up the work of web developers to ship websites in a swift way.'
+core: 8.x
+version: 8.x-1.x-dev
+dependencies:
+  - config
+  - user
+  - node
+  - taxonomy
+  - block
+  - block_content
+  - menu_link_content
+  - menu_ui
+  - color
+  - field
+  - field_ui
+  - file
+  - image
+  - text
+  - datetime
+  - options
+  - contextual
+  - editor
+  - filter
+  - path
+  - search
+  - shortcut
+  - toolbar
+  - views
+  - views_ui
+  - datetime_range
+  - layout_discovery
+  - statistics
+  - syslog
+  
+  - ctools
+  - ctools_block
+  - ctools_views
+  - config_update
+  - entity
+  - token
+  - page_manager
+  - page_manager_ui
+  - panels
+  - ds
+  - ds_extras
+  - field_group
+  - smart_trim
+  - pathauto
+  - features
+  - features_ui
+
+# UIKit modules.
+  - uikit_components
+  - uikit_gui
+  
+themes:
+  - agnian_material_admin
+  - uikit
+  - webship_install 
+  - webship_backend
+  - webship_frontend
+distribution:
+  name: Webship
+  install:
+    theme: webship_install

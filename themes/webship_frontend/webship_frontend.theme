@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * @file
+ * Conditional logic and data processing for webship_frontend.
+ */
+
+/**
+ * Load webship_frontend's include files for theme processing.
+ */
+uikit_load_include('inc', 'webship_frontend', 'preprocess', 'includes');
+uikit_load_include('inc', 'webship_frontend', 'process', 'includes');
+uikit_load_include('inc', 'webship_frontend', 'theme', 'includes');
+uikit_load_include('inc', 'webship_frontend', 'alter', 'includes');
+
