@@ -10,7 +10,7 @@ projects[uikit][type] = theme
 projects[uikit][version] = 3.0-beta3
 
 projects[uikit_components][type] = module
-projects[uikit_components][version] = 1.0-beta2
+projects[uikit_components][version] = 3.0-beta1
 
 projects[uikit_gui][type] = module
 projects[uikit_gui][download][url] = https://git.drupal.org/project/uikit_gui.git
