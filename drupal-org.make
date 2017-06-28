@@ -7,18 +7,15 @@ projects[agnian_material_admin][type] = theme
 projects[agnian_material_admin][version] = 1.21
 
 projects[uikit][type] = theme
-projects[uikit][version] = 3.0-beta8
+projects[uikit][version] = 2.9
 
 projects[uikit_components][type] = module
-projects[uikit_components][version] = 3.0-beta1
+projects[uikit_components][version] = 2.1
 
 projects[uikit_gui][type] = module
 projects[uikit_gui][download][url] = https://git.drupal.org/project/uikit_gui.git
 projects[uikit_gui][download][revision] = 06e9e4ac428be66a96b9d618a5d681c516cfc294
 projects[uikit_gui][download][branch] = 8.x-1.x
-
-projects[uikit_slideshow][type] = module
-projects[uikit_slideshow][version] = 1.0
 
 projects[ctools][type] = module
 projects[ctools][version] = 3.0
