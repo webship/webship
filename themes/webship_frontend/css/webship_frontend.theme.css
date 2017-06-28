@@ -1,6 +1,7 @@
 /* Purely visual styling (“look-and-feel”) for a component. */
-
-.uk-navbar-item.uk-logo {
-  width: 100px;
-  margin-left: 55px;
+.uk-navbar-brand img {
+  height: inherit;
+  width: inherit;
+  padding: 0.1em;
 }
+/*# sourceMappingURL=webship_frontend.theme.css.map */
