@@ -18,16 +18,16 @@ regions:
   footer: 'Footer'
 
 regions_hidden:
-  navbar
-  offcanvas
-  header
-  pre_content
-  breadcrumb
-  highlighted
-  help
-  sidebar_first
-  sidebar_second
-  footer
+  - navbar
+  - offcanvas
+  - header
+  - pre_content
+  - breadcrumb
+  - highlighted
+  - help
+  - sidebar_first
+  - sidebar_second
+  - footer
 
 libraries:
   - uikit_admin/global-style
