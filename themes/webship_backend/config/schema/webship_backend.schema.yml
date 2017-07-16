@@ -1,5 +1,5 @@
 # Schema for the configuration files of the UIkit Admin theme.
 
-uikit_blog.settings:
+webship_backend.settings:
   type: theme_settings
-  label: 'UIkit Blog settings'
+  label: 'Webship Back-End settings'

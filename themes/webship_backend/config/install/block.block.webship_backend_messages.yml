@@ -4,7 +4,6 @@ dependencies:
   module:
     - system
   theme:
-    - uikit_admin
     - webship_backend
 id: webship_backend_messages
 theme: webship_backend

@@ -10,6 +10,8 @@ projects[uikit_admin][type] = module
 projects[uikit_admin][download][url] = https://git.drupal.org/project/uikit_admin.git
 projects[uikit_admin][download][revision] = b9c9b632ef97becb902d89d58e3a1edf04dd7dc5
 projects[uikit_admin][download][branch] = 8.x-1.x
+;; Issue #2895105 by RajabNatshah: Fixed uikit_admin schema name.
+projects[entity_browser][patch][] = https://www.drupal.org/files/issues/2895105-2.patch
 
 projects[uikit_components][type] = module
 projects[uikit_components][version] = 2.1

@@ -45,6 +45,12 @@
       "web/profiles/{$name}": [
           "type:drupal-profile"
       ]
+    },
+    "patches": {
+      "drupal/uikit_admin": {
+        "Issue #2895105 by RajabNatshah: Fixed uikit_admin schema name.":
+        "https://www.drupal.org/files/issues/2895105-2.patch"
+      }
     }
   },
   "require": {
