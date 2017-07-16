@@ -3,11 +3,13 @@ core = 8.x
 
 defaults[projects][subdir] = "contrib"
 
-projects[agnian_material_admin][type] = theme
-projects[agnian_material_admin][version] = 1.21
-
 projects[uikit][type] = theme
 projects[uikit][version] = 2.10
+
+projects[uikit_admin][type] = module
+projects[uikit_admin][download][url] = https://git.drupal.org/project/uikit_admin.git
+projects[uikit_admin][download][revision] = b9c9b632ef97becb902d89d58e3a1edf04dd7dc5
+projects[uikit_admin][download][branch] = 8.x-1.x
 
 projects[uikit_components][type] = module
 projects[uikit_components][version] = 2.1

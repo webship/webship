@@ -56,8 +56,8 @@ dependencies:
   - uikit_gui
   
 themes:
-  - agnian_material_admin
   - uikit
+  - uikit_admin
   - webship_install 
   - webship_backend
   - webship_frontend

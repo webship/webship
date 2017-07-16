@@ -1,30 +1,36 @@
 name: Webship Install
 type: theme
 core: 8.x
-base theme: agnian_material_admin
+base theme: uikit_admin
 package: Webship
 author: Rajab Natshah
-libraries:
-  - agnian_material_admin/material_styling
 regions:
-  header: 'Header'
+  navbar: 'Navigation Bar'
+  offcanvas: 'Offcanvas Navigation'
+  header: Header
   pre_content: 'Pre-content'
   breadcrumb: 'Breadcrumb'
   highlighted: 'Highlighted'
   help: 'Help'
-  content: 'Content'
-  page_top: 'Page top'
-  page_bottom: 'Page bottom'
-  sidebar_first: 'First sidebar'
+  content: Content
+  sidebar_first: 'Left Sidebar'
+  sidebar_second: 'Right Sidebar'
+  footer: 'Footer'
+
 regions_hidden:
-  - header
-  - pre_content
-  - breadcrumb
-  - highlighted
-  - help
-  - page_top
-  - page_bottom
-  - sidebar_first
+  navbar
+  offcanvas
+  header
+  pre_content
+  breadcrumb
+  highlighted
+  help
+  sidebar_first
+  sidebar_second
+  footer
+
+libraries:
+  - uikit_admin/global-style
 
 libraries-override:
   seven/install-page:
