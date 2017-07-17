@@ -16,6 +16,7 @@ dependencies:
   - field
   - field_ui
   - file
+  - help
   - image
   - text
   - datetime
