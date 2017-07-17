@@ -29,6 +29,9 @@ regions_hidden:
   - sidebar_second
   - footer
 
+libraries:
+  - uikit_admin/global-style
+
 libraries-override:
   seven/install-page:
     css:
