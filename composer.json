@@ -45,12 +45,6 @@
       "web/profiles/{$name}": [
           "type:drupal-profile"
       ]
-    },
-    "patches": {
-      "drupal/uikit_admin": {
-        "Issue #2895105 by RajabNatshah: Fixed uikit_admin schema name.":
-        "https://www.drupal.org/files/issues/2895105-2.patch"
-      }
     }
   },
   "require": {
@@ -59,7 +53,7 @@
     "drupal-composer/drupal-scaffold": "^2.0.0",
     "drupal/core": "8.3.5",
     "drupal/uikit": "2.10",
-    "drupal/uikit_admin": "2.x-dev#d46c4694868d481ec2101fbaf71cdfef47492c7a",
+    "drupal/uikit_admin": "2.0-beta1",
     "drupal/uikit_components": "2.1",
     "drupal/uikit_gui": "1.x-dev#06e9e4ac428be66a96b9d618a5d681c516cfc294",
     "drupal/ctools": "3.0",
