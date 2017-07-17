@@ -1,5 +1,0 @@
-# Schema for the configuration files of the UIkit Admin theme.
-
-webship_backend.settings:
-  type: theme_settings
-  label: 'Webship Back-End settings'
