@@ -1,8 +1,11 @@
+uuid: 9b1e3f6b-81dc-4728-ad09-6314adbebd37
 langcode: en
 status: true
 dependencies:
   theme:
     - webship_frontend
+_core:
+  default_config_hash: CHNPjTpNVfNK2uZQIUTKVgzRnd32MjHNYpEuQvOgbq4
 id: webship_frontend_local_tasks
 theme: webship_frontend
 region: content

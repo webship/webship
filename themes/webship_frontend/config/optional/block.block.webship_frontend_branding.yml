@@ -1,3 +1,4 @@
+uuid: bca61848-77d4-4d6b-ad74-6a0b4ffcd1cc
 langcode: en
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - system
   theme:
     - webship_frontend
+_core:
+  default_config_hash: KXKvM8XA2rcUsLGygQ0_4NoL8mqickBMTWQpB_OtdxI
 id: webship_frontend_branding
 theme: webship_frontend
 region: navbar

@@ -1,3 +1,4 @@
+uuid: d529050f-0a58-428d-b138-313bed9c6a0f
 langcode: en
 status: true
 dependencies:
@@ -5,6 +6,8 @@ dependencies:
     - system
   theme:
     - webship_frontend
+_core:
+  default_config_hash: m5DQex5PZkGCleEhTUGqwSjC0mby7IDUUNZMCWKlctA
 id: webship_frontend_content
 theme: webship_frontend
 region: content

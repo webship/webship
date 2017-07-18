@@ -1,3 +1,4 @@
+uuid: f0bd0da9-96b8-48cd-a1e2-7937e7456439
 langcode: en
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
     - system
   theme:
     - webship_frontend
+_core:
+  default_config_hash: TAm1AHSQ85xoYpuA-Fu---x-HEFKxlHhhcuB1jvaOpI
 id: webship_frontend_footer
 theme: webship_frontend
 region: footer

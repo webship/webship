@@ -1,3 +1,4 @@
+uuid: 1aaece7f-eead-4bd4-8945-db2be7056bd7
 langcode: en
 status: true
 dependencies:
@@ -7,6 +8,8 @@ dependencies:
     - system
   theme:
     - webship_frontend
+_core:
+  default_config_hash: yTW2GM-yP5KlK2mOAhWTzjCP2fKKvVAhAefH1_YkSAw
 id: webship_frontend_main_menu_offcanvas
 theme: webship_frontend
 region: offcanvas

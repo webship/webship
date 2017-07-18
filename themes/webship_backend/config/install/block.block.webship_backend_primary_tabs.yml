@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   theme:
+    - uikit_admin
     - webship_backend
 id: webship_backend_primary_tabs
 theme: webship_backend
