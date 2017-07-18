@@ -55,6 +55,7 @@ dependencies:
 # UIKit modules.
   - uikit_components
   - uikit_gui
+  - uikit_views
   
 themes:
   - uikit
