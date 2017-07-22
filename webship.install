@@ -32,5 +32,6 @@ function webship_install() {
   // Enable the admin theme.
   \Drupal::configFactory()->getEditable('node.settings')->set('use_admin_theme', TRUE)->save(TRUE);
   
+  // Uninstall webship install theme.
   \Drupal::service('theme_installer')->uninstall(['webship_install']);
 }
