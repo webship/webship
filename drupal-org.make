@@ -6,6 +6,9 @@ defaults[projects][subdir] = "contrib"
 projects[uikit][type] = theme
 projects[uikit][version] = 2.10
 
+projects[webtheme][type] = theme
+projects[webtheme][version] = 1.0-alpha1
+
 projects[uikit_admin][type] = module
 projects[uikit_admin][download][url] = https://git.drupal.org/project/uikit_admin.git
 projects[uikit_admin][download][revision] = 8e0d4d98d8de0e473d2fdd931a1f5acbe9cacc83
