@@ -50,6 +50,7 @@
   "require-dev": {
     "drush/drush": "~9",
     "jakoch/phantomjs-installer": "1.9.8",
+    "behat/behat": "^3.0",
     "phing/phing": "^2.14",
     "behat/mink-selenium2-driver":  "~1.3"
   },
