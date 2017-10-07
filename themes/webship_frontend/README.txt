@@ -1,4 +1,0 @@
-Webship Front-End
----------------------
-
- * Introduction

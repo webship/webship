@@ -62,7 +62,6 @@ themes:
   - uikit_admin
   - webship_install 
   - webship_backend
-  - webship_frontend
 distribution:
   name: Webship
   install:

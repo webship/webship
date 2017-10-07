@@ -1,5 +1,0 @@
-# Schema for the configuration files of the webship front-end theme.
-
-webship_frontend.settings:
-  type: theme_settings
-  label: 'webship_frontend settings'

@@ -4,21 +4,19 @@ core = 8.x
 defaults[projects][subdir] = "contrib"
 
 projects[uikit][type] = theme
-projects[uikit][version] = 2.11
+projects[uikit][version] = 3.0-beta13
 
 projects[webtheme][type] = theme
 projects[webtheme][version] = 1.0-alpha1
 
-projects[uikit_admin]][type] = theme
-projects[uikit_admin]][version] = 2.0-rc1
+projects[uikit_admin][type] = theme
+projects[uikit_admin][version] = 2.0-rc1
 
 projects[uikit_components][type] = module
-projects[uikit_components][version] = 2.3
+projects[uikit_components][version] = 3.0-beta4
 
 projects[uikit_gui][type] = module
-projects[uikit_gui][download][url] = https://git.drupal.org/project/uikit_gui.git
-projects[uikit_gui][download][revision] = 06e9e4ac428be66a96b9d618a5d681c516cfc294
-projects[uikit_gui][download][branch] = 8.x-1.x
+projects[uikit_gui][version] = 1.x-dev
 
 projects[ctools][type] = module
 projects[ctools][version] = 3.0

@@ -21,7 +21,7 @@ class Procedures {
    *    Drupal root path.
    */
   protected static function geDrupalRootPath($project_root) {
-    return $project_root . '/docroot';
+    return $project_root . '/web';
   }
 
   /**
