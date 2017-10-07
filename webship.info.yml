@@ -60,6 +60,7 @@ dependencies:
 themes:
   - uikit
   - uikit_admin
+  - webtheme
   - webship_install 
   - webship_backend
 distribution:
