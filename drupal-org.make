@@ -10,7 +10,7 @@ projects[webtheme][type] = theme
 projects[webtheme][version] = 1.0-alpha1
 
 projects[uikit_admin][type] = theme
-projects[uikit_admin][version] = 2.0-rc1
+projects[uikit_admin][version] = 2.0-rc2
 
 projects[uikit_components][type] = module
 projects[uikit_components][version] = 3.0-beta5
