@@ -22,7 +22,7 @@ projects[ctools][type] = module
 projects[ctools][version] = 3.0
 
 projects[entity][type] = module
-projects[entity][version] = 1.0-alpha4
+projects[entity][version] = 1.0-beta1
 
 projects[config_update][type] = module
 projects[config_update][version] = 1.3
