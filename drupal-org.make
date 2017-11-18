@@ -42,7 +42,7 @@ projects[ds][type] = module
 projects[ds][version] = 3.1
 
 projects[field_group][type] = module
-projects[field_group][version] = 1.0-rc6
+projects[field_group][version] = 3.0-beta1
 
 projects[smart_trim][type] = module
 projects[smart_trim][version] = 1.0
