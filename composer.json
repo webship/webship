@@ -27,7 +27,7 @@
     "cweagans/composer-patches": "1.6.2",
     "drupal-composer/drupal-scaffold": "2.3.0",
     "drupal/drupal-library-installer-plugin": "0.3",
-    "drupal/core": "8.4.0",
+    "drupal/core": "8.4.2",
     "drupal/uikit": "3.0-rc3",
     "drupal/webtheme": "1.0-alpha1",
     "drupal/uikit_admin": "2.0-rc3",
