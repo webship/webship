@@ -33,9 +33,9 @@ class WebshipContext extends RawDrupalContext implements SnippetAcceptingContext
   }
 
   /**
-   * Maximize the window before scenario.
+   * Maximize the window.
    *
-   * @BeforeScenario @javascript
+   * @BeforeStep @javascript
    */
   public function maximizeWindow() {
     $this->getSession()->getDriver()->maximizeWindow();

@@ -10,9 +10,7 @@ projects[uikit_admin][type] = theme
 projects[uikit_admin][version] = 3.0-rc1
 
 projects[uikit_components][type] = module
-projects[uikit_components][version] = 3.0-beta5
-; 2918235-4
-projects[uikit_components][patch][] = https://www.drupal.org/files/issues/php_fatal_error_class-2918235-4.patch
+projects[uikit_components][version] = 3.x-dev
 
 projects[uikit_gui][type] = module
 projects[uikit_gui][version] = 1.x-dev
