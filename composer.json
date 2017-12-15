@@ -35,7 +35,7 @@
     "drupal/uikit_gui": "1.x-dev",
     "drupal/ctools": "3.0",
     "drupal/entity": "1.0-beta1",
-    "drupal/config_update": "1.4",
+    "drupal/config_update": "1.5",
     "drupal/token": "1.0",
     "drupal/page_manager": "4.0-beta2",
     "drupal/panels": "4.2",

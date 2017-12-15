@@ -27,7 +27,7 @@ projects[entity][type] = module
 projects[entity][version] = 1.0-beta1
 
 projects[config_update][type] = module
-projects[config_update][version] = 1.4
+projects[config_update][version] = 1.5
 
 projects[token][type] = module
 projects[token][version] = 1.0
