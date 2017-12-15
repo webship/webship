@@ -6,11 +6,8 @@ defaults[projects][subdir] = "contrib"
 projects[uikit][type] = theme
 projects[uikit][version] = 3.0-rc3
 
-projects[webtheme][type] = theme
-projects[webtheme][version] = 1.0-alpha1
-
 projects[uikit_admin][type] = theme
-projects[uikit_admin][version] = 2.0-rc3
+projects[uikit_admin][version] = 3.0-rc1
 
 projects[uikit_components][type] = module
 projects[uikit_components][version] = 3.0-beta5
@@ -19,6 +16,9 @@ projects[uikit_components][patch][] = https://www.drupal.org/files/issues/php_fa
 
 projects[uikit_gui][type] = module
 projects[uikit_gui][version] = 1.x-dev
+
+projects[webtheme][type] = theme
+projects[webtheme][version] = 1.0-alpha1
 
 projects[ctools][type] = module
 projects[ctools][version] = 3.0
