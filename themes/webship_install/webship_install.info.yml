@@ -3,19 +3,18 @@ type: theme
 core: 8.x
 base theme: seven
 package: Webship
-author: Rajab Natshah
 regions:
   navbar: 'Navigation Bar'
-  offcanvas: 'Offcanvas Navigation'
-  header: Header
-  pre_content: 'Pre-content'
-  breadcrumb: 'Breadcrumb'
-  highlighted: 'Highlighted'
-  help: 'Help'
+  navbar_left: 'Navbar Left'
+  navbar_center: 'Navbar Center'
+  navbar_right: 'Navbar Right'
+  status_messages: 'Status messages'
+  help: Help
   content: Content
   sidebar_first: 'Left Sidebar'
   sidebar_second: 'Right Sidebar'
   footer: 'Footer'
+  offcanvas: 'Offcanvas Navigation'
 
 regions_hidden:
   - navbar
@@ -31,6 +30,9 @@ regions_hidden:
 
 libraries:
   - uikit_admin/global-style
+  - uikit_admin/system.admin
+  - uikit_admin/tableheader
+  - uikit_admin/user
 
 libraries-override:
   seven/install-page:

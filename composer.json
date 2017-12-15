@@ -28,7 +28,7 @@
     "drupal-composer/drupal-scaffold": "2.4.0",
     "drupal/drupal-library-installer-plugin": "0.3",
     "drupal/core": "8.4.3",
-    "drupal/uikit": "3.0-rc3",
+    "drupal/uikit": "3.0",
     "drupal/uikit_admin": "3.0-rc1",
     "drupal/uikit_components": "3.x-dev",
     "drupal/uikit_gui": "1.x-dev",

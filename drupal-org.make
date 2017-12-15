@@ -4,7 +4,7 @@ core = 8.x
 defaults[projects][subdir] = "contrib"
 
 projects[uikit][type] = theme
-projects[uikit][version] = 3.0-rc3
+projects[uikit][version] = 3.0
 
 projects[uikit_admin][type] = theme
 projects[uikit_admin][version] = 3.0-rc1
