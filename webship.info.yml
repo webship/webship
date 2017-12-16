@@ -18,11 +18,14 @@ dependencies:
   - file
   - help
   - image
+  - responsive_image
   - text
   - datetime
   - options
   - contextual
   - editor
+  - ckeditor
+  - quickedit
   - filter
   - path
   - search
@@ -39,11 +42,13 @@ dependencies:
   - ctools_block
   - ctools_views
   - config_update
+  - config_update_ui
   - entity
   - token
   - page_manager
   - page_manager_ui
   - panels
+  - panels_ipe
   - ds
   - ds_extras
   - field_group
