@@ -37,6 +37,7 @@ dependencies:
   - layout_discovery
   - statistics
   - syslog
+  - rdf
   
   - ctools
   - ctools_block
