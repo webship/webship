@@ -28,7 +28,7 @@ projects[config_update][type] = module
 projects[config_update][version] = 1.5
 
 projects[token][type] = module
-projects[token][version] = 1.0
+projects[token][version] = 1.1
 
 projects[page_manager][type] = module
 projects[page_manager][version] = 4.0-beta2
