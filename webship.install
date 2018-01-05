@@ -34,4 +34,7 @@ function webship_install() {
   
   // Uninstall webship install theme.
   \Drupal::service('theme_installer')->uninstall(['webship_install']);
+
+  // Uninstall seven theme after install.
+  \Drupal::service('theme_installer')->uninstall(['seven']);
 }
