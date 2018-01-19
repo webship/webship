@@ -2,7 +2,7 @@
   "name": "webship/webship",
   "description": "Helps in speeding up the work of web developers to ship websites in a swift way.",
   "type": "drupal-profile",
-  "license": "GPL-2.0+",
+  "license": "GPL-2.0-or-later",
   "minimum-stability": "dev",
   "prefer-stable": true,
   "authors": [
