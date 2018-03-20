@@ -45,7 +45,7 @@ projects[smart_trim][type] = module
 projects[smart_trim][version] = 1.1
 
 projects[pathauto][type] = module
-projects[pathauto][version] = 1.0
+projects[pathauto][version] = 1.1
 
 projects[features][type] = module
 projects[features][version] = 3.5

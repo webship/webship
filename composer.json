@@ -41,7 +41,7 @@
     "drupal/ds": "3.1",
     "drupal/field_group": "3.0-beta1",
     "drupal/smart_trim": "1.1",
-    "drupal/pathauto": "1.0",
+    "drupal/pathauto": "1.1",
     "drupal/features": "3.5",
     "drupal/webtheme": "1.0-alpha1",
     "drupal/webpage": "1.x-dev"
