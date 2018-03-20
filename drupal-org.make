@@ -32,6 +32,8 @@ projects[token][version] = 1.1
 
 projects[page_manager][type] = module
 projects[page_manager][version] = 4.0-beta2
+;; Issue #2918564: Update 'page_manager.variant_route_filter' service according to core changes
+projects[page_manager][patch][] = https://www.drupal.org/files/issues/2918564-22.patch
 
 projects[panels][type] = module
 projects[panels][version] = 4.2
