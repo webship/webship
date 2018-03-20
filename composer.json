@@ -32,7 +32,6 @@
     "drupal/uikit_admin": "3.0-rc1",
     "drupal/uikit_components": "3.x-dev",
     "drupal/uikit_gui": "1.x-dev",
-    "drupal/webtheme": "1.0-alpha1",
     "drupal/ctools": "3.0",
     "drupal/entity": "1.0-beta1",
     "drupal/config_update": "1.5",
@@ -43,7 +42,9 @@
     "drupal/field_group": "3.0-beta1",
     "drupal/smart_trim": "1.0",
     "drupal/pathauto": "1.0",
-    "drupal/features": "3.5"
+    "drupal/features": "3.5",
+    "drupal/webtheme": "1.0-alpha1",
+    "drupal/webpage": "1.x-dev"
   },
   "require-dev": {
     "drush/drush": "8.1.16",

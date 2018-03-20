@@ -15,9 +15,6 @@ projects[uikit_components][version] = 3.x-dev
 projects[uikit_gui][type] = module
 projects[uikit_gui][version] = 1.x-dev
 
-projects[webtheme][type] = theme
-projects[webtheme][version] = 1.0-alpha1
-
 projects[ctools][type] = module
 projects[ctools][version] = 3.0
 
@@ -52,3 +49,9 @@ projects[pathauto][version] = 1.0
 
 projects[features][type] = module
 projects[features][version] = 3.5
+
+projects[webtheme][type] = theme
+projects[webtheme][version] = 1.0-alpha1
+
+projects[webpage][type] = module
+projects[webpage][version] = 1.x-dev

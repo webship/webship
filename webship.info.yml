@@ -63,6 +63,9 @@ dependencies:
   - uikit_gui
   - uikit_views
   
+# Webship extentions.
+  - webpage
+  
 themes:
   - uikit
   - uikit_admin
