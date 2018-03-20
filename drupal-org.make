@@ -48,7 +48,7 @@ projects[pathauto][type] = module
 projects[pathauto][version] = 1.1
 
 projects[features][type] = module
-projects[features][version] = 3.5
+projects[features][version] = 3.7
 
 projects[webtheme][type] = theme
 projects[webtheme][version] = 1.0-alpha1
