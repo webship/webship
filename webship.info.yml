@@ -35,9 +35,13 @@ dependencies:
   - views_ui
   - datetime_range
   - layout_discovery
+  - settings_tray
   - statistics
   - syslog
   - rdf
+  - media
+  - big_pipe
+  - telephone
   
   - ctools
   - ctools_block
@@ -57,19 +61,20 @@ dependencies:
   - pathauto
   - features
   - features_ui
+  - libraries
+  - admin_toolbar
+  - admin_toolbar_tools
+  - admin_toolbar_links_access_filter
+  - adminimal_admin_toolbar
+  - webform
+  - webform_ui
 
-# UIKit modules.
-  - uikit_components
-  - uikit_gui
-  - uikit_views
-  
-# Webship extentions.
   - webpage
   
 themes:
   - uikit
-  - uikit_admin
   - webtheme
+  - adminimal_theme
   - webship_install
 distribution:
   name: Webship

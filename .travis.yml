@@ -1,3 +1,5 @@
+sudo: required
+dist: trusty
 language: php
 cache:
   bundler: true
@@ -6,28 +8,24 @@ cache:
     - "$HOME/.composer/cache"
     - "$HOME/.drush/cache"
     - "$HOME/.npm"
-    - "$HOME/.selenium/cache"    
+    - "$HOME/.selenium/cache"
+
 php:
+  - 7.0
   - 7.1
-env:
-  - VERSION=8.x-1.x
-dist: precise
-addons:  
-  firefox: 46.0.1
+  - 7.2
+
+addons:
   apt:
     packages:
-      - xorg
-      - xvfb
-      - dbus-x11
-      - x11-xkb-utils
-      - xfonts-100dpi
-      - xfonts-75dpi
-      - xfonts-scalable
-      - xserver-xorg-core
+    - libappindicator1
+    - fonts-liberation
+
 mysql:
   database: test_webship
   username: root
   encoding: utf8
+
 before_install:
   - phpenv config-rm xdebug.ini
   - phpenv rehash
@@ -46,7 +44,7 @@ before_install:
   - echo 'max_execution_time = 1200' >> webship.php.ini;
   - echo 'max_input_time = 180' >> webship.php.ini;
   - echo 'max_input_vars = 10000' >> webship.php.ini;
-  - echo 'memory_limit = 2048M' >> webship.php.ini;
+  - echo 'memory_limit = 2000M' >> webship.php.ini;
   - echo 'error_reporting = E_ALL' >> webship.php.ini;
   - echo 'post_max_size = 64M' >> webship.php.ini;
   - echo 'upload_max_filesize = 32M' >> webship.php.ini;
@@ -54,36 +52,52 @@ before_install:
   - echo 'sendmail_path = /bin/true' >> webship.php.ini;
   - phpenv config-add webship.php.ini
   - phpenv rehash
-   
+
   # Configure and run the virtual display.
-  - export DISPLAY=:0
+  - export DISPLAY=:99
   - sh -e /etc/init.d/xvfb start
-  - Xvfb :0 -ac -screen 0 1366x768x24 &
+  - Xvfb :99 -ac -screen 0 1366x768x24 &>/dev/null &
   - sleep 3
+
+  # Download Chrome Driver.
+  - LATEST_CHROMEDRIVER=$(wget -q -O - http://chromedriver.storage.googleapis.com/LATEST_RELEASE)
+  - wget http://chromedriver.storage.googleapis.com/$LATEST_CHROMEDRIVER/chromedriver_linux64.zip
+  - unzip chromedriver_linux64.zip
+  - chmod +x chromedriver
+  - mkdir -p $HOME/.composer/vendor/bin
+  - mv -f chromedriver $HOME/.composer/vendor/bin/
+  - rm chromedriver_linux64.zip
+
+  # Update Chrome.
+  - export CHROME_BIN=/usr/bin/google-chrome
+  - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  - sudo dpkg -i google-chrome-stable_current_amd64.deb
+  - rm google-chrome-stable_current_amd64.deb
+  - google-chrome --version
 
   # Run selenium standalone server.
   - SELENIUM="$HOME/.selenium/cache/selenium-server-standalone-2.53.1.jar";
   - if [[ ! -f $SELENIUM ]]; then wget -O $SELENIUM http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.1.jar; fi
-  - java -jar $SELENIUM -port 4444 > /dev/null 2>&1 &
-  - echo "[  OK  ] Starting Selenium on the 4444 port ..."
+  - java -jar $SELENIUM -port 4445 > /dev/null 2>&1 &
+  - echo "[  OK  ] Starting Selenium on the 4445 port ..."
 install:
   - git checkout $TRAVIS_COMMIT
   ## Build with the composer.
-  - composer install --no-interaction -vvv
-  
+  - composer install --no-interaction
+
   ## Install with drush.
   - cd web
-  - drush site-install webship --yes --site-name='Webship' --account-name=admin --account-pass=dD.123123ddd --account-mail=webship@webship.org --db-url="mysql://root:@localhost/test_webship" 
+  - drush site-install cucumber --yes --site-name='Cucumber' --account-name=admin --account-pass=dD.123123ddd --account-mail=cucumber@webship.org --db-url="mysql://root:@localhost/test_cucumber" 
   - drush config-set system.performance css.preprocess 0 --yes
   - drush config-set system.performance js.preprocess 0 --yes
   - drush config-set system.logging error_level all --yes
+  - drush cr
 before_script:
   - drush runserver --default-server=builtin 8080 &>/dev/null &
   - sleep 5
 script:
-  - cd ./profiles/webship
-  - behat --strict tests/features/webship
-
+  - cd ./profiles/cucumber
+  - behat --strict tests/features/cucumber
 
 matrix:
   fast_finish: true
