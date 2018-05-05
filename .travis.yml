@@ -87,7 +87,7 @@ install:
 
   ## Install with drush.
   - cd web
-  - drush site-install cucumber --yes --site-name='Cucumber' --account-name=admin --account-pass=dD.123123ddd --account-mail=cucumber@webship.org --db-url="mysql://root:@localhost/test_cucumber" 
+  - drush site-install webship --yes --site-name='Webship' --account-name=admin --account-pass=dD.123123ddd --account-mail=webship@webship.org --db-url="mysql://root:@localhost/test_webship" 
   - drush config-set system.performance css.preprocess 0 --yes
   - drush config-set system.performance js.preprocess 0 --yes
   - drush config-set system.logging error_level all --yes
@@ -96,8 +96,8 @@ before_script:
   - drush runserver --default-server=builtin 8080 &>/dev/null &
   - sleep 5
 script:
-  - cd ./profiles/cucumber
-  - behat --strict tests/features/cucumber
+  - cd ./profiles/webship
+  - behat --strict tests/features/webship
 
 matrix:
   fast_finish: true
