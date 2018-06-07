@@ -1,4 +1,4 @@
-Feature: Aonymous user
+Feature: Anonymous user
 
   @javascript @local @development @staging @production
   Scenario: Check that anonymous users cannot register.
