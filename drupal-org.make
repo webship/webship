@@ -15,7 +15,7 @@ projects[admin_toolbar][type] = module
 projects[admin_toolbar][version] = 1.24
 
 projects[adminimal_admin_toolbar][type] = module
-projects[adminimal_admin_toolbar][version] = 1.7
+projects[adminimal_admin_toolbar][version] = 1.8
 
 projects[ctools][type] = module
 projects[ctools][version] = 3.0
@@ -24,7 +24,7 @@ projects[entity][type] = module
 projects[entity][version] = 1.0-beta4
 
 projects[token][type] = module
-projects[token][version] = 1.3
+projects[token][version] = 1.4
 
 projects[page_manager][type] = module
 projects[page_manager][version] = 4.0-beta3
@@ -48,7 +48,7 @@ projects[smart_trim][type] = module
 projects[smart_trim][version] = 1.1
 
 projects[pathauto][type] = module
-projects[pathauto][version] = 1.2
+projects[pathauto][version] = 1.3
 
 projects[uikit][type] = theme
 projects[uikit][version] = 3.x-dev
@@ -57,10 +57,10 @@ projects[webtheme][type] = theme
 projects[webtheme][version] = 1.0-alpha1
 
 projects[features][type] = module
-projects[features][version] = 3.7
+projects[features][version] = 3.8
 
 projects[webform][type] = module
-projects[webform][version] = 5.0-rc16
+projects[webform][version] = 5.0-rc21
 
 projects[webpage][type] = module
 projects[webpage][version] = 1.x-dev
