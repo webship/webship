@@ -73,7 +73,7 @@ before_install:
   - SELENIUM="$HOME/.selenium/cache/selenium-server-standalone-2.53.1.jar";
   - if [[ ! -f $SELENIUM ]]; then wget -O $SELENIUM http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.1.jar; fi
   - java -jar $SELENIUM -port 4444 > /dev/null 2>&1 &
-  - echo "[  OK  ] Starting Selenium on the 4445 port ..."
+  - echo "[  OK  ] Starting Selenium on the 4444 port ..."
 install:
   - git checkout $TRAVIS_COMMIT
   ## Build with the composer.
