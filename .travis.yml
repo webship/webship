@@ -10,6 +10,7 @@ cache:
     - "$HOME/.selenium/cache"
 
 php:
+  - 5.6
   - 7.0
   - 7.1
   - 7.2
@@ -21,8 +22,6 @@ mysql:
   encoding: utf8
 
 before_install:
-  - phpenv config-rm xdebug.ini
-  - phpenv rehash
   - composer self-update
   - composer --version
 
