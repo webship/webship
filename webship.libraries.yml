@@ -1,0 +1,13 @@
+install-page:
+  js:
+    themes/webship/js/mobile.install.js: {}
+  css:
+    theme:
+      themes/webship/css/theme/install-page.css: {}
+  dependencies:
+    - system/maintenance
+
+toolbar-icon:
+  css:
+    theme:
+      themes/webship/css/theme/admin-toolbar-tools.css: {}

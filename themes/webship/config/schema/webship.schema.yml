@@ -1,0 +1,5 @@
+# Schema for the configuration files of the webship backend theme.
+
+webship.settings:
+  type: theme_settings
+  label: 'Webship Back-End settings'
