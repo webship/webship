@@ -3,6 +3,15 @@ type: profile
 description: 'Webship helps in speeding up the work of web developers to ship websites in a swift way.'
 core: 8.x
 version: 8.x-1.x-dev
+distribution:
+  name: Webship
+  install:
+    theme: webship
+themes:
+  - uikit
+  - uikit_admin
+  - webtheme
+  - webship
 install:
   - system
   - config
@@ -36,7 +45,6 @@ install:
   - admin_toolbar
   - admin_toolbar_tools
   - admin_toolbar_links_access_filter
-  - adminimal_admin_toolbar
   - color
   - field
   - field_ui
@@ -84,12 +92,3 @@ install:
   - webform
   - webform_ui
   - webpage
-themes:
-  - uikit
-  - webtheme
-  - adminimal_theme
-  - webship_install
-distribution:
-  name: Webship
-  install:
-    theme: webship_install
