@@ -92,3 +92,5 @@ install:
   - webform
   - webform_ui
   - webpage
+  - varbase_media
+  - varbase_editor

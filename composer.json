@@ -57,7 +57,9 @@
     "drupal/uikit_admin": "@stable",
     "drupal/webform": "@stable",
     "drupal/webtheme": "@stable",
-    "drupal/webpage": "@stable"
+    "drupal/webpage": "@stable",
+    "drupal/varbase_media": "@stable",
+    "drupal/varbase_editor": "@stable"
   },
   "require-dev": {
     "drupal/console": "@stable",
@@ -113,19 +115,30 @@
       "web/profiles/{$name}": ["type:drupal-profile"],
       "web/modules/contrib/{$name}": ["type:drupal-module"],
       "web/themes/contrib/{$name}": ["type:drupal-theme"],
+      "web/libraries/slick": ["npm-asset/slick-carousel"],
+      "web/libraries/ace": ["npm-asset/ace-builds"],
       "web/libraries/{$name}": [
-          "type:drupal-library",
-          "type:bower-asset",
-          "type:npm-asset"
+        "type:drupal-library",
+        "type:bower-asset",
+        "type:npm-asset"
       ],
       "web/modules/custom/{$name}": ["type:drupal-custom-module"],
       "web/themes/custom/{$name}": ["type:drupal-custom-theme"],
       "drush/contrib/{$name}": ["type:drupal-drush"]
     },
+    "drupal-libraries": {
+      "library-directory": "web/libraries",
+      "libraries": [
+        {"name": "dropzone","package": "npm-asset/dropzone"},
+        {"name": "blazy", "package": "npm-asset/blazy"},
+        {"name": "slick", "package": "npm-asset/slick-carousel"},
+        {"name": "ace", "package": "npm-asset/ace-builds"}
+      ]
+    },
     "enable-patching": true,
     "composer-exit-on-patch-failure": true,
     "patchLevel": {
-      "drupal/core": "-p2"
+       "drupal/core": "-p2"
     } 
   }
 }
