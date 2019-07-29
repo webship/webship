@@ -13,6 +13,7 @@ php:
   - 7.1
   - 7.2
   - 7.3
+  - 7.4
 
 mysql:
   database: test_varbase6c
@@ -35,7 +36,7 @@ before_install:
   - echo 'max_execution_time = 1200' >> webship.php.ini;
   - echo 'max_input_time = 180' >> webship.php.ini;
   - echo 'max_input_vars = 10000' >> webship.php.ini;
-  - echo 'memory_limit = 2000M' >> webship.php.ini;
+  - echo 'memory_limit = 3000M' >> webship.php.ini;
   - echo 'error_reporting = E_ALL' >> webship.php.ini;
   - echo 'post_max_size = 64M' >> webship.php.ini;
   - echo 'upload_max_filesize = 32M' >> webship.php.ini;

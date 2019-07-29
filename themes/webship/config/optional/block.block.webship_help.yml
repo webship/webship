@@ -9,7 +9,7 @@ dependencies:
 id: webship_help
 theme: webship
 region: help
-weight: -6
+weight: 0
 provider: null
 plugin: help_block
 settings:

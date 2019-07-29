@@ -4,15 +4,17 @@ dependencies:
   theme:
     - uikit_admin
     - webship
-id: webship_page_title
+id: webship_primary_local_tasks
 theme: webship
-region: navbar_left
-weight: -4
+region: navbar_right
+weight: -3
 provider: null
-plugin: page_title_block
+plugin: local_tasks_block
 settings:
-  id: page_title_block
-  label: 'Page title'
+  id: local_tasks_block
+  label: 'Primary tabs'
   provider: core
   label_display: '0'
+  primary: true
+  secondary: false
 visibility: {  }

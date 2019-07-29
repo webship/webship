@@ -8,8 +8,8 @@ dependencies:
     - webship
 id: webship_breadcrumbs
 theme: webship
-region: breadcrumb
-weight: -6
+region: content
+weight: -2
 provider: null
 plugin: system_breadcrumb_block
 settings:

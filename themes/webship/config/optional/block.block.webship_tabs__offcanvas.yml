@@ -1,20 +1,20 @@
 langcode: en
 status: true
 dependencies:
-  module:
-    - help
   theme:
     - uikit_admin
     - webship
-id: webship_help
+id: webship_tabs__offcanvas
 theme: webship
-region: help
+region: offcanvas
 weight: 0
 provider: null
-plugin: help_block
+plugin: local_tasks_block
 settings:
-  id: help_block
-  label: Help
-  provider: help
+  id: local_tasks_block
+  label: Tabs
+  provider: core
   label_display: '0'
+  primary: true
+  secondary: true
 visibility: {  }

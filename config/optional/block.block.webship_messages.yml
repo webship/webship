@@ -8,8 +8,8 @@ dependencies:
     - webship
 id: webship_messages
 theme: webship
-region: highlighted
-weight: -6
+region: status_messages
+weight: -3
 provider: null
 plugin: system_messages_block
 settings:

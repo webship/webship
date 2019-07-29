@@ -1,3 +1,4 @@
+uuid: 1c83f309-b69e-4a3f-87b4-06d84e625ce6
 langcode: en
 status: true
 dependencies:
@@ -9,7 +10,7 @@ dependencies:
 id: webship_content
 theme: webship
 region: content
-weight: -3
+weight: -1
 provider: null
 plugin: system_main_block
 settings:
