@@ -102,4 +102,61 @@ class Procedures {
     }
   }
 
+  /**
+   * Remove .git folder from modules, themes, profiles of development branches.
+   */
+  public static function removeGitDirectories() {
+    $drupal_root = static::getDrupalRoot(getcwd());
+
+    if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+      self::removeWindowsGitDirectories($drupal_root);
+    }
+    else {
+      exec("find " . $drupal_root . " -name '.git' | xargs rm -rf");
+    }
+  }
+
+  /**
+   * Find and return the path to .git repository in root folder.
+   *
+   * @param string $root
+   */
+  private static function removeWindowsGitDirectories($root) {
+    foreach (scandir($root) as $dirOrFile) {
+      if ('.' === $dirOrFile || '..' === $dirOrFile) {
+        continue;
+      }
+
+      if ('.git' === $dirOrFile) {
+        self::rmdirWindows($root . '/.git');
+      }
+      elseif (!is_file($root . '/' . $dirOrFile)) {
+        self::removeWindowsGitDirectories($root . '/' . $dirOrFile);
+      }
+    }
+  }
+
+  /**
+   * Remove a directory on Windows.
+   *
+   * @param string $dirname
+   */
+  private static function rmdirWindows($dirname) {
+    if (is_file($dirname)) {
+      unlink($dirname);
+      return;
+    }
+
+    $dir = dir($dirname);
+    while (FALSE !== $entry = $dir->read()) {
+      if ($entry === '.' || $entry === '..') {
+        continue;
+      }
+      self::rmdirWindows("$dirname/$entry");
+    }
+
+    $dir->close();
+    rmdir($dirname);
+  }
+
 }

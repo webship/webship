@@ -82,6 +82,7 @@
   "config": {
     "bin-dir": "bin/",
     "secure-http": false,
+    "optimize-autoloader": true,
     "preferred-install": {
       "drupal/core": "dist"
     }
@@ -97,11 +98,13 @@
     "pre-update-cmd": ["Webship\\composer\\Procedures::checkComposerVersionProcedure"],
     "post-install-cmd": [
       "Webship\\composer\\Procedures::createRequiredFilesProcedure",
+      "Webship\\composer\\ScriptHandler::removeGitDirectories",
       "@composer drupal-scaffold",
       "./bin/phing push"
     ],
     "post-update-cmd": [
       "Webship\\composer\\Procedures::createRequiredFilesProcedure",
+      "Webship\\composer\\ScriptHandler::removeGitDirectories",
       "./bin/phing push"
     ]
   },
