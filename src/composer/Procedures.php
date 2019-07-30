@@ -1,15 +1,15 @@
 <?php
 
-namespace Varbase\composer;
+namespace Webship\composer;
 
 use Composer\Semver\Comparator;
 use Symfony\Component\Filesystem\Filesystem;
 use Composer\EventDispatcher\Event;
 
 /**
- * Varbase Composer Script Handler.
+ * Webship Composer Script Handler.
  */
-class ScriptHandler {
+class Procedures {
 
   /**
    * Get the Drupal root directory.
