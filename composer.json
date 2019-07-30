@@ -79,7 +79,6 @@
   "config": {
     "bin-dir": "bin/",
     "secure-http": false,
-    "optimize-autoloader": true,
     "preferred-install": {
       "drupal/core": "dist"
     }
