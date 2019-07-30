@@ -101,6 +101,7 @@
     "post-update-cmd": [
       "Webship\\composer\\Procedures::createRequiredFilesProcedure",
       "Webship\\composer\\Procedures::removeGitDirectories",
+      "@composer drupal-scaffold",
       "./bin/phing push"
     ]
   },
