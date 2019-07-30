@@ -94,13 +94,13 @@
     "pre-update-cmd": ["Webship\\composer\\Procedures::checkComposerVersionProcedure"],
     "post-install-cmd": [
       "Webship\\composer\\Procedures::createRequiredFilesProcedure",
-      "Webship\\composer\\Procedures::removeGitDirectories",
+      "Webship\\composer\\Procedures::removeGitDirectoriesProcedure",
       "@composer drupal-scaffold",
       "./bin/phing push"
     ],
     "post-update-cmd": [
       "Webship\\composer\\Procedures::createRequiredFilesProcedure",
-      "Webship\\composer\\Procedures::removeGitDirectories",
+      "Webship\\composer\\Procedures::removeGitDirectoriesProcedure",
       "@composer drupal-scaffold",
       "./bin/phing push"
     ]
