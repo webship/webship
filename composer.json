@@ -76,9 +76,6 @@
     "behatch/contexts": "~3.0",
     "emuse/behat-html-formatter": "^0.1.0"
   },
-  "replace": {
-    "ajaxorg/ace-builds": "*"
-  },
   "config": {
     "bin-dir": "bin/",
     "secure-http": false,
