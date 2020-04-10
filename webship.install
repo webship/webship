@@ -6,6 +6,7 @@
  */
 
 use Drupal\webship\Entity\WebshipEntityDefinitionUpdateManager;
+use Drupal\user\UserInterface;
 
 /**
  * Implements hook_install().
@@ -19,7 +20,7 @@ function webship_install() {
   \Drupal::configFactory()->getEditable('system.site')->set('page.front', '/node')->save(TRUE);
 
   // Restrict user registration to admin role creation.
-  \Drupal::configFactory()->getEditable('user.settings')->set('register', USER_REGISTER_ADMINISTRATORS_ONLY)->save(TRUE);
+  \Drupal::configFactory()->getEditable('user.settings')->set('register', UserInterface::REGISTER_ADMINISTRATORS_ONLY)->save(TRUE);
 
   // We install some menu links, so we have to rebuild the router, to ensure the
   // menu links are valid.
