@@ -58,6 +58,7 @@ install:
   - rdf
   - telephone
   - media
+  - media_library
   - webdev
   - webadmin
   - webpage
