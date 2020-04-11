@@ -14,6 +14,7 @@ themes:
   - webtheme
 install:
   - system
+  - config
   - action
   - syslog
   - dblog
@@ -57,10 +58,7 @@ install:
   - statistics
   - rdf
   - telephone
-  - media
-  - media_library
-  - webdev
-  - webadmin
-  - webpage
+  - entity
+  - pathauto
   - webform
   - webform_ui
