@@ -28,37 +28,22 @@ install:
   - views_ui
   - menu_ui
   - menu_link_content
-  - color
   - field
   - field_ui
-  - file
   - help
   - breakpoint
-  - image
-  - responsive_image
   - text
   - datetime
+  - datetime_range
   - options
   - contextual
-  - editor
-  - ckeditor
-  - quickedit
   - filter
-  - path
   - page_cache
   - dynamic_page_cache
   - automated_cron
-  - big_pipe
   - search
-  - shortcut
-  - datetime_range
   - layout_discovery
-  - settings_tray
-  - history
-  - statistics
-  - rdf
-  - telephone
-  - entity
-  - pathauto
+  - webdev
+  - webadmin
+  - webpage
   - webform
-  - webform_ui
