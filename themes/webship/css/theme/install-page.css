@@ -5,7 +5,9 @@
  */
 
 body.install-page {
-  background-image: url(../../images/drupal-webship.svg);
+  background: #0074bd;
+  background-color: #0074bd;
+  background-image: url(../../logo-wight.svg);
   background-position: center center;
   background-repeat: no-repeat;
   -webkit-background-size: 22%;

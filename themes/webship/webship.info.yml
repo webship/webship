@@ -24,7 +24,7 @@ libraries-override:
   claro/install-page:
     css:
       theme:
-        css/theme/install-page.css: css/install-page.css
+        css/theme/install-page.css: css/theme/install-page.css
   system/base:
     css:
       component:
