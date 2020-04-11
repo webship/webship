@@ -14,20 +14,6 @@ themes:
   - webtheme
 install:
   - system
-  - config
-  - config_provider
-  - config_snapshot
-  - config_filter
-  - config_split
-  - config_merge
-  - config_merge_filter
-  - config_sync
-  - config_ignore
-  - config_distro
-  - config_distro_ignore
-  - config_update
-  - config_update_ui
-  - config_normalizer
   - action
   - syslog
   - dblog
@@ -41,10 +27,6 @@ install:
   - views_ui
   - menu_ui
   - menu_link_content
-  - toolbar
-  - admin_toolbar
-  - admin_toolbar_tools
-  - admin_toolbar_links_access_filter
   - color
   - field
   - field_ui
@@ -57,8 +39,6 @@ install:
   - datetime
   - options
   - contextual
-  - content_moderation
-  - workflows
   - editor
   - ckeditor
   - quickedit
@@ -76,19 +56,9 @@ install:
   - history
   - statistics
   - rdf
-  - media
   - telephone
-  - ctools
-  - ctools_block
-  - ctools_views
-  - entity
-  - token
-  - ds
-  - ds_extras
-  - field_group
-  - smart_trim
-  - pathauto
-  - libraries
+  - webdev
+  - webadmin
+  - webpage
   - webform
   - webform_ui
-  - webpage

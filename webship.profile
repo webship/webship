@@ -27,7 +27,7 @@ function webship_preprocess_install_page(&$variables) {
 function webship_toolbar_alter(&$items) {
   if (\Drupal::currentUser()->hasPermission('access toolbar')
     && !empty($items['admin_toolbar_tools'])) {
-    $items['admin_toolbar_tools']['#attached']['library'][] = 'webship/toolbar-icon';
+    $items['admin_toolbar_tools']['#attached']['library'][] = 'webadmin/admin-toolbar-tools';
   }
 }
 
