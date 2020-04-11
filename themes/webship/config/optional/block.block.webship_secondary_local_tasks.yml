@@ -2,12 +2,12 @@ langcode: en
 status: true
 dependencies:
   theme:
-    - uikit_admin
+    - claro
     - webship
 id: webship_secondary_local_tasks
 theme: webship
-region: content
-weight: -3
+region: pre_content
+weight: 0
 provider: null
 plugin: local_tasks_block
 settings:

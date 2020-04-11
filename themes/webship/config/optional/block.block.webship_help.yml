@@ -4,7 +4,7 @@ dependencies:
   module:
     - help
   theme:
-    - uikit_admin
+    - claro
     - webship
 id: webship_help
 theme: webship

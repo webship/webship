@@ -13,7 +13,6 @@ default:
         - Drupal\DrupalExtension\Context\MessageContext
         - Drupal\DrupalExtension\Context\MinkContext
         - Drupal\DrupalExtension\Context\MarkupContext
-        - Drupal\DrupalExtension\Context\BatchContext
       paths:
         features: %paths.base%/tests/features
         bootstrap: %paths.base%/tests/features/bootstrap
@@ -25,14 +24,35 @@ default:
     Behat\MinkExtension:
       files_path: "%paths.base%/tests/assets/"
       goutte: ~
-      zombie: ~
       selenium2:
-        wd_host: 127.0.0.1:4444/wd/hub
+        wd_host: 127.0.0.1:4445/wd/hub
         capabilities:
           # browser: 'firefox'
           browser: 'chrome'
           # browser: 'phantomjs'
           nativeEvents: true
+          marionette: true
+          browserName: chrome
+          version: "*"
+          extra_capabilities:
+            chromeOptions:
+              w3c: false
+          chrome:
+            switches:
+#              - "--headless"
+              - "--disable-web-security"
+              - "--DNS-prefetch-disable"
+              - "--whitelisted-ips"
+              - "--start-maximized"
+              - "--disable-translate"
+              - "--ignore-certificate-errors"
+              - "--test-type"
+              - "--disable-dev-shm-usage"
+              - "--disable-extensions"
+              - "incognito"
+              - "enable-precise-memory-info"
+              - "js-flags=--expose-gc"
+              - "no-sandbox"
       base_url: 'http://127.0.0.1:8080'
       # browser_name: 'firefox'
       browser_name: 'chrome'
@@ -40,6 +60,7 @@ default:
       javascript_session: selenium2
     Drupal\DrupalExtension:
       blackbox: ~
+      api_driver: 'drupal'
     emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
       name: html
       renderer: Twig,Behat2

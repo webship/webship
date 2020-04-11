@@ -1,40 +1,21 @@
 name: 'Webship Theme'
 type: theme
-core: 8.x
+core_version_requirement: ^8.8 || ^9
 description: 'The default administration theme for Webship'
 alt text: 'Default administration theme for Webship.'
 package: Webship
 version: VERSION
-core: 8.x
-base theme: uikit_admin
+base theme: claro
 regions:
-  navbar: 'Navigation Bar'
-  offcanvas: 'Offcanvas Navigation'
-  header: Header
+  header: 'Header'
   pre_content: 'Pre-content'
-  breadcrumb: 'Breadcrumb'
-  highlighted: 'Highlighted'
-  help: 'Help'
+  breadcrumb: Breadcrumb
+  highlighted: Highlighted
+  help: Help
   content: Content
-  sidebar_first: 'Left Sidebar'
-  sidebar_second: 'Right Sidebar'
-  footer: 'Footer'
-
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  sidebar_first: 'First sidebar'
 regions_hidden:
-  - navbar
-  - offcanvas
-  - header
-  - pre_content
-  - breadcrumb
-  - highlighted
-  - help
   - sidebar_first
-  - sidebar_second
-  - footer
-
-libraries:
-  - uikit_admin/global-style
-
-libraries-extend:
-  views_ui/views_ui.admin:
-    - uikit_admin/uikit-admin-views-ui
+ 

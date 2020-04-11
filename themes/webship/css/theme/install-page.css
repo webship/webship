@@ -4,75 +4,38 @@
  *
  */
 
-body {
-  background: url(../../images/drupal-webship.svg) repeat center center;
-  -webkit-background-size: 80px;
-  -moz-background-size: 80px;
-  -o-background-size: 80px;
-  background-size: 80px;
-  -webkit-transform:rotate(45deg);
-  -moz-transform:rotate(45deg);
-  transform:rotate(45deg);
-  -webkit-animation: background-animation 180s infinite;
-  animation: background-animation 360s infinite;
-  animation-delay: 5s;
-  overflow-x: hidden;
-}
-
-.animated-logo {
-  background: url(../../images/drupal-webship.svg) no-repeat center center;
-  -webkit-background-size: 15%;
-  -moz-background-size: 15%;
-  -o-background-size: 15%;
-  background-size: 15%;
+body.install-page {
+  background-image: url(../../images/drupal-webship.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: 22%;
+  -moz-background-size: 22%;
+  -o-background-size: 22%;
+  background-size: 22%;
   background-position: 95% 5%;
   -webkit-animation: logo-animation 40s infinite;
   animation: logo-animation 40s infinite;
   animation-delay: 5s;
 }
 
-body .dialog-off-canvas-main-canvas {
-  -webkit-transform:rotate(-45deg);
-  -moz-transform:rotate(-45deg);
-  transform:rotate(-45deg);
+body .install-logo {
+  width: 100px;
+  float: left;
 }
 
-body .install-logo {
-  width: 80px;
-  float: left;
+body .page-title {
+  width: 100%;
 }
 
 body .install-site-name,
 body .site-version {
-  float: left;
-  margin-left: 15px;
-  margin-top: 18px;
-  color: #FFFFFF;
-}
-
-body body .layout-container,
-body .js .layout-container,
-.js body .layout-container,
-.js .js .layout-container {
-  margin: 4% auto;
-  
-}
-
-@keyframes background-animation {
-  0% {
-    background-size: 80;
-  }
-  50% {
-    background-size: 50px;
-  }
-  100% {
-    background-size: 80;
-  }
+  margin-left: 60px;
+  margin-top: 1em;
 }
 
 @keyframes logo-animation {
   10% {
-    background-size: 15%;
+    background-size: 22%;
     background-position: 95% 5%;
   }
   20% {
@@ -80,15 +43,15 @@ body .js .layout-container,
     background-position: 50%;
   }
   30% {
-    background-size: 15%;
+    background-size: 22%;
     background-position: 5% 95%;
   }
   40% {
-    background-size: 50%;
+    background-size: 22%;
     background-position: 50%;
   }
   50% {
-    background-size: 15%;
+    background-size: 22%;
     background-position: 95% 5%;
   }
   60% {
@@ -96,7 +59,7 @@ body .js .layout-container,
     background-position: 50%;
   }
   70% {
-    background-size: 15%;
+    background-size: 22%;
     background-position: 5% 95%;
   }
   80% {
@@ -104,110 +67,15 @@ body .js .layout-container,
     background-position: 50%;
   }
   90% {
-    background-size: 15%;
+    background-size: 22%;
     background-position: 95% 5%;
   }
 }
 
-.install-header,
-.install-card {
-  background: #358FC8;
-  background-color: #358FC8 !important;
-}
-
-/**
- * Task list & step indicator
- */
-@media all and (max-width: 48em) { /* 768px */
-
-  .step-indicator {
-    position: absolute;
-    top: 0.2em;
-    right: 0.5em; /* LTR */
-    display: block;
-    font-size: 1.385em;
+@media screen and (min-width: 38em) {
+  .toolbar-tray-open:not(.toolbar-vertical) .layout-container,
+  body:not(.toolbar-tray-open) .layout-container {
+    margin-right: auto !important;
+    margin-left: auto !important;
   }
-
-  .task-list {
-    display: none;
-  }
-}
-
-@media all and (min-width: 48em) { /* 768px */
-  .step-indicator {
-    display: none;
-  }
-
-  .task-list {
-    margin-left: 0;
-    padding-bottom: 1em;
-    padding-left: 0; 
-    list-style-type: none;
-  }
-
-  .task-list li {
-    padding: 0.5em;
-    color: #ffffff;
-  }
-
-  .task-list .is-active {
-    position: relative;
-    background: #358FC8;
-    font-weight: normal;
-  }
-  .task-list .is-active:after {
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    width: 0;
-    height: 0;
-    margin-top: -1.269em;
-    content: " ";
-    pointer-events: none;
-    border: solid transparent;
-    border-width: 1.269em;
-    border-color: #358FC8;
-    border-left-color: #358FC8;
-  }
-  .task-list .done {
-    color: #358FC8;
-  }
-}
-
-/**
- * Layout
- */
-.layout-container {
-  width: auto;
-  margin-right: 1.25em;
-  margin-left: 1.25em;
-  background: #fff;
-}
-
-.layout-container:after {
-  display: table;
-  clear: both;
-  content: "";
-}
-
-.page-title {
-  color: #358FC8;
-} 
-
-/**
- * Status report customization for install and update page.
- */
-.system-status-report__status-title {
-  float: none;
-  width: 100%;
-}
-.system-status-report__entry__value {
-  float: none;
-  width: 100%;
-  padding-top: 0;
-  padding-left: 3em; /* LTR */
-}
-[dir="rtl"] .system-status-report__entry__value {
-  padding-right: 3em;
-  padding-left: 1em;
 }

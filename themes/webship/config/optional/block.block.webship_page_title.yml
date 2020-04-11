@@ -2,12 +2,12 @@ langcode: en
 status: true
 dependencies:
   theme:
-    - uikit_admin
+    - claro
     - webship
 id: webship_page_title
 theme: webship
-region: navbar_left
-weight: -4
+region: header
+weight: -30
 provider: null
 plugin: page_title_block
 settings:

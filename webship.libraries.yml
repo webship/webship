@@ -6,6 +6,7 @@ install-page:
       themes/webship/css/theme/install-page.css: {}
   dependencies:
     - system/maintenance
+    - claro/install-page
 
 toolbar-icon:
   css:

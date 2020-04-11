@@ -20,19 +20,16 @@
     "drupal": {
       "type": "composer",
       "url": "https://packages.drupal.org/8"
-      },
-    "assets": {
-      "type": "composer",
-      "url": "https://asset-packagist.org"
     }
   },
   "require": {
-    "composer/installers": "@stable",
-    "cweagans/composer-patches": "@stable",
-    "drupal-composer/drupal-scaffold": "@stable",
-    "webflo/drupal-finder": "@stable",
-    "webmozart/path-util": "@stable",
-    "drupal/core": "@stable",
+    "composer/installers": "~1.0",
+    "oomphinc/composer-installers-extender": "~1.0",
+    "cweagans/composer-patches": "~1.0",
+    "drupal/core-composer-scaffold": "^8.8.0",
+    "drupal/drupal-library-installer-plugin": "^0.3",
+    "webflo/drupal-finder": "~1.0",
+    "drupal/core": "^8.8.0",
     "drupal/config_provider": "@stable",
     "drupal/config_snapshot": "@stable",
     "drupal/config_merge": "@stable",
@@ -45,36 +42,26 @@
     "drupal/config_ignore": "@stable",
     "drupal/config_perms": "@stable",
     "drupal/admin_toolbar": "~2.0",
-    "drupal/libraries": "@stable",
-    "drupal/ctools": "@stable",
-    "drupal/entity": "@stable",
-    "drupal/token": "@stable",
-    "drupal/ds": "@stable",
+    "drupal/ctools": "~3.0",
+    "drupal/entity": "~1.0",
+    "drupal/token": "~1.0",
+    "drupal/ds": "~3.0",
     "drupal/field_group": "~3.0",
-    "drupal/smart_trim": "@stable",
-    "drupal/pathauto": "@stable",
-    "drupal/uikit": "@stable",
-    "drupal/uikit_admin": "@stable",
-    "drupal/webform": "@stable",
-    "drupal/webtheme": "@stable",
-    "drupal/webpage": "@stable",
-    "drupal/varbase_media": "@stable",
-    "drupal/varbase_editor": "@stable"
+    "drupal/smart_trim": "~1.0",
+    "drupal/pathauto": "~1.0",
+    "drupal/radix_layouts": "~4.0",
+    "drupal/webform": "~5.0",
+    "drupal/webpage": "8.2.x-dev",
+    "drupal/webtheme": "8.2.x-dev"
   },
   "require-dev": {
-    "drupal/console": "~1.0",
-    "drush/drush": "~9.0",
-    "drupal/coder": "~8.0",
-    "drupal/drupal-extension": "~3.0",
-    "phing/phing": "~2.0",
+    "drupal/core-dev": "^8.8.0",
+    "drupal/console": "^1.0",
+    "drush/drush": "^9.0",
     "behat/behat": "~3.0",
-    "behat/mink": "~1.0",
-    "behat/mink-extension": "~2.0",
-    "behat/mink-goutte-driver": "~1.0",
-    "behat/mink-zombie-driver": "~1.0",
-    "behat/mink-selenium2-driver": "~1.0",
-    "behatch/contexts": "~3.0",
-    "emuse/behat-html-formatter": "^0.1.0"
+    "phing/phing": "~2.0",
+    "drupal/drupal-extension": "^3.2",
+    "emuse/behat-html-formatter": "^0.2.0"
   },
   "config": {
     "bin-dir": "bin/",
@@ -89,7 +76,6 @@
     }
   },
   "scripts": {
-    "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
     "pre-install-cmd": ["Webship\\composer\\Procedures::checkComposerVersionProcedure"],
     "pre-update-cmd": ["Webship\\composer\\Procedures::checkComposerVersionProcedure"],
     "post-install-cmd": [
@@ -106,8 +92,10 @@
     ]
   },
   "extra": {
-    "branch-alias": {
-      "dev-8.x-1.x": "8.1.x-dev"
+    "drupal-scaffold": {
+      "locations": {
+        "web-root": "web/"
+      }
     },
     "installer-types": [
       "bower-asset",
@@ -115,11 +103,9 @@
     ],
     "installer-paths": {
       "web/core": ["type:drupal-core"],
-      "web/profiles/{$name}": ["type:drupal-profile"],
+      "web/modules/contrib/{$name}": ["type:drupal-profile"],
       "web/modules/contrib/{$name}": ["type:drupal-module"],
       "web/themes/contrib/{$name}": ["type:drupal-theme"],
-      "web/libraries/slick": ["npm-asset/slick-carousel"],
-      "web/libraries/ace": ["npm-asset/ace-builds"],
       "web/libraries/{$name}": [
         "type:drupal-library",
         "type:bower-asset",
@@ -131,17 +117,12 @@
     },
     "drupal-libraries": {
       "library-directory": "web/libraries",
-      "libraries": [
-        {"name": "dropzone","package": "npm-asset/dropzone"},
-        {"name": "blazy", "package": "npm-asset/blazy"},
-        {"name": "slick", "package": "npm-asset/slick-carousel"},
-        {"name": "ace", "package": "npm-asset/ace-builds"}
-      ]
+      "libraries": []
     },
     "enable-patching": true,
     "composer-exit-on-patch-failure": true,
     "patchLevel": {
        "drupal/core": "-p2"
-    } 
+    }
   }
 }

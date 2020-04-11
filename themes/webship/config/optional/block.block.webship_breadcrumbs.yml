@@ -4,12 +4,12 @@ dependencies:
   module:
     - system
   theme:
-    - uikit_admin
+    - claro
     - webship
 id: webship_breadcrumbs
 theme: webship
-region: content
-weight: -2
+region: breadcrumb
+weight: 0
 provider: null
 plugin: system_breadcrumb_block
 settings:

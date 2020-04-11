@@ -2,16 +2,16 @@ name: Webship
 type: profile
 description: 'Webship helps in speeding up the work of web developers to ship websites in a swift way.'
 core: 8.x
-version: 8.x-1.x-dev
+version: 8.2.x-dev
 distribution:
   name: Webship
   install:
     theme: webship
 themes:
-  - uikit
-  - uikit_admin
-  - webtheme
+  - claro
   - webship
+  - radix
+  - webtheme
 install:
   - system
   - config
@@ -92,5 +92,3 @@ install:
   - webform
   - webform_ui
   - webpage
-  - varbase_media
-  - varbase_editor
