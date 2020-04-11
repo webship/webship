@@ -57,6 +57,7 @@ install:
   - statistics
   - rdf
   - telephone
+  - media
   - webdev
   - webadmin
   - webpage
