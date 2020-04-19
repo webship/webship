@@ -30,10 +30,10 @@
     "drupal/drupal-library-installer-plugin": "^0.3",
     "webflo/drupal-finder": "~1.0",
     "drupal/core": "^8.8.0",
-    "drupal/webdev": "8.1.x-dev",
-    "drupal/webadmin": "8.1.x-dev",
-    "drupal/webpage": "8.2.x-dev",
-    "drupal/webtheme": "8.2.x-dev",
+    "drupal/webdev": "^8.1",
+    "drupal/webadmin": "^8.1",
+    "drupal/webpage": "^8.2",
+    "drupal/webtheme": "^8.2",
     "drupal/webform": "~5.0"
   },
   "require-dev": {
