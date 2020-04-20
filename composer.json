@@ -37,7 +37,7 @@
     "drupal/webform": "~5.0"
   },
   "require-dev": {
-    "drupal/webtest": "8.1.x-dev"
+    "drupal/webtest": "^8.1"
   },
   "config": {
     "bin-dir": "bin/",
