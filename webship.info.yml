@@ -1,8 +1,10 @@
 name: Webship
 type: profile
 description: 'Webship helps in speeding up the work of web developers to ship websites in a swift way.'
-core: 8.x
-version: 8.2.0-alpha1
+core_version_requirement: ^8 || ^9
+project: webship
+package: Webship
+version: 8.2.x-dev
 distribution:
   name: Webship
   install:
