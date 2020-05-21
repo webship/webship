@@ -34,7 +34,8 @@
     "drupal/webadmin": "8.1.x-dev",
     "drupal/webpage": "8.2.x-dev",
     "drupal/webtheme": "8.2.x-dev",
-    "drupal/webform": "~5.0"
+    "drupal/webform": "~5.0",
+    "drupal/vartheme_claro": "^8.1"
   },
   "require-dev": {
     "drupal/webtest": "8.1.x-dev"
