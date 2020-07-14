@@ -1,0 +1,6 @@
+/* Main menu icons. */
+#toolbar-administration .toolbar-icon-admin-toolbar-tools-help:before {
+  background-image: url('../../images/logo-wight.svg');
+  margin: 0;
+  padding: 0;
+}

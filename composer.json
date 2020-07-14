@@ -26,19 +26,16 @@
     "composer/installers": "~1.0",
     "oomphinc/composer-installers-extender": "~1.0",
     "cweagans/composer-patches": "~1.0",
-    "drupal/core-composer-scaffold": "^8.8.0",
+    "drupal/core-composer-scaffold": "~9.0",
     "drupal/drupal-library-installer-plugin": "^0.3",
     "webflo/drupal-finder": "~1.0",
-    "drupal/core": "^8.8.0",
-    "drupal/webdev": "8.1.x-dev",
-    "drupal/webadmin": "8.1.x-dev",
-    "drupal/webpage": "8.2.x-dev",
-    "drupal/webtheme": "8.2.x-dev",
+    "drupal/core": "~9.0",
+    "drupal/webdev": "~2.0",
+    "drupal/webadmin": "~2.0",
+    "drupal/webpage": "~2.0",
+    "drupal/webtheme": "~2.0",
     "drupal/webform": "~5.0",
-    "drupal/vartheme_claro": "^8.1"
-  },
-  "require-dev": {
-    "drupal/webtest": "8.1.x-dev"
+    "drupal/vartheme_claro": "~2.0"
   },
   "config": {
     "bin-dir": "bin/",

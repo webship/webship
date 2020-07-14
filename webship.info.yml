@@ -1,17 +1,17 @@
 name: Webship
 type: profile
 description: 'Webship helps in speeding up the work of web developers to ship websites in a swift way.'
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^9
 project: webship
 package: Webship
-version: 8.2.x-dev
+version: 9.0.x-dev
 distribution:
   name: Webship
   install:
-    theme: webship
+    theme: vartheme_claro
 themes:
   - claro
-  - webship
+  - vartheme_claro
   - radix
   - webtheme
 install:
