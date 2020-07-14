@@ -17,9 +17,17 @@
     "source": "http://cgit.drupalcode.org/webship"
   },
   "repositories": {
+    "packagist": {
+      "type": "composer",
+      "url": "https://packagist.org"
+    },
     "drupal": {
       "type": "composer",
       "url": "https://packages.drupal.org/8"
+    },
+    "assets": {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
     }
   },
   "require": {
@@ -40,9 +48,10 @@
   "config": {
     "bin-dir": "bin/",
     "secure-http": false,
-    "preferred-install": {
-      "drupal/core": "dist"
-    }
+    "process-timeout": 1800,
+    "github-protocols": [
+      "https,ssh"
+    ]
   },
   "autoload": {
     "psr-4": {
