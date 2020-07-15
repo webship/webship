@@ -40,10 +40,10 @@ html body.install-page {
   background-image: url(../../images/logo-wight.svg) !important;
   background-position: center center;
   background-repeat: no-repeat;
-  -webkit-background-size: 22%;
-  -moz-background-size: 22%;
-  -o-background-size: 22%;
-  background-size: 22%;
+  -webkit-background-size: 50px;
+  -moz-background-size: 50px;
+  -o-background-size: 50px;
+  background-size: 50px;
   background-position: 95% 5%;
   -webkit-animation: logo-animation 40s infinite;
   animation: logo-animation 40s infinite;
