@@ -6,14 +6,6 @@
  */
 
 /**
- * Implements hook_install_tasks_alter().
- */
-function webship_install_tasks_alter(&$tasks, $install_state) {
-  unset($tasks['install_select_language']);
-  unset($tasks['install_download_translation']);
-}
-
-/**
  * Implements hook_preprocess_install_page().
  */
 function webship_preprocess_install_page(&$variables) {
@@ -27,7 +19,7 @@ function webship_preprocess_install_page(&$variables) {
 function webship_toolbar_alter(&$items) {
   if (\Drupal::currentUser()->hasPermission('access toolbar')
     && !empty($items['admin_toolbar_tools'])) {
-    $items['admin_toolbar_tools']['#attached']['library'][] = 'webadmin/admin-toolbar-tools';
+    $items['admin_toolbar_tools']['#attached']['library'][] = 'webship/toolbar-icon';
   }
 }
 
