@@ -27,7 +27,7 @@ html body .claro-details__summary:hover {
 html body .button--primary:hover,
 html body .button--primary:focus,
 html body .button--primary:active {
-  background: #2c4b00;
+  background: #3c3d41;
 }
 
 html body .task-list .is-active:after {
@@ -58,7 +58,7 @@ html body .site-version {
 }
 
 html body.install-page .site-version {
-  font-size: 5rem !important;
+  font-size: 4rem !important;
   display: inline-block !important;
   margin-top: 4rem !important;
 }
