@@ -42,7 +42,7 @@
     "drupal/webadmin": "~9.0",
     "drupal/webpage": "~9.0",
     "drupal/webform": "~5.0",
-    "drupal/vartheme_bs4": "~8.0",
+    "drupal/vartheme_bs4": "~6.0",
     "drupal/vartheme_claro": "~2.0"
   },
   "config": {
