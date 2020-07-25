@@ -12,8 +12,7 @@ distribution:
 themes:
   - claro
   - vartheme_claro
-  - radix
-  - webtheme
+  - vartheme_bs4
 install:
   - system
   - config
