@@ -38,8 +38,9 @@ html body.install-page {
   background: #328ec7 !important;
   background-color: #328ec7 !important;
   background-image: url(../../images/logo-wight.svg) !important;
-  background-position: center center;
-  background-repeat: no-repeat;
+  background-position: 100px !important;
+  background-size: 25px !important;
+  background-repeat: space !important;
 }
 
 html body .installer-logo {
