@@ -21,7 +21,7 @@ After that you can create the project:
 
 To install the most recent stable release of Webship 9.0.x run this command:
 ```
-composer create-project webship/webship-project:~9 WEBSITE_NAME --no-dev --no-interaction
+composer create-project webship/webship-project:^9.0.0-alpha1 WEBSITE_NAME --no-dev --no-interaction
 ```
 
 To install the dev version of Webship 9.0.x run this command:
