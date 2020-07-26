@@ -19,7 +19,7 @@ for your setup.
 
 After that you can create the project:
 
-To install the most recent stable release of Webship 8.2.x run this command:
+To install the most recent stable release of Webship 9.0.x run this command:
 ```
 composer create-project webship/webship-project:~9 WEBSITE_NAME --no-dev --no-interaction
 ```
