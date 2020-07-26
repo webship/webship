@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/webship/webship.svg?branch=8.2.x)](https://travis-ci.org/webship/webship)
+[![Build Status](https://travis-ci.org/webship/webship.svg?branch=9.0.x)](https://travis-ci.org/webship/webship)
 
 # Webship
 
@@ -21,10 +21,10 @@ After that you can create the project:
 
 To install the most recent stable release of Webship 8.2.x run this command:
 ```
-composer create-project webship/webship-project:^8.1.0-alpha1 WEBSITE_NAME --no-dev --no-interaction
+composer create-project webship/webship-project:~9 WEBSITE_NAME --no-dev --no-interaction
 ```
 
-To install the dev version of Webship 8.8.x run this command:
+To install the dev version of Webship 9.0.x run this command:
 ```
-composer create-project webship/webship-project:8.2.x-dev WEBSITE_NAME --stability dev --no-interaction
+composer create-project webship/webship-project:9.0.x-dev WEBSITE_NAME --stability dev --no-interaction
 ```
