@@ -43,7 +43,8 @@
     "drupal/webpage": "9.0.x-dev",
     "drupal/webform": "~6.0",
     "drupal/vartheme_bs4": "~6.0",
-    "drupal/vartheme_claro": "~2.0"
+    "drupal/vartheme_claro": "~2.0",
+		"drupal/webtheme": "9.0.x-dev"
   },
   "config": {
     "bin-dir": "bin/",
