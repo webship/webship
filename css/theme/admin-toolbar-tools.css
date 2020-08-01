@@ -332,8 +332,8 @@ toolbar-administration .level-4 .toolbar-handle.open,
   background-image: url('../../images/logo-wight.svg');
   margin: 0;
   padding: 0;
-  background-size: cover;
-  width: 75%;
+  background-size: 100% 100%;
+  width: 60%;
   background-repeat: no-repeat;
   background-position: center bottom;
 }

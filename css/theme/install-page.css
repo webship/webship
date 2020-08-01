@@ -39,7 +39,7 @@ html body.install-page {
   background-color: #328ec7 !important;
   background-image: url(../../images/logo-wight.svg) !important;
   background-position: 100px !important;
-  background-size: 25px !important;
+  background-size: 50% 14% !important;
   background-repeat: space !important;
 }
 

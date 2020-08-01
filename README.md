@@ -14,14 +14,14 @@ Built on top of Drupal, as it has many options, tools, frameworks, and
 First you need to [install composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx).
 
 > Note: The instructions below refer to the [global composer installation](https://getcomposer.org/doc/00-intro.md#globally).
-You might need to replace `composer` with `php composer.phar` (or similar) 
+You might need to replace `composer` with `php composer.phar` (or similar)
 for your setup.
 
 After that you can create the project:
 
 To install the most recent stable release of Webship 9.0.x run this command:
 ```
-composer create-project webship/webship-project:^9.0.0-alpha1 WEBSITE_NAME --no-dev --no-interaction
+composer create-project webship/webship-project:^9.0.0-alpha2 WEBSITE_NAME --no-dev --no-interaction
 ```
 
 To install the dev version of Webship 9.0.x run this command:

@@ -4,7 +4,7 @@ description: 'Webship helps in speeding up the work of web developers to ship we
 core_version_requirement: ^9
 project: webship
 package: Webship
-version: 9.0.x-dev
+version: 9.0.0-alpha2
 distribution:
   name: Webship
   install:
