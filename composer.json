@@ -38,13 +38,13 @@
     "drupal/drupal-library-installer-plugin": "^0.3",
     "webflo/drupal-finder": "~1.0",
     "drupal/core": "~9.0",
-    "drupal/webdev": "~9.0",
-    "drupal/webadmin": "~9.0",
-    "drupal/webpage": "~9.0",
+    "drupal/webdev": "9.0",
+    "drupal/webadmin": "9.0.x-dev",
+    "drupal/webpage": "9.0.x-dev",
     "drupal/webform": "~6.0",
     "drupal/vartheme_bs4": "~6.0",
     "drupal/vartheme_claro": "~2.0",
-		"drupal/webtheme": "~9.0"
+		"drupal/webtheme": "9.0.x-dev"
   },
   "config": {
     "bin-dir": "bin/",
