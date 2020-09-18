@@ -65,13 +65,11 @@
     "post-install-cmd": [
       "Webship\\composer\\Procedures::createRequiredFilesProcedure",
       "Webship\\composer\\Procedures::removeGitDirectoriesProcedure",
-      "@composer drupal-scaffold",
       "./bin/phing push"
     ],
     "post-update-cmd": [
       "Webship\\composer\\Procedures::createRequiredFilesProcedure",
       "Webship\\composer\\Procedures::removeGitDirectoriesProcedure",
-      "@composer drupal-scaffold",
       "./bin/phing push"
     ]
   },
@@ -106,7 +104,7 @@
     "enable-patching": true,
     "composer-exit-on-patch-failure": true,
     "patchLevel": {
-       "drupal/core": "-p2"
+      "drupal/core": "-p2"
     }
   }
 }
