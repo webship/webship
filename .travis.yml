@@ -1,6 +1,15 @@
-dist: trusty
-
+dist: xenial
 language: php
+php:
+  - 7.3
+  - 7.4
+services:
+  - mysql
+  - xvfb
+mysql:
+  database: test_webship
+  username: root
+  encoding: utf8
 cache:
   bundler: true
   directories:
@@ -8,16 +17,11 @@ cache:
     - "$HOME/.drush/cache"
     - "$HOME/.npm"
     - "$HOME/.selenium/cache"
-
-php:
-  - 7.3
-
-mysql:
-  database: test_webship
-  username: root
-  encoding: utf8
-
 before_install:
+  - phpenv config-rm xdebug.ini
+  - phpenv rehash
+  - COMPOSER_AUTH_PATH="$HOME/.composer/auth.json"
+  - if [[ -f $COMPOSER_AUTH_PATH ]]; then rm $COMPOSER_AUTH_PATH; fi
   - composer self-update
   - composer --version
 
@@ -25,41 +29,34 @@ before_install:
   - export PATH="$HOME/.composer/vendor/bin:$TRAVIS_BUILD_DIR/bin:$PATH"
   - export COMPOSER_EXIT_ON_PATCH_FAILURE=1
 
-  # MySQL Configurations.
-  - mysql -e 'SET GLOBAL wait_timeout = 5400;'
-  - mysql -e "SHOW VARIABLES LIKE 'wait_timeout'"
-
   # PHP Configurations.
-  - echo 'max_execution_time = 1200' >> webship.php.ini;
-  - echo 'max_input_time = 180' >> webship.php.ini;
-  - echo 'max_input_vars = 10000' >> webship.php.ini;
-  - echo 'memory_limit = 3000M' >> webship.php.ini;
-  - echo 'error_reporting = E_ALL' >> webship.php.ini;
-  - echo 'post_max_size = 64M' >> webship.php.ini;
-  - echo 'upload_max_filesize = 32M' >> webship.php.ini;
-  - echo 'max_file_uploads = 40' >> webship.php.ini;
-  - echo 'sendmail_path = /bin/true' >> webship.php.ini;
-  - phpenv config-add webship.php.ini
+  - echo 'max_execution_time = 1200' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini ;
+  - echo 'max_input_time = 180' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini ;
+  - echo 'max_input_vars = 10000' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini ;
+  - echo 'memory_limit = -1' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini ;
+  - echo 'error_reporting = E_ALL' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini ;
+  - echo 'post_max_size = 64M' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini ;
+  - echo 'upload_max_filesize = 32M' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini ;
+  - echo 'max_file_uploads = 40' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini ;
+  - echo 'sendmail_path = /bin/true' >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini ;
   - phpenv rehash
 
-  # Configure and run the virtual display.
-  - export DISPLAY=:99
-  - sh -e /etc/init.d/xvfb start
-  - Xvfb :99 -ac -screen 0 1366x768x24 &>/dev/null &
-  - sleep 3
-
-  # Download Chrome Driver.
-  - LATEST_CHROMEDRIVER=$(wget -q -O - http://chromedriver.storage.googleapis.com/LATEST_RELEASE)
-  - wget http://chromedriver.storage.googleapis.com/$LATEST_CHROMEDRIVER/chromedriver_linux64.zip
+  # Download Latest Chrome Driver.
+  - CHROME_DRIVER_VERSION=$(wget -qO- chromedriver.storage.googleapis.com/LATEST_RELEASE);
+  - echo $CHROME_DRIVER_VERSION;
+  - wget http://chromedriver.storage.googleapis.com/$CHROME_DRIVER_VERSION/chromedriver_linux64.zip
   - unzip chromedriver_linux64.zip
   - chmod +x chromedriver
   - mkdir -p $HOME/.composer/vendor/bin
   - mv -f chromedriver $HOME/.composer/vendor/bin/
   - rm chromedriver_linux64.zip
 
-  # Update Chrome.
+  # Update to latest Chrome browser.
   - export CHROME_BIN=/usr/bin/google-chrome
   - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+  - sudo apt-get clean
+  - sudo apt-get update
+  - sudo apt-get install dpkg
   - sudo dpkg -i google-chrome-stable_current_amd64.deb
   - rm google-chrome-stable_current_amd64.deb
   - google-chrome --version
