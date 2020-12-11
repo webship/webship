@@ -24,34 +24,28 @@
     "drupal": {
       "type": "composer",
       "url": "https://packages.drupal.org/8"
-    },
-    "assets": {
-      "type": "composer",
-      "url": "https://asset-packagist.org"
     }
   },
   "require": {
-    "composer/installers": "~1.0",
-    "oomphinc/composer-installers-extender": "~1.0",
+    "composer/installers": "~1.0 || ~2.0",
+    "oomphinc/composer-installers-extender": "~1.0 || ~2.0",
     "cweagans/composer-patches": "~1.0",
     "drupal/core-composer-scaffold": "~9.0",
-    "drupal/drupal-library-installer-plugin": "^0.3",
-    "webflo/drupal-finder": "~1.0",
     "drupal/core": "~9.0",
-    "drupal/webdev": "9.0",
-    "drupal/webadmin": "9.0.x-dev",
-    "drupal/webpage": "9.0.x-dev",
+    "drupal/webdev": "~9.0",
+    "drupal/webadmin": "~9.0",
+    "drupal/webpage": "~9.0",
+		"drupal/webtheme": "~9.0",
     "drupal/webform": "~6.0",
-    "drupal/vartheme_bs4": "~6.0",
-    "drupal/vartheme_claro": "~2.0",
-		"drupal/webtheme": "9.0.x-dev"
+    "drupal/vartheme_claro": "~2.0"
   },
   "require-dev": {
-    "drupal/core-dev": "^9.0.0",
-    "drush/drush": "~9.0",
-    "behat/behat": "~3.0",
-    "phing/phing": "~2.0",
-    "drupal/drupal-extension": "~4.0"
+    "drupal/core-dev": "~9.0",
+    "drush/drush": "~10.0",
+    "drupal/webtest": "~9.0"
+  },
+  "conflict": {
+    "drupal/drupal": "*"
   },
   "config": {
     "bin-dir": "bin/",
@@ -61,52 +55,21 @@
       "https,ssh"
     ]
   },
-  "autoload": {
-    "psr-4": {
-      "Webship\\composer\\": "src/composer"
-    }
-  },
-  "scripts": {
-    "pre-install-cmd": ["Webship\\composer\\Procedures::checkComposerVersionProcedure"],
-    "pre-update-cmd": ["Webship\\composer\\Procedures::checkComposerVersionProcedure"],
-    "post-install-cmd": [
-      "Webship\\composer\\Procedures::createRequiredFilesProcedure",
-      "Webship\\composer\\Procedures::removeGitDirectoriesProcedure",
-      "./bin/phing push"
-    ],
-    "post-update-cmd": [
-      "Webship\\composer\\Procedures::createRequiredFilesProcedure",
-      "Webship\\composer\\Procedures::removeGitDirectoriesProcedure",
-      "./bin/phing push"
-    ]
-  },
   "extra": {
     "drupal-scaffold": {
       "locations": {
         "web-root": "web/"
       }
     },
-    "installer-types": [
-      "bower-asset",
-      "npm-asset"
-    ],
     "installer-paths": {
       "web/core": ["type:drupal-core"],
-      "web/modules/contrib/{$name}": ["type:drupal-profile"],
+      "web/profiles/contrib/{$name}": ["type:drupal-profile"],
       "web/modules/contrib/{$name}": ["type:drupal-module"],
       "web/themes/contrib/{$name}": ["type:drupal-theme"],
-      "web/libraries/{$name}": [
-        "type:drupal-library",
-        "type:bower-asset",
-        "type:npm-asset"
-      ],
+      "web/libraries/{$name}": ["type:drupal-library"],
       "web/modules/custom/{$name}": ["type:drupal-custom-module"],
       "web/themes/custom/{$name}": ["type:drupal-custom-theme"],
       "drush/contrib/{$name}": ["type:drupal-drush"]
-    },
-    "drupal-libraries": {
-      "library-directory": "web/libraries",
-      "libraries": []
     },
     "enable-patching": true,
     "composer-exit-on-patch-failure": true,

@@ -1,4 +1,5 @@
 dist: xenial
+sudo: true
 language: php
 php:
   - 7.3
@@ -17,12 +18,23 @@ cache:
     - "$HOME/.drush/cache"
     - "$HOME/.npm"
     - "$HOME/.selenium/cache"
+
 before_install:
+  # Upgrade to MySQL 8.0.X
+  - wget https://repo.mysql.com//mysql-apt-config_0.8.16-1_all.deb
+  - sudo dpkg -i mysql-apt-config_0.8.16-1_all.deb
+  - sudo apt-get update -q
+  - sudo apt-get install -q -y --allow-unauthenticated -o Dpkg::Options::=--force-confnew mysql-server
+  - sudo systemctl restart mysql
+  - sudo mysql_upgrade
+  - mysql --version 
+
+  # Update the composer.
   - phpenv config-rm xdebug.ini
   - phpenv rehash
   - COMPOSER_AUTH_PATH="$HOME/.composer/auth.json"
   - if [[ -f $COMPOSER_AUTH_PATH ]]; then rm $COMPOSER_AUTH_PATH; fi
-  - composer self-update
+  - composer self-update --2
   - composer --version
 
   # Composer Configurations.
@@ -64,12 +76,14 @@ before_install:
   # Run selenium standalone server.
   - SELENIUM="$HOME/.selenium/cache/selenium-server-standalone-2.53.1.jar";
   - if [[ ! -f $SELENIUM ]]; then wget -O $SELENIUM http://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.1.jar; fi
-  - java -jar $SELENIUM -port 4444 > /dev/null 2>&1 &
-  - echo "[  OK  ] Starting Selenium on the 4444 port ..."
+  - java -jar $SELENIUM -port 4445 > /dev/null 2>&1 &
+  - echo "[  OK  ] Starting Selenium on the 4445 port ..."
 install:
   - git checkout $TRAVIS_COMMIT
   ## Build with the composer.
   - composer install --no-interaction
+  - mkdir web/profiles/contrib
+  - git clone --branch 9.0.x https://github.com/webship/webship.git web/profiles/contrib/webship
 
   ## Install with drush.
   - cd web
@@ -82,8 +96,8 @@ before_script:
   - drush runserver --default-server=builtin 8080 &>/dev/null &
   - sleep 5
 script:
-  - cd ./profiles/webship
-  - behat --strict tests/features/webship
+  - cd profiles/contrib/webship/
+  - ../../../../bin/behat tests/features/webship/
 
 matrix:
   fast_finish: true
