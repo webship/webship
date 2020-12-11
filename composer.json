@@ -32,17 +32,17 @@
     "cweagans/composer-patches": "~1.0",
     "drupal/core-composer-scaffold": "~9.0",
     "drupal/core": "~9.0",
-    "drupal/webdev": "~9.0",
-    "drupal/webadmin": "~9.0",
-    "drupal/webpage": "~9.0",
-		"drupal/webtheme": "~9.0",
+    "drupal/webdev": "9.0.x-dev",
+    "drupal/webadmin": "9.0.x-dev",
+    "drupal/webpage": "9.0.x-dev",
+		"drupal/webtheme": "9.0.x-dev",
     "drupal/webform": "~6.0",
     "drupal/vartheme_claro": "~2.0"
   },
   "require-dev": {
     "drupal/core-dev": "~9.0",
     "drush/drush": "~10.0",
-    "drupal/webtest": "~9.0"
+    "drupal/webtest": "9.0.x-dev"
   },
   "conflict": {
     "drupal/drupal": "*"
