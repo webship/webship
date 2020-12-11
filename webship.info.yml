@@ -12,7 +12,6 @@ distribution:
 themes:
   - claro
   - vartheme_claro
-  - vartheme_bs4
   - webtheme
 install:
   - system
