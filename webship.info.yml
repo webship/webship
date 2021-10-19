@@ -4,14 +4,13 @@ description: 'Webship helps in speeding up the work of web developers to ship we
 core_version_requirement: ^9
 project: webship
 package: Webship
-version: 9.0.x-dev
+version: 9.1.x-dev
 distribution:
   name: Webship
   install:
-    theme: vartheme_claro
+    theme: claro
 themes:
   - claro
-  - vartheme_claro
   - webtheme
 install:
   - system
