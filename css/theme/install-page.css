@@ -1,8 +1,8 @@
 /**
- * @file
- * Installation styling.
- *
- */
+* @file
+* Installation styling.
+*
+*/
 
 html body,
 html body a,
@@ -37,37 +37,25 @@ html body .task-list .is-active:after {
 html body.install-page {
   background: #328ec7 !important;
   background-color: #328ec7 !important;
-  background-image: url(../../images/logo-wight.svg) !important;
-  background-position: 100px !important;
-  background-size: 50% 14% !important;
-  background-repeat: space !important;
 }
 
-html body .installer-logo {
-  width: 120px !important;
-  float: left !important;
+html body .layout-container header {
+  background-image: url("../../images/logo.svg") !important;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 15rem;
+  margin-bottom: 2rem;
 }
 
-html body .page-title {
-  width: 100% !important;
+html body.install-page .page-title {
+  margin-left: 17rem;
 }
 
-html body .install-site-name,
-html body .site-version {
-  margin-left: 60px !important;
-  margin-top: 1rem !important;
-}
-
-html body.install-page .site-version {
-  font-size: 3.5rem !important;
+html body.install-page .page-title {
+  font-size: 3rem !important;
   display: inline-block !important;
-  margin-top: 3.5rem !important;
-}
-
-html body.install-page .site-version::before {
-  content: 'Webship ';
-  display: inline-block;
-  padding-right: 1rem;
+  margin-top: 4rem !important;
 }
 
 @media screen and (min-width: 38em) {
@@ -76,10 +64,6 @@ html body.install-page .site-version::before {
     margin-right: auto !important;
     margin-left: auto !important;
   }
-}
-
-html body footer.installer-footer #credit {
-  display: none;
 }
 
 html body .progress__bar {
@@ -91,4 +75,17 @@ html body .progress__bar {
 html body .progress__track {
   height: 1.6rem !important;
   padding: 0.2rem !important;
+}
+
+@media (min-width: 48em) {
+  html body .layout-sidebar-first {
+    float: left;
+    width: 25%;
+    margin-right: 3rem;
+  }
+
+  html body main {
+    float: left;
+    width: 65%;
+  }
 }
