@@ -20,7 +20,7 @@ for your setup.
 After that you can create the project:
 
 
-To install the dev version of Webship 9.2.x run this command:
+To install the dev version of Webship 9.1.x run this command:
 ```
-composer create-project webship/webship-project:9.2.x-dev WEBSITE_NAME --stability dev --no-interaction
+composer create-project webship/webship-project:9.1.x-dev WEBSITE_NAME --stability dev --no-interaction
 ```

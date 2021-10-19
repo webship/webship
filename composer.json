@@ -35,7 +35,7 @@
     "drupal/webdev": "9.0.x-dev",
     "drupal/webadmin": "9.0.x-dev",
     "drupal/webpage": "9.1.x-dev",
-		"drupal/webtheme": "9.0.x-dev",
+		"drupal/webtheme": "9.1.x-dev",
     "drupal/webform": "~6"
   },
   "require-dev": {
