@@ -40,6 +40,7 @@ install:
   - automated_cron
   - search
   - layout_discovery
+  - webapps
   - webdev
   - webadmin
   - webpage

@@ -32,6 +32,7 @@
     "cweagans/composer-patches": "~1",
     "drupal/core-composer-scaffold": "~9",
     "drupal/core": "~9",
+    "drupal/webapps": "9.0.x-dev",
     "drupal/webdev": "9.0.x-dev",
     "drupal/webadmin": "9.0.x-dev",
     "drupal/webpage": "9.1.x-dev",
