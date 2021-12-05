@@ -41,6 +41,7 @@ install:
   - search
   - layout_discovery
   - webapps
+  - webconfig
   - webdev
   - webadmin
   - webpage
