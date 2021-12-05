@@ -32,6 +32,7 @@
     "cweagans/composer-patches": "~1",
     "drupal/core-composer-scaffold": "~9",
     "drupal/core": "~9",
+    "drush/drush": "~10",
     "drupal/webapps": "9.0.x-dev",
     "drupal/webdev": "9.0.x-dev",
     "drupal/webadmin": "9.0.x-dev",
@@ -41,7 +42,6 @@
   },
   "require-dev": {
     "drupal/core-dev": "~9",
-    "drush/drush": "~10",
     "drupal/webtest": "~9"
   },
   "conflict": {
@@ -50,7 +50,6 @@
   "config": {
     "bin-dir": "bin/",
     "secure-http": false,
-    "process-timeout": 1800,
     "github-protocols": [
       "https,ssh"
     ]
