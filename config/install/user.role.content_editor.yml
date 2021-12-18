@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies: {  }
+id: content_editor
+label: 'Content editor'
+weight: 2
+is_admin: false
+permissions:
+  - 'access administration pages'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access files overview'
+  - 'access toolbar'
+  - 'access tour'
+  - 'administer url aliases'
+  - 'create webpage content'
+  - 'create terms in tags'
+  - 'create url aliases'
+  - 'delete webpage revisions'
+  - 'delete own webpage content'
+  - 'delete page revisions'
+  - 'edit own webpage content'
+  - 'edit own comments'
+  - 'edit terms in tags'
+  - 'revert all revisions'
+  - 'view all revisions'
+  - 'view own unpublished content'
+  - 'view the administration theme'
