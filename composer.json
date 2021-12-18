@@ -17,10 +17,6 @@
     "source": "http://cgit.drupalcode.org/webship"
   },
   "repositories": {
-    "packagist": {
-      "type": "composer",
-      "url": "https://packagist.org"
-    },
     "drupal": {
       "type": "composer",
       "url": "https://packages.drupal.org/8"
@@ -37,6 +33,7 @@
     "drupal/webconfig": "1.0.x-dev",
     "drupal/webdev": "9.1.x-dev",
     "drupal/webadmin": "9.0.x-dev",
+    "drupal/webassets": "1.0.x-dev",
     "drupal/webeditor": "1.0.x-dev",
     "drupal/webpage": "9.1.x-dev",
 		"drupal/webtheme": "9.1.x-dev",

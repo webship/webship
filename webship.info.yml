@@ -44,6 +44,7 @@ install:
   - webconfig
   - webdev
   - webadmin
+  - webassets
   - webeditor
   - webpage
   - webform
