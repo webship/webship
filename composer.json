@@ -27,12 +27,12 @@
     }
   },
   "require": {
-    "composer/installers": "~1 || ~2",
-    "oomphinc/composer-installers-extender": "~1 || ~2",
-    "cweagans/composer-patches": "~1",
-    "drupal/core-composer-scaffold": "~9",
-    "drupal/core": "~9",
-    "vardot/entity-definition-update-manager": "~1.0",
+    "composer/installers": "@stable",
+    "oomphinc/composer-installers-extender": "@stable",
+    "cweagans/composer-patches": "@stable",
+    "drupal/core-composer-scaffold": "@stable",
+    "drupal/core": "@stable",
+    "vardot/entity-definition-update-manager": "@stable",
     "drupal/webapps": "9.0.x-dev",
     "drupal/webconfig": "1.0.x-dev",
     "drupal/webdev": "9.1.x-dev",
@@ -44,9 +44,9 @@
     "drupal/webform": "@stable"
   },
   "require-dev": {
-    "drupal/core-dev": "~9",
-    "drush/drush": "~10",
-    "drupal/webtest": "~9"
+    "drupal/core-dev": "@stable",
+    "drush/drush": "@stable",
+    "drupal/webtest": "9.0.x-dev"
   },
   "conflict": {
     "drupal/drupal": "*"
@@ -71,15 +71,30 @@
         "web-root": "web/"
       }
     },
+    "installer-types": [
+      "bower-asset",
+      "npm-asset"
+    ],
     "installer-paths": {
       "web/core": ["type:drupal-core"],
       "web/profiles/contrib/{$name}": ["type:drupal-profile"],
       "web/modules/contrib/{$name}": ["type:drupal-module"],
       "web/themes/contrib/{$name}": ["type:drupal-theme"],
-      "web/libraries/{$name}": ["type:drupal-library"],
+      "web/libraries/link": ["npm-asset/ckeditor--ckeditor5-link"],
+      "web/libraries/{$name}": [
+        "type:drupal-library",
+        "type:bower-asset",
+        "type:npm-asset"
+      ],
       "web/modules/custom/{$name}": ["type:drupal-custom-module"],
       "web/themes/custom/{$name}": ["type:drupal-custom-theme"],
       "drush/contrib/{$name}": ["type:drupal-drush"]
+    },
+    "drupal-libraries": {
+      "library-directory": "web/libraries",
+      "libraries": [
+        {"name": "link", "package": "npm-asset/ckeditor--ckeditor5-link"}
+      ]
     },
     "enable-patching": true,
     "composer-exit-on-patch-failure": true,
