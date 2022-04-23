@@ -11,6 +11,7 @@ distribution:
     theme: claro
 themes:
   - claro
+  - gin
   - webtheme
 install:
   - system
@@ -48,3 +49,7 @@ install:
   - webeditor
   - webpage
   - webform
+  - gin_toolbar
+  - gin_login
+  - gin_lb
+

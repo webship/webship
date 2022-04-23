@@ -41,7 +41,11 @@
     "drupal/webeditor": "1.0.x-dev",
     "drupal/webpage": "9.1.x-dev",
 		"drupal/webtheme": "9.1.x-dev",
-    "drupal/webform": "@stable"
+    "drupal/webform": "@stable",
+    "drupal/gin": "~3.0",
+    "drupal/gin_toolbar": "~1.0",
+    "drupal/gin_login": "~1.2",
+    "drupal/gin_lb": "~1.0"
   },
   "require-dev": {
     "drupal/core-dev": "@stable",
