@@ -2,8 +2,7 @@ dist: xenial
 sudo: true
 language: php
 php:
-  - 7.4
-  - 8.0
+  - 8.1
 services:
   - mysql
   - xvfb
@@ -97,7 +96,7 @@ before_script:
   - sleep 5
 script:
   - cd profiles/contrib/webship/
-  - ../../../../bin/behat tests/features/webship/
+  - npm run test-webship
 
 matrix:
   fast_finish: true
