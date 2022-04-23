@@ -1,6 +1,6 @@
 favicon:
   mimetype: image/png
-  path: 'public://assets/images/branding/favicon.ico'
+  path: 'profiles/contrib/webship/assets/images/branding/favicon.ico'
   use_default: false
 features:
   comment_user_picture: true
@@ -8,7 +8,7 @@ features:
   favicon: true
   node_user_picture: true
 logo:
-  path: 'public://assets/images/branding/webship-logo.svg'
+  path: 'profiles/contrib/webship/assets/images/branding/webship-logo.svg'
   use_default: false
 third_party_settings:
   shortcut:
