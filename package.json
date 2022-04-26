@@ -12,7 +12,7 @@
     "author": "Webship.org",
     "license": "GPL-2.0",
     "scripts": {
-      "test-webship": "cucumber-js --require conf.js --require tests/step-definitions --format node_modules/cucumber-pretty"
+      "test-webship": "cucumber-js --require tests/cucumber.config.js --require tests/step-definitions --format node_modules/cucumber-pretty"
     },
     "dependencies": {
       "chromedriver": "^99.0.0",

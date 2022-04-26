@@ -96,6 +96,7 @@ before_script:
   - sleep 5
 script:
   - cd profiles/contrib/webship/
+  - npm install
   - npm run test-webship
 
 matrix:
