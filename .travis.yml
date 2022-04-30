@@ -18,9 +18,12 @@ cache:
     - "$HOME/.npm"
 
 before_install:
-  # install v16.x of nodejs -
-  - nvm install 16
-  - sudo npm install -g yarn
+  # install v6.x of nodejs
+  - nvm install 6
+  #install yarn globally
+  - npm install - g yarn
+  # yarn install is like npm install
+  - yarn install
   
   # Upgrade to MySQL 8.0.X
   - wget https://repo.mysql.com//mysql-apt-config_0.8.16-1_all.deb
