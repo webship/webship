@@ -5,4 +5,4 @@ So that I know it is working
 
   Scenario: Check the webship site
     Given I go to "http://localhost:8080"
-     Then I should see "Welcome to dev webship91x1"
+     Then I should see "Welcome to Webship"
