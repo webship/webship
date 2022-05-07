@@ -1,6 +1,16 @@
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  config:
+    - node.type.webpage
+  module:
+    - contextual
+    - dashboards
+    - file
+    - node
+    - path
+    - system
+    - toolbar
 id: content_editor
 label: 'Content editor'
 weight: 2
@@ -13,14 +23,15 @@ permissions:
   - 'access toolbar'
   - 'access tour'
   - 'administer url aliases'
-  - 'create webpage content'
+  - 'can view editorial_dashboard dashboard'
   - 'create terms in tags'
   - 'create url aliases'
-  - 'delete webpage revisions'
+  - 'create webpage content'
   - 'delete own webpage content'
   - 'delete page revisions'
-  - 'edit own webpage content'
+  - 'delete webpage revisions'
   - 'edit own comments'
+  - 'edit own webpage content'
   - 'edit terms in tags'
   - 'revert all revisions'
   - 'view all revisions'

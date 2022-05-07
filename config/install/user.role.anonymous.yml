@@ -1,6 +1,12 @@
 langcode: en
 status: true
-dependencies: { }
+dependencies:
+  config:
+    - filter.format.restricted_html
+  module:
+    - filter
+    - search
+    - system
 id: anonymous
 label: 'Anonymous user'
 weight: 0

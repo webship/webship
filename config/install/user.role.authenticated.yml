@@ -1,6 +1,11 @@
 langcode: en
 status: true
-dependencies: { }
+dependencies:
+  module:
+    - dashboards
+    - search
+    - shortcut
+    - system
 id: authenticated
 label: 'Authenticated user'
 weight: 1
@@ -10,5 +15,6 @@ permissions:
   - 'access content'
   - 'access shortcuts'
   - 'access site-wide contact form'
+  - 'can view default_dashboard dashboard'
   - 'post comments'
   - 'search content'
