@@ -16,10 +16,10 @@
     },
     "dependencies": {
       "nightwatch": "~2",
-    "@cucumber/cucumber": "*",
-    "chromedriver": "*",
-    "cucumber-pretty": "*",
-    "geckodriver": "*"
+      "@cucumber/cucumber": "*",
+      "chromedriver": "*",
+      "cucumber-pretty": "*",
+      "geckodriver": "*"
     }
   }
   
