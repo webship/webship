@@ -94,11 +94,15 @@ install:
   - drush config-set system.performance js.preprocess 0 --yes
   - drush config-set system.logging error_level all --yes
   - drush cr
+
+  ## Add testing useres.
+  - cd profiles/contrib/webship/scripts
+  - bash add-testing-users.sh
 before_script:
   - drush runserver --default-server=builtin 8080 &>/dev/null &
   - sleep 5
 script:
-  - cd profiles/contrib/webship/
+  - cd ..
   - yarn install
   - yarn test-webship
 
