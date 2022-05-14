@@ -15,7 +15,7 @@
       "test-webship": "nightwatch"
     },
     "dependencies": {
-      "nightwatch": "~2",
+      "nightwatch": "2.1.4",
       "@cucumber/cucumber": "*",
       "chromedriver": "*",
       "cucumber-pretty": "*",
