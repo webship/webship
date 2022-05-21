@@ -42,7 +42,7 @@ module.exports = {
     default: {
       launch_url: "http://webship.test",
       selenium_port: 4444,
-      selenium_host: "localhost",
+      selenium_host: "127.0.0.1",
       silent: true,
       screenshots: {
           enabled: true,
@@ -50,10 +50,34 @@ module.exports = {
       },
       
       desiredCapabilities: {
-          browserName: "chrome",
-          marionette: true,
-          javascriptEnabled: true,
-          acceptSslCerts: true
+        browserName: 'chrome',
+        'goog:chromeOptions': {
+          // More info on Chromedriver: https://sites.google.com/a/chromium.org/chromedriver/
+          //
+          // w3c:false tells Chromedriver to run using the legacy JSONWire protocol (not required in Chrome 78)
+          w3c: false,
+          args: [
+            '--headless',
+            '--start-maximized',
+            '--disable-gpu',
+            '--window-size=1600,1200',
+            '--no-sandbox',
+            '--disable-dev-shm-usage',
+            '--disable-setuid-sandbox',
+            '--disable-web-security',
+            '--DNS-prefetch-disable',
+            '--disable-translate',
+            '--ignore-certificate-errors',
+            '--test-type',
+            '--disable-extensions',
+            '--incognito',
+            '--disable-infobars',
+            '--remote-debugging-port=9222',
+            '--allowed-ips=*',
+            '--whitelisted-ips=*',
+            '--allow-insecure-localhost'
+          ]
+        }
       }
     },
 
@@ -100,12 +124,27 @@ module.exports = {
           // More info on Chromedriver: https://sites.google.com/a/chromium.org/chromedriver/
           //
           // w3c:false tells Chromedriver to run using the legacy JSONWire protocol (not required in Chrome 78)
-          w3c: true,
+          w3c: false,
           args: [
-            //'--no-sandbox',
-            //'--ignore-certificate-errors',
-            //'--allow-insecure-localhost',
-            //'--headless'
+            '--headless',
+            '--start-maximized',
+            '--disable-gpu',
+            '--window-size=1600,1200',
+            '--no-sandbox',
+            '--disable-dev-shm-usage',
+            '--disable-setuid-sandbox',
+            '--disable-web-security',
+            '--DNS-prefetch-disable',
+            '--disable-translate',
+            '--ignore-certificate-errors',
+            '--test-type',
+            '--disable-extensions',
+            '--incognito',
+            '--disable-infobars',
+            '--remote-debugging-port=9222',
+            '--allowed-ips=*',
+            '--whitelisted-ips=*',
+            '--allow-insecure-localhost'
           ]
         }
       },
