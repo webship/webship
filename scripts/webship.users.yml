@@ -20,7 +20,7 @@ user:
     password: dD.123123ddd
     role: content_editor
   administrator:
-    name: Admin
-    mail: test.admin@webship.org
+    name: Webmaster
+    mail: test.Webmaster@webship.org
     password: dD.123123ddd
     role: administrator
