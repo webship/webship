@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/webship/webship.svg?branch=9.1.x)](https://travis-ci.com/github/webship/webship/builds) 9.1.x
+[![CircleCI](https://circleci.com/gh/webship/webship/tree/9.1.x.svg?style=svg)](https://circleci.com/gh/webship/webship/tree/9.1.x) 9.1.x
 
 # Webship
 
