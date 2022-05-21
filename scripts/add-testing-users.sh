@@ -8,7 +8,7 @@ source ${current_path}/libs/bash-yaml.sh || exit 1 ;
 # Load the list of default users for Webship.
 eval $(parse_yaml ${current_path}/webship.users.yml);
 
-cd ../../../../../;
+cd ../../../../;
 
 # Add Drush if it was not in the system.
 if [ ! -d "vendor/drush/drush" ]; then
@@ -32,14 +32,14 @@ do
     echo "      User role: ${!user_role}";
     echo " ================================================================= ";
 
-    ../vendor/drush/drush/drush user:create "${!user_name}" --mail="${!user_mail}" --password="${!user_password}" ;
+    ../bin/drush user:create "${!user_name}" --mail="${!user_mail}" --password="${!user_password}" ;
     if [ "${!user_role}" == '_none_' ] ; then
         echo "   No user role for this user" ;
     else
-        ../vendor/drush/drush/drush user:role:add "${!user_role}" "${!user_name}" ;
+        ../bin/drush user:role:add "${!user_role}" "${!user_name}" ;
     fi
 done
 
 echo "Cache rebuilding ...";
-../vendor/drush/drush/drush cache:rebuild ;
+../bin/drush cache:rebuild ;
 
