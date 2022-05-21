@@ -40,22 +40,20 @@ module.exports = {
 
   test_settings: {
     default: {
-      disable_error_log: false,
-      launch_url: 'http://localhost:8080',
-
+      launch_url: "http://webship.test",
+      selenium_port: 4444,
+      selenium_host: "localhost",
+      silent: true,
       screenshots: {
-        enabled: false,
-        path: 'screens',
-        on_failure: true
+          enabled: true,
+          path: "./reports/screenshots"
       },
-
+      
       desiredCapabilities: {
-        browserName: 'firefox'
-      },
-
-      webdriver: {
-        start_process: true,
-        server_path: ''
+          browserName: "chrome",
+          marionette: true,
+          javascriptEnabled: true,
+          acceptSslCerts: true
       }
     },
 
