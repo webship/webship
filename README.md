@@ -2,12 +2,11 @@
 
 # Webship
 
-[![](/assets/images/branding/webship-logo.png)](http://drupal.org/project/webship)
+[![](https://www.drupal.org/files/styles/grid-2/public/WebshipCo-Large-V3-Logo-Color-with-padding.png)](http://drupal.org/project/webship)
 
-Helps in speeding up the work of web developers to ship websites in a swift way.
+The Webship.co portal site was built on top of Drupal, as it has many options, tools, frameworks, and configuration management, which are needed in building solutions.
 
-Built on top of Drupal, as it has many options, tools, frameworks, and
- configuration management, which needed in building solutions.
+Helps in speeding up the work of having Functional Automated Acceptance Testing for products to ship websites in a swift way.
 
 ## Usage
 
