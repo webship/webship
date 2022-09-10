@@ -3,6 +3,13 @@
   "description": "Helps in speeding up the work of web developers to ship websites in a swift way.",
   "type": "drupal-profile",
   "license": "GPL-2.0-or-later",
+  "homepage": "https://webship.co",
+  "support": {
+    "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
+    "chat": "https://app.slack.com/client/T06GX3JTS/C7MAHMJRE",
+    "issues": "http://drupal.org/project/issues/webship",
+    "source": "http://cgit.drupalcode.org/webship"
+  },
   "minimum-stability": "dev",
   "prefer-stable": true,
   "authors": [
@@ -12,10 +19,6 @@
       "role": "Maintainer"
     }
   ],
-  "support": {
-    "issues": "http://drupal.org/project/issues/webship",
-    "source": "http://cgit.drupalcode.org/webship"
-  },
   "repositories": {
     "drupal": {
       "type": "composer",
@@ -49,6 +52,9 @@
     "drupal/core-dev": "~9.0",
     "drupal/webtest": "9.0.x-dev"
   },
+  "conflict": {
+    "drupal/drupal": "*"
+  },
   "config": {
     "bin-dir": "bin/",
     "secure-http": false,
@@ -72,7 +78,7 @@
       ],
       "gitignore": true,
       "locations": {
-        "web-root": "./web"
+        "web-root": "web/"
       },
       "file-mapping": {
         "[web-root]/sites/default/default.services.yml": {
