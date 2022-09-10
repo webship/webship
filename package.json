@@ -12,7 +12,7 @@
     "author": "Webship.org",
     "license": "GPL-2.0",
     "scripts": {
-      "test-webship": "nightwatch"
+      "test": "nightwatch"
     },
     "dependencies": {
       "webship-js":"~1.0"

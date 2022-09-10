@@ -224,7 +224,7 @@ jobs:
           command: |
             cd /var/www/html/test/webship/web/profiles/webship
             yarn install
-            yarn test-webship
+            yarn test
 
 workflows:
   version: 2
