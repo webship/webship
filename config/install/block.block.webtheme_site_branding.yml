@@ -1,0 +1,25 @@
+uuid: 99566b28-29d1-4d4d-ac05-b457cee16eeb
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - webtheme
+_core:
+  default_config_hash: fJoCMvoYdugLtOGojQ8lyokpWnHzDVq8LYVNZfpOY5A
+id: webtheme_site_branding
+theme: webtheme
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }
