@@ -55,5 +55,3 @@ install:
   - dashboards
   - dashboards_statistic
   - dashboards_views
-  - token_filter
-  - link_attributes
