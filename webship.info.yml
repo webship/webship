@@ -49,6 +49,7 @@ install:
   - webeditor
   - webpage
   - webform
+  - webtheme_default_content
   - gin_toolbar
   - gin_lb
   - dashboards
