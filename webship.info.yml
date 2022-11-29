@@ -50,7 +50,6 @@ install:
   - webpage
   - webform
   - gin_toolbar
-  - gin_login
   - gin_lb
   - dashboards
   - dashboards_statistic
