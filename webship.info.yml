@@ -22,6 +22,8 @@ install:
   - user
   - node
   - taxonomy
+  - block
+  - block_content
   - views
   - views_ui
   - menu_ui
