@@ -45,9 +45,6 @@
 		"drupal/webtheme": "10.0.x-dev",
     "drupal/webapps": "10.0.x-dev"
   },
-  "require-dev": {
-    "drupal/core-dev": "~10.0"
-  },
   "conflict": {
     "drupal/drupal": "*"
   },
