@@ -33,22 +33,20 @@
     "composer/installers": "~2.0",
     "oomphinc/composer-installers-extender": "~2.0",
     "cweagans/composer-patches": "~1.0",
-    "drupal/core-composer-scaffold": "~9.0",
-    "drupal/core": "~9.0",
+    "drupal/core-composer-scaffold": "~10.0",
+    "drupal/core": "~10.0",
     "drush/drush": "~11.0",
-    "drupal/webconfig": "1.0.x-dev",
-    "drupal/webdev": "9.1.x-dev",
-    "drupal/webadmin": "9.0.x-dev",
-    "drupal/webassets": "1.0.x-dev",
-    "drupal/webeditor": "1.0.x-dev",
-    "drupal/webpage": "9.1.x-dev",
-		"drupal/webtheme": "9.1.x-dev",
-    "drupal/webapps": "9.0.x-dev",
-    "drupal/webform": "~6.0"
-
+    "drupal/webconfig": "10.0.x-dev",
+    "drupal/webdev": "10.0.x-dev",
+    "drupal/webadmin": "10.0.x-dev",
+    "drupal/webassets": "10.0.x-dev",
+    "drupal/webeditor": "10.0.x-dev",
+    "drupal/webpage": "10.0.x-dev",
+		"drupal/webtheme": "10.0.x-dev",
+    "drupal/webapps": "10.0.x-dev"
   },
   "require-dev": {
-    "drupal/core-dev": "~9.0"
+    "drupal/core-dev": "~10.0"
   },
   "conflict": {
     "drupal/drupal": "*"
@@ -84,7 +82,6 @@
       "web/profiles/contrib/{$name}": ["type:drupal-profile"],
       "web/modules/contrib/{$name}": ["type:drupal-module"],
       "web/themes/contrib/{$name}": ["type:drupal-theme"],
-      "web/libraries/link": ["npm-asset/ckeditor--ckeditor5-link"],
       "web/libraries/{$name}": [
         "type:drupal-library",
         "type:bower-asset",
@@ -100,9 +97,7 @@
     ],
     "drupal-libraries": {
       "library-directory": "web/libraries",
-      "libraries": [
-        {"name": "link", "package": "npm-asset/ckeditor--ckeditor5-link"}
-      ]
+      "libraries": [ ]
     },
     "enable-patching": true,
     "composer-exit-on-patch-failure": true,

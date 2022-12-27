@@ -1,11 +1,12 @@
 {
     "name": "webship",
     "version": "1.0.0",
+    "private": true,
     "description": "Webship helps in speeding up the work of web developers to ship websites in a swift way.",
     "main": "index.js",
     "keywords": [
-      "webship",
-      "drupal",
+      "Webship",
+      "Drupal",
       "testing",
       "test"
     ],

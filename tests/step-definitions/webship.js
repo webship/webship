@@ -4,7 +4,6 @@ const {Then} = require('@cucumber/cucumber');
 
 When(/^I navigate to "([^"]*)?"$/, function( url) {
   return browser.url(url);
-  
 });
 
 When("I put username as {string}", function(string) {

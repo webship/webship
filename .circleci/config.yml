@@ -146,7 +146,7 @@ commands:
             cd /var/www/html/test/
             sudo chmod 775 .
             sudo chown www-data:circleci .
-            git clone --branch '9.1.x' https://github.com/webship/webship.git /var/www/html/test/webship-code
+            git clone --branch '10.0.x' https://github.com/webship/webship.git /var/www/html/test/webship-code
             cp -r /var/www/html/test/webship-code /var/www/html/test/webship
             cd /var/www/html/test/webship
             composer install --no-interaction -vvv
@@ -233,7 +233,7 @@ workflows:
       - webship-testing:
           filters:
             tags:
-              only: /^9.1.*/
+              only: /^10.0.*/
             branches:
-              only: /^9.1.x/
+              only: /^10.0.x/
 
