@@ -36,14 +36,14 @@
     "drupal/core-composer-scaffold": "~10.0",
     "drupal/core": "~10.0",
     "drush/drush": "~11.0",
-    "drupal/webconfig": "10.0.x-dev@dev",
-    "drupal/webdev": "10.0.x-dev@dev",
-    "drupal/webadmin": "10.0.x-dev@dev",
-    "drupal/webassets": "10.0.x-dev@dev",
-    "drupal/webeditor": "10.0.x-dev@dev",
-    "drupal/webpage": "10.0.x-dev@dev",
-		"drupal/webtheme": "10.0.x-dev@dev",
-    "drupal/webapps": "10.0.x-dev@dev"
+    "drupal/webconfig": "10.0.x-dev",
+    "drupal/webdev": "10.0.x-dev",
+    "drupal/webadmin": "10.0.x-dev",
+    "drupal/webassets": "10.0.x-dev",
+    "drupal/webeditor": "10.0.x-dev",
+    "drupal/webpage": "10.0.x-dev",
+    "drupal/webtheme": "10.0.x-dev",
+    "drupal/webapps": "10.0.x-dev"
   },
   "conflict": {
     "drupal/drupal": "*"
