@@ -3,10 +3,7 @@
   "description": "The Webship.co portal site was built on top of Drupal, as it has many options, tools, frameworks, and configuration management, which are needed in building solutions.",
   "type": "drupal-profile",
   "license": "GPL-2.0-or-later",
-  "homepage": "https://webship.co",
   "support": {
-    "docs": "https://www.drupal.org/docs/user_guide/en/index.html",
-    "chat": "https://app.slack.com/client/T06GX3JTS/C7MAHMJRE",
     "issues": "http://drupal.org/project/issues/webship",
     "source": "http://cgit.drupalcode.org/webship"
   },

@@ -2,8 +2,28 @@
 
 /**
  * @file
- * Site configuration for Webship site installation.
+ * Site configuration for webship.co portal site installation.
  */
+
+ /**
+ * Implements hook_form_FORM_ID_alter() for install_configure_form().
+ *
+ * Allows the profile to alter the site configuration form.
+ */
+function webship_form_install_configure_form_alter(&$form, FormStateInterface $form_state) {
+  $form['site_information']['site_name']['#attributes']['placeholder'] = t('Webship.co');
+  $form['site_information']['site_mail']['#default_value'] = 'admin@webship.co';
+  $form['admin_account']['account']['name']['#default_value'] = 'webmaster';
+  $form['admin_account']['account']['mail']['#default_value'] = 'admin@webship.co';
+}
+
+/**
+ * Implements hook_install_tasks_alter().
+ */
+function webship_install_tasks_alter(&$tasks, $install_state) {
+  unset($tasks['install_select_language']);
+  unset($tasks['install_download_translation']);
+}
 
 /**
  * Implements hook_preprocess_install_page().
