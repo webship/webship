@@ -5,13 +5,15 @@
  * Site configuration for webship.co portal site installation.
  */
 
+use Drupal\Core\Form\FormStateInterface;
+
  /**
  * Implements hook_form_FORM_ID_alter() for install_configure_form().
  *
  * Allows the profile to alter the site configuration form.
  */
 function webship_form_install_configure_form_alter(&$form, FormStateInterface $form_state) {
-  $form['site_information']['site_name']['#attributes']['placeholder'] = t('Webship.co');
+  $form['site_information']['site_name']['#default_value'] = t('Webship.co');
   $form['site_information']['site_mail']['#default_value'] = 'admin@webship.co';
   $form['admin_account']['account']['name']['#default_value'] = 'webmaster';
   $form['admin_account']['account']['mail']['#default_value'] = 'admin@webship.co';
