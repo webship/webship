@@ -30,7 +30,6 @@ permissions:
   - 'delete own webpage content'
   - 'delete page revisions'
   - 'delete webpage revisions'
-  - 'edit own comments'
   - 'edit own webpage content'
   - 'edit terms in tags'
   - 'revert all revisions'
