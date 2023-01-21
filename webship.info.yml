@@ -51,6 +51,8 @@ install:
   - webeditor
   - webpage
   - webtheme_default_content
+  - ctools_block
+  - ctools_views
   - gin_toolbar
   - dashboards
   - dashboards_statistic
