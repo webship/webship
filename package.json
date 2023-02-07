@@ -16,6 +16,6 @@
     "test": "nightwatch"
   },
   "dependencies": {
-    "webship-js": "~1.0"
+    "webship-js": "1.0.12"
   }
 }
