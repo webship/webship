@@ -57,3 +57,5 @@ install:
   - dashboards
   - dashboards_statistic
   - dashboards_views
+  - responsive_image
+  - admin_toolbar_search
