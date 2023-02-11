@@ -40,7 +40,8 @@
     "drupal/webeditor": "10.0.x-dev",
     "drupal/webpage": "10.0.x-dev",
     "drupal/webtheme": "10.0.x-dev",
-    "drupal/webapps": "10.0.x-dev"
+    "drupal/webapps": "10.0.x-dev",
+    "drupal/webblog": "10.0.x-dev"
   },
   "conflict": {
     "drupal/drupal": "*"
