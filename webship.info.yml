@@ -1,6 +1,6 @@
 name: Webship
 type: profile
-description: 'Webship helps in speeding up the work of web developers to ship websites in a swift way.'
+description: "Webship helps in speeding up the work of web developers to ship websites in a swift way."
 core_version_requirement: ~10.0
 project: webship
 package: Webship
@@ -43,14 +43,6 @@ install:
   - automated_cron
   - search
   - layout_discovery
-  - webapps
-  - webconfig
-  - webdev
-  - webadmin
-  - webassets
-  - webeditor
-  - webpage
-  - webtheme_default_content
   - ctools_block
   - ctools_views
   - gin_toolbar
@@ -58,3 +50,13 @@ install:
   - dashboards_statistic
   - dashboards_views
   - admin_toolbar_search
+  - webapps
+  - webconfig
+  - webdev
+  - webadmin
+  - webassets
+  - webeditor
+  - webpage
+  - webpatches
+  - webship_default_content
+  - webtheme_default_content
