@@ -34,12 +34,13 @@
     "drupal/core": "~10.0",
     "drush/drush": "~11.0",
     "drupal/webconfig": "10.0.x-dev",
+    "drupal/webform": "~6.0",
     "drupal/webdev": "10.0.x-dev",
     "drupal/webadmin": "10.0.x-dev",
     "drupal/webeditor": "10.0.x-dev",
     "drupal/webpage": "10.0.x-dev",
     "drupal/webtheme": "10.0.x-dev",
-    "drupal/webassets": "10.0.x-dev", 
+    "drupal/webassets": "10.0.x-dev",
     "drupal/webapps": "10.0.x-dev",
     "drupal/webblog": "10.0.x-dev",
     "drupal/webpatches": "10.0.x-dev",
@@ -76,18 +77,32 @@
       }
     },
     "installer-paths": {
-      "web/core": ["type:drupal-core"],
-      "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-      "web/modules/contrib/{$name}": ["type:drupal-module"],
-      "web/themes/contrib/{$name}": ["type:drupal-theme"],
+      "web/core": [
+        "type:drupal-core"
+      ],
+      "web/profiles/contrib/{$name}": [
+        "type:drupal-profile"
+      ],
+      "web/modules/contrib/{$name}": [
+        "type:drupal-module"
+      ],
+      "web/themes/contrib/{$name}": [
+        "type:drupal-theme"
+      ],
       "web/libraries/{$name}": [
         "type:drupal-library",
         "type:bower-asset",
         "type:npm-asset"
       ],
-      "web/modules/custom/{$name}": ["type:drupal-custom-module"],
-      "web/themes/custom/{$name}": ["type:drupal-custom-theme"],
-      "drush/contrib/{$name}": ["type:drupal-drush"]
+      "web/modules/custom/{$name}": [
+        "type:drupal-custom-module"
+      ],
+      "web/themes/custom/{$name}": [
+        "type:drupal-custom-theme"
+      ],
+      "drush/contrib/{$name}": [
+        "type:drupal-drush"
+      ]
     },
     "installer-types": [
       "bower-asset",
@@ -95,7 +110,7 @@
     ],
     "drupal-libraries": {
       "library-directory": "web/libraries",
-      "libraries": [ ]
+      "libraries": []
     },
     "enable-patching": true,
     "composer-exit-on-patch-failure": true,
