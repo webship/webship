@@ -59,4 +59,3 @@ install:
   - webpage
   - webpatches
   - webship_default_content
-  - webtheme_default_content
