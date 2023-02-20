@@ -44,8 +44,7 @@
     "drupal/webblog": "10.0.x-dev",
     "drupal/webpatches": "10.0.x-dev",
     "drupal/webform": "~6.0",
-    "drupal/webship_default_content": "10.0.x-dev",
-    "drupal/webtheme_default_content": "10.0.x-dev"
+    "drupal/webship_default_content": "10.0.x-dev"
   },
   "conflict": {
     "drupal/drupal": "*"
