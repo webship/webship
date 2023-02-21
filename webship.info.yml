@@ -56,5 +56,6 @@ install:
   - webadmin
   - webassets
   - webeditor
+  - webblog
   - webpage
   - webship_default_content

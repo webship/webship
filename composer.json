@@ -40,6 +40,7 @@
     "drupal/webpage": "10.0.x-dev",
     "drupal/webtheme": "10.0.x-dev",
     "drupal/webassets": "10.0.x-dev",
+    "drupal/webblog": "10.0.x-dev",
     "drupal/webapps": "10.0.x-dev",
     "drupal/webform": "~6.0",
     "drupal/webship_default_content": "10.0.x-dev"
