@@ -57,5 +57,4 @@ install:
   - webassets
   - webeditor
   - webpage
-  - webpatches
   - webship_default_content
