@@ -58,5 +58,6 @@ install:
   - webeditor
   - webblog
   - webpage
+  - webform
   - webship_default_content
   - webtheme_default_content
