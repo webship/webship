@@ -59,5 +59,6 @@ install:
   - webblog
   - webpage
   - webform
+  - webform_ui
   - webship_default_content
   - webtheme_default_content
