@@ -58,6 +58,7 @@ install:
   - webeditor
   - webblog
   - webpage
+  - webnewsletter
   - webform
   - webform_ui
   - webship_default_content
