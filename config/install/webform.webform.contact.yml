@@ -4,8 +4,6 @@ dependencies:
   enforced:
     module:
       - webform
-_core:
-  default_config_hash: CJr5U2B4if_Ff1SZfnNp_csPKwXIynmbUlBC-SmSOAE
 weight: 0
 open: null
 close: null
@@ -17,6 +15,9 @@ title: Contact
 description: 'Basic email contact webform.'
 category: ''
 elements: |-
+  contact_paragraph:
+    '#type': webform_markup
+    '#markup': "<h4>We'd love to talk to you</h4><p>Leave us your details and we will contact you soon</p>"
   layout_1:
     '#type': webform_flexbox
     name:
@@ -109,7 +110,9 @@ settings:
   form_access_denied_message: ''
   form_access_denied_attributes: {  }
   form_file_limit: ''
-  form_attributes: {  }
+  form_attributes:
+    class:
+      - bluelight-background
   form_method: ''
   form_action: ''
   share: false
@@ -155,6 +158,8 @@ settings:
   wizard_toggle: false
   wizard_toggle_show_label: ''
   wizard_toggle_hide_label: ''
+  wizard_page_type: container
+  wizard_page_title_tag: h2
   preview: 0
   preview_label: ''
   preview_title: ''
