@@ -1,12 +1,13 @@
+uuid: 2e9c372d-a639-49e4-8504-6a54d3486087
 langcode: en
 status: true
 dependencies:
-  config:
-    - filter.format.restricted_html
   module:
-    - filter
+    - media
     - search
     - system
+_core:
+  default_config_hash: KQFn6g0aH3qHiw9MPIKCg7U9qb7Nde9ShuKJtCz3SdI
 id: anonymous
 label: 'Anonymous user'
 weight: 0
@@ -14,3 +15,4 @@ is_admin: false
 permissions:
   - 'access content'
   - 'search content'
+  - 'view media'
