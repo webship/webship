@@ -37,6 +37,7 @@
     "drupal/webdev": "10.0.x-dev",
     "drupal/webadmin": "10.0.x-dev",
     "drupal/webeditor": "10.0.x-dev",
+    "drupal/webseo": "10.0.x-dev",
     "drupal/webpage": "10.0.x-dev",
     "drupal/webtheme": "10.0.x-dev",
     "drupal/webassets": "10.0.x-dev",
