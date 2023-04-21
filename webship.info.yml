@@ -54,6 +54,7 @@ install:
   - webconfig
   - webdev
   - webadmin
+  - websecurity
   - webassets
   - webeditor
   - webseo

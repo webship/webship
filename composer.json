@@ -36,6 +36,7 @@
     "drupal/webconfig": "10.0.x-dev",
     "drupal/webdev": "10.0.x-dev",
     "drupal/webadmin": "10.0.x-dev",
+    "drupal/websecurity": "10.0.x-dev",
     "drupal/webeditor": "10.0.x-dev",
     "drupal/webseo": "10.0.x-dev",
     "drupal/webpage": "10.0.x-dev",
@@ -119,6 +120,6 @@
     "patchLevel": {
       "drupal/core": "-p2"
     },
-    "patches": {}
+    "patches": {  }
   }
 }
