@@ -60,6 +60,7 @@ install:
   - webseo
   - webpage
   - webblog
+  - webdoc
   - webnewsletter
   - webform
   - webform_ui
