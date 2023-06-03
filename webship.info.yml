@@ -50,7 +50,6 @@ install:
   - dashboards_statistic
   - dashboards_views
   - admin_toolbar_search
-  - webapps
   - webconfig
   - webdev
   - webadmin
