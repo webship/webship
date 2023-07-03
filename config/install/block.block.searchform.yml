@@ -2,7 +2,6 @@ langcode: en
 status: true
 dependencies:
   module:
-    - node
     - search
     - system
   theme:
@@ -24,11 +23,3 @@ visibility:
     id: request_path
     negate: false
     pages: "/docs\r\n/blog\r\n/docs/*\r\n/blog/*"
-  'entity_bundle:node':
-    id: 'entity_bundle:node'
-    negate: false
-    context_mapping:
-      node: '@node.node_route_context:node'
-    bundles:
-      webblog: webblog
-      webdoc: webdoc
