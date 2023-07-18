@@ -1,9 +1,20 @@
 langcode: en
 status: open
 dependencies:
+  module:
+    - antibot
+    - honeypot
   enforced:
     module:
       - webform
+third_party_settings:
+  antibot:
+    antibot: true
+  honeypot:
+    honeypot: true
+    time_restriction: true
+_core:
+  default_config_hash: 87aLBiSZ5Q5Jo8z3HWa3L100EYe_nqcI8joIiW8plfw
 weight: 0
 open: null
 close: null
@@ -12,8 +23,8 @@ template: false
 archive: false
 id: contact
 title: Contact
-description: 'Basic email contact webform.'
-category: ''
+description: '<p>Basic email contact webform.</p>'
+categories: {  }
 elements: |-
   contact_paragraph:
     '#type': webform_markup
@@ -65,6 +76,9 @@ elements: |-
     '#required': true
     '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
     '#test': 'Please ignore this email.'
+  privacy:
+    '#type': webform_markup
+    '#markup': '<p>You agree to our <a href="/privacy-policy"><strong>Privacy Policy&nbsp;</strong></a></p>'
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
@@ -72,12 +86,12 @@ elements: |-
 css: ''
 javascript: ''
 settings:
-  ajax: false
+  ajax: true
   ajax_scroll_top: form
-  ajax_progress_type: ''
-  ajax_effect: ''
+  ajax_progress_type: throbber
+  ajax_effect: fade
   ajax_speed: null
-  page: true
+  page: false
   page_submit_path: ''
   page_confirm_path: ''
   page_theme_name: ''
