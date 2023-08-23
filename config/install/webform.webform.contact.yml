@@ -60,10 +60,18 @@ elements: |-
   layout_3:
     '#type': webform_flexbox
     team_size:
-      '#type': textfield
-      '#title': 'Team size'
-      '#placeholder': 'Your team size'
-      '#multiple__no_items_message': '<p>No items entered. Please add items below.</p>'
+      '#type': select
+      '#title': 'Team Size'
+      '#options':
+        1-10: '1-10 employees'
+        11-50: '11-50 employees'
+        51-100: '51-100 employees'
+        101-500: '101-500 employees'
+        '501-1,000': '501-1,000 employees'
+        '1,000+': '1,000+ employees'
+      '#empty_option': Select
+      '#access_view_permissions':
+        - 'administer responsive images'
     job_title:
       '#type': textfield
       '#title': 'Job title'
@@ -78,7 +86,7 @@ elements: |-
     '#test': 'Please ignore this email.'
   privacy:
     '#type': webform_markup
-    '#markup': '<p>You agree to our <a href="/privacy-policy"><strong>Privacy Policy&nbsp;</strong></a></p>'
+    '#markup': '<p>By contacting us throw this form, you agree to our <a href="/privacy-policy"><strong>Privacy Policy&nbsp;</strong></a></p>'
   actions:
     '#type': webform_actions
     '#title': 'Submit button(s)'
@@ -274,7 +282,7 @@ handlers:
     handler_id: email_confirmation
     label: 'Email confirmation'
     notes: ''
-    status: true
+    status: false
     conditions: {  }
     weight: 1
     settings:
@@ -311,7 +319,7 @@ handlers:
     handler_id: email_notification
     label: 'Email notification'
     notes: ''
-    status: true
+    status: false
     conditions: {  }
     weight: 2
     settings:
