@@ -3,4 +3,4 @@ logo:
   path: themes/contrib/webtheme/logo-blue.svg
 brand_image:
   use_default: false
-  path: 'profiles/contrib/webship/assets/images/ImageLogin.png'
+  path: 'images/ImageLogin.png'
