@@ -46,6 +46,7 @@ install:
   - ctools_block
   - ctools_views
   - gin_toolbar
+  - gin_login
   - dashboards
   - dashboards_statistic
   - dashboards_views
