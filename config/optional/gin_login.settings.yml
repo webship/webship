@@ -3,4 +3,4 @@ logo:
   path: themes/contrib/webtheme/logo-blue.svg
 brand_image:
   use_default: false
-  path: 'images/ImageLogin.png'
+  path: 'themes/contrib/webtheme/ImageLogin.png'
