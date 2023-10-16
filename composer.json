@@ -41,6 +41,7 @@
     "drupal/webseo": "10.0.x-dev",
     "drupal/webpage": "10.0.x-dev",
     "drupal/webtheme": "10.0.x-dev",
+    "drupal/webtheme_admin": "10.0.x-dev",
     "drupal/webassets": "10.0.x-dev",
     "drupal/webblog": "10.0.x-dev",
     "drupal/webpatches": "10.0.x-dev",
