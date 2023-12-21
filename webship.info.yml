@@ -1,7 +1,7 @@
 name: Webship
 type: profile
-description: "Webship helps in speeding up the work of web developers to ship websites in a swift way."
-core_version_requirement: ~10.0
+description: Webship helps in speeding up the work of web developers to ship websites in a swift way.
+core_version_requirement: ~10.2.0
 project: webship
 package: Webship
 version: 10.0.x-dev

@@ -6,8 +6,6 @@
 
 The Webship.co portal site was built on top of Drupal, as it has many options, tools, frameworks, and configuration management, which are needed in building solutions.
 
-Helps in speeding up the work of having Functional Automated Acceptance Testing for products to ship websites in a swift way.
-
 ## Usage
 
 First you need to [install composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-osx).

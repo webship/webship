@@ -8,14 +8,14 @@
     "Webship",
     "Drupal",
     "testing",
-    "test"
+    "Portal for a service"
   ],
-  "author": "Webship.org",
+  "author": "Webship.co",
   "license": "GPL-2.0",
   "scripts": {
     "test": "nightwatch"
   },
   "dependencies": {
-    "webship-js": "1.0.23"
+    "webship-js": "~1"
   }
 }

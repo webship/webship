@@ -13,8 +13,6 @@ third_party_settings:
   honeypot:
     honeypot: true
     time_restriction: true
-_core:
-  default_config_hash: 87aLBiSZ5Q5Jo8z3HWa3L100EYe_nqcI8joIiW8plfw
 weight: 0
 open: null
 close: null
