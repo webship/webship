@@ -11,7 +11,7 @@
   "prefer-stable": true,
   "authors": [
     {
-      "name": "Webship",
+      "name": "webship.co",
       "homepage": "https://www.drupal.org/webship",
       "role": "Maintainer"
     }
@@ -29,10 +29,11 @@
   "require": {
     "composer/installers": "~2",
     "oomphinc/composer-installers-extender": "~2",
-    "cweagans/composer-patches": "~2",
+    "symplify/vendor-patches": "~11",
     "drupal/core-composer-scaffold": "~10",
     "drupal/core-recommended": "~10.2.0",
     "drush/drush": "~12.0",
+    "drupal/webpatches": "10.0.x-dev",
     "drupal/webconfig": "10.0.x-dev",
     "drupal/webdev": "10.0.x-dev",
     "drupal/webadmin": "10.0.x-dev",
@@ -47,8 +48,7 @@
     "drupal/webdoc": "10.0.x-dev",
     "drupal/webnewsletter": "10.0.x-dev",
     "drupal/webform": "~6.2.0",
-    "drupal/webship_default_content": "10.0.x-dev",
-    "drupal/webpatches": "10.0.x-dev"
+    "drupal/webship_default_content": "10.0.x-dev"
   },
   "conflict": {
     "drupal/drupal": "*"
@@ -62,6 +62,8 @@
     },
     "allow-plugins": {
       "composer/installers": true,
+      "symplify/vendor-patches": true,
+      "cweagans/composer-configurable-plugin": true,
       "cweagans/composer-patches": true,
       "oomphinc/composer-installers-extender": true,
       "drupal/core-composer-scaffold": true,
@@ -119,7 +121,6 @@
     "composer-exit-on-patch-failure": true,
     "patchLevel": {
       "drupal/core": "-p2"
-    },
-    "patches": {  }
+    }
   }
 }
