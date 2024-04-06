@@ -60,6 +60,7 @@ install:
   - webeditor
   - webseo
   - webpage
+  - webreleases
   - webblog
   - webdoc
   - webnewsletter

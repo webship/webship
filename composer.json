@@ -44,6 +44,7 @@
     "drupal/webtheme": "10.0.x-dev",
     "drupal/webtheme_admin": "10.0.x-dev",
     "drupal/webassets": "10.0.x-dev",
+    "drupal/webreleases": "10.0.x-dev",
     "drupal/webblog": "10.0.x-dev",
     "drupal/webdoc": "10.0.x-dev",
     "drupal/webnewsletter": "10.0.x-dev",
