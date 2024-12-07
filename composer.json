@@ -29,9 +29,8 @@
   "require": {
     "composer/installers": "~2",
     "oomphinc/composer-installers-extender": "~2",
-    "drupal/core-composer-scaffold": "^11",
+    "drupal/core-composer-scaffold": "~11",
     "drupal/core": "~11.0.0",
-    "drush/drush": "~13",
     "drupal/webpatches": "11.0.x-dev",
     "drupal/webconfig": "11.0.x-dev",
     "drupal/webdev": "11.0.x-dev",
@@ -48,7 +47,9 @@
     "drupal/webdoc": "11.0.x-dev",
     "drupal/webnewsletter": "11.0.x-dev",
     "drupal/webship_default_content": "11.0.x-dev",
-    "drupal/webform": "~6.3.0"
+    "drupal/webform": "~6.3.0",
+    "mglaman/composer-drupal-lenient": "~1",
+    "drush/drush": "~13"
   },
   "conflict": {
     "drupal/drupal": "*"
@@ -67,10 +68,16 @@
       "cweagans/composer-patches": true,
       "oomphinc/composer-installers-extender": true,
       "drupal/core-composer-scaffold": true,
-      "dealerdirect/phpcodesniffer-composer-installer": true
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "mglaman/composer-drupal-lenient": true
     }
   },
   "extra": {
+    "drupal-lenient": {
+      "allowed-list": [
+        "drupal/config_import_single"
+      ]
+    },
     "drupal-scaffold": {
       "allowed-packages": [
         "drupal/core",
