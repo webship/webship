@@ -48,7 +48,7 @@
     "drupal/webdoc": "11.0.x-dev",
     "drupal/webnewsletter": "11.0.x-dev",
     "drupal/webship_default_content": "11.0.x-dev",
-    "drupal/webform": "~6.2.0"
+    "drupal/webform": "~6.3.0"
   },
   "conflict": {
     "drupal/drupal": "*"
