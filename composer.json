@@ -74,9 +74,7 @@
   },
   "extra": {
     "drupal-lenient": {
-      "allowed-list": [
-        "drupal/config_import_single"
-      ]
+      "allowed-list": ["drupal/config_import_single"]
     },
     "drupal-scaffold": {
       "allowed-packages": [
