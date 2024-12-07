@@ -73,9 +73,6 @@
     }
   },
   "extra": {
-    "drupal-lenient": {
-      "allowed-list": ["drupal/config_import_single"]
-    },
     "drupal-scaffold": {
       "allowed-packages": [
         "drupal/core",
@@ -126,6 +123,9 @@
     "composer-exit-on-patch-failure": true,
     "patchLevel": {
       "drupal/core": "-p2"
+    },
+    "drupal-lenient": {
+      "allowed-list": ["drupal/config_import_single"]
     }
   }
 }
