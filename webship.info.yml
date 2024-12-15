@@ -64,6 +64,7 @@ install:
   - webblog
   - webdoc
   - webnewsletter
+  - webshare
   - webform
   - webform_ui
   - webship_default_content
