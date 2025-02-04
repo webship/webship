@@ -52,7 +52,6 @@ install:
   - dashboards_statistic
   - dashboards_views
   - admin_toolbar_search
-  - klaro
   - webconfig
   - webdev
   - webadmin
