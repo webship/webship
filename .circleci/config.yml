@@ -4,11 +4,11 @@ defaults: &defaults
     - image: cimg/base:2022.09
       auth:
         username: mydockerhub-user
-        password: $DOCKERHUB_PASSWORD
-    - image: cimg/mysql:8.0
+        password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+    - image: circleci/mysql:8.0.23
       auth:
         username: mydockerhub-user
-        password: $DOCKERHUB_PASSWORD
+        password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
       entrypoint: 
         [
           "docker-entrypoint.sh",
@@ -17,14 +17,15 @@ defaults: &defaults
       environment:
         MYSQL_ROOT_PASSWORD: rootpw
         MYSQL_ROOT_HOST: "%"
-        MYSQL_DATABASE: test_varbase
+        MYSQL_DATABASE: test_webship
         MYSQL_USER: user
         MYSQL_PASSWORD: passw0rd
   resource_class: large
 commands:
-  varbase-build:
+  webship-build:
     steps:
-      - checkout
+      - checkout         
+      ## Usefull must have utils.
       - run:
           name: Usefull must have utils
           command: |
@@ -39,6 +40,8 @@ commands:
             sudo apt -yqq install libpangocairo-1.0-0 libstdc++6 libx11-6 libx11-xcb1 libxcb1 libxcursor1 libxdamage1 libxext6 libxfixes3 libxi6
             sudo apt -yqq install libxrandr2 libxrender1 libxss1 libxtst6 libnss3 libu2f-udev libgbm1 libvulkan1 fonts-liberation libappindicator3-1
             sudo apt -yqq install libatk-bridge2.0-0 xdg-utils gnupg2 apt-transport-https ca-certificates
+
+      ## Setup Apache2 and PHP8.3
       - run:
           name: Setup Apache2 and PHP8.3
           command: |
@@ -58,6 +61,8 @@ commands:
             echo -e "upload_max_filesize = 32M" | sudo tee /etc/php/8.3/apache2/php.ini > /dev/null
             echo -e "max_file_uploads = 40" | sudo tee /etc/php/8.3/apache2/php.ini > /dev/null
             sudo service apache2 restart
+  
+      ## Waiting for MySQL to be ready.
       - run:
           name: Waiting for MySQL to be ready
           command: |
@@ -68,6 +73,8 @@ commands:
               sleep 1
             done
             echo Failed waiting for MySQL && exit 1
+
+      ## Configure and run the virtual display.
       - run:
           name: Start D-Bus
           command: sudo service dbus start
@@ -77,6 +84,8 @@ commands:
             export DISPLAY=:99
             Xvfb -ac :99 -screen 0 1600x1200x24 > /dev/null 2>&1
           background: true
+
+      ## Install/Update Google Chrome browser.
       - run:
           name: Install/Update Google Chrome browser
           command: |
@@ -89,6 +98,8 @@ commands:
             sudo chmod +x /usr/bin/google-chrome
             /usr/bin/google-chrome --version
             google-chrome --version
+
+      ## Install/Update Chrome Driver.
       - run:
           name: Install/Update Chrome Driver
           command: |
@@ -100,11 +111,15 @@ commands:
             sudo mv -f chromedriver-linux64/chromedriver /usr/bin/
             rm -rf chromedriver-linux64.zip chromedriver-linux64
             chromedriver --version
+
+      ## Install/Update Java.
       - run:
           name: Install Java
           command: |
             sudo apt update
             sudo apt install -y openjdk-11-jre openjdk-11-jre-headless openjdk-11-jdk openjdk-11-jdk-headless
+      
+      ## Install/Update Selenium Standalone server.
       - run:
           name: Run Selenium Standalone server
           command: |
@@ -113,18 +128,32 @@ commands:
             cd /home/circleci/
             java -jar selenium-server-4.4.0.jar standalone --port 4445
           background: true
+
+       ## Install composer ~2
       - run:
           name: Install composer ~2
           command: |
             sudo curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin/ --filename=composer --2;
             composer config -g github-oauth.github.com $GITHUB_TOKEN
+
+      ## Install node js, npm, yarn
+      - run:
+          name: Install node js
+          command: |
+            curl -sL https://deb.nodesource.com/setup_18.x | sudo bash -
+            sudo apt install -y nodejs 
+            sudo npm install -g yarn
+
+      ## List tools versions.
       - run:
           name: List tools versions
           command: |
             php --version
-            java -version
+            node --version
+            yarn --version
             google-chrome --version
             chromedriver --version
+            java -version
             mysql --version
             composer --version
             php -m
@@ -195,20 +224,6 @@ commands:
             ../bin/drush config-set system.logging error_level all --yes
             ../bin/drush cr
 
-      ## Run Selenium Standalone server.
-      - run:
-          name: Install Java
-          command: |
-            sudo apt update
-            sudo apt install -y openjdk-11-jre openjdk-11-jre-headless openjdk-11-jdk openjdk-11-jdk-headless
-      - run:
-          name: Run Selenium Standalone server
-          command: |
-            export DISPLAY=:99
-            if [[ ! -f /home/circleci/selenium-server-4.4.0.jar ]]; then wget -O /home/circleci/selenium-server-4.4.0.jar https://github.com/SeleniumHQ/selenium/releases/download/selenium-4.4.0/selenium-server-4.4.0.jar; fi
-            cd /home/circleci/
-            java -jar selenium-server-4.4.0.jar standalone --port 4444
-          background: true
 
       ## Add testing users.
       - run:
