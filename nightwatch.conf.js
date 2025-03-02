@@ -23,6 +23,7 @@ module.exports = {
   test_settings: {
     default: {
       launch_url: 'http://webship.test',
+      start_process: true,
       selenium_port: 4444,
       selenium_host: '127.0.0.1',
       silent: true,
@@ -75,14 +76,18 @@ module.exports = {
         'webdriver.chrome.driver': (Services.chromedriver ? Services.chromedriver.path : ''),
       },
     },
+
+    webdriver: {
+      start_process: false
+    },
   },
 
   'selenium.chrome': {
-    extends: 'selenium_server',
+    extends: 'selenium',
     desiredCapabilities: {
       browserName: 'chrome',
       chromeOptions: {
-        w3c: true,
+        w3c: false,
       },
     },
   }
