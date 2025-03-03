@@ -83,7 +83,7 @@ module.exports = {
   },
 
   'selenium.chrome': {
-    extends: 'selenium',
+    extends: 'selenium_server',
     desiredCapabilities: {
       browserName: 'chrome',
       chromeOptions: {
