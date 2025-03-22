@@ -19,5 +19,5 @@ After that you can create the project:
 
 To install the dev version of Webship 10.0.x run this command:
 ```
-composer create-project webship/webship-project:10.0.x-dev WEBSITE_NAME --stability dev --no-interaction
+composer create-project webship/webship-project:11.0.x-dev WEBSITE_NAME --stability dev --no-interaction
 ```

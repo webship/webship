@@ -29,9 +29,8 @@
   "require": {
     "composer/installers": "~2",
     "oomphinc/composer-installers-extender": "~2",
-    "drupal/core-composer-scaffold": "~11",
-    "mglaman/composer-drupal-lenient": "~1",
-    "drupal/core": "~11",
+    "drupal/core-composer-scaffold": "~10",
+    "drupal/core": "~11.1.0",
     "drush/drush": "~13",
     "drupal/webpatches": "11.0.x-dev",
     "drupal/webconfig": "11.0.x-dev",
@@ -48,6 +47,7 @@
     "drupal/webblog": "11.0.x-dev",
     "drupal/webdoc": "11.0.x-dev",
     "drupal/webnewsletter": "11.0.x-dev",
+    "drupal/webshare": "1.0.x-dev",
     "drupal/webship_default_content": "11.0.x-dev",
     "drupal/webform": "~6.3.0"
   },
@@ -68,8 +68,7 @@
       "cweagans/composer-patches": true,
       "oomphinc/composer-installers-extender": true,
       "drupal/core-composer-scaffold": true,
-      "dealerdirect/phpcodesniffer-composer-installer": true,
-      "mglaman/composer-drupal-lenient": true
+      "dealerdirect/phpcodesniffer-composer-installer": true
     }
   },
   "extra": {
@@ -82,9 +81,6 @@
       "locations": {
         "web-root": "web/"
       }
-    },
-    "drupal-lenient": {
-      "allow-all": true
     },
     "installer-paths": {
       "web/core": [
