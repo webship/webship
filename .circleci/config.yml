@@ -253,6 +253,6 @@ workflows:
       - webship-testing:
           filters:
             tags:
-              only: /^10.0.*/
+              only: /^11.0.*/
             branches:
               only: /^11.0.x/
