@@ -17,7 +17,6 @@ themes:
 install:
   - system
   - config
-  - action
   - syslog
   - dblog
   - user
