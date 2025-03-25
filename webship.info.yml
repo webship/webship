@@ -59,8 +59,8 @@ install:
   - webeditor
   - webseo
   - webpage
-  - webreleases
   - webblog
+  - webreleases
   - webdoc
   - webnewsletter
   - webshare
