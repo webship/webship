@@ -49,7 +49,6 @@ install:
   - gin_toolbar
   - gin_login
   - dashboards
-  - dashboards_statistic
   - dashboards_views
   - admin_toolbar_search
   - webconfig
