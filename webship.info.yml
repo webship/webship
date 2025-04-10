@@ -50,7 +50,6 @@ install:
   - gin_login
   - dashboards
   - dashboards_views
-  - admin_toolbar_search
   - webconfig
   - webdev
   - webadmin
