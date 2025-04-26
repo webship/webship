@@ -1,0 +1,63 @@
+_meta:
+  version: '1.0'
+  entity_type: node
+  uuid: ed286406-6053-41f2-86ce-136c3d951f1e
+  bundle: webpage
+  default_langcode: en
+default:
+  revision_uid:
+    -
+      target_id: 1
+  status:
+    -
+      value: false
+  uid:
+    -
+      target_id: 1
+  title:
+    -
+      value: Contact
+  created:
+    -
+      value: 1677325190
+  promote:
+    -
+      value: false
+  sticky:
+    -
+      value: false
+  revision_translation_affected:
+    -
+      value: true
+  moderation_state:
+    -
+      value: published
+  path:
+    -
+      alias: /contact
+      langcode: en
+      pathauto: 1
+  layout_builder__layout:
+    -
+      section:
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+          context_mapping: {  }
+        components:
+          3879085e-ccc4-49b8-8ad4-69a17deca89e:
+            uuid: 3879085e-ccc4-49b8-8ad4-69a17deca89e
+            region: content
+            configuration:
+              id: webform_block
+              label: Webform
+              label_display: 0
+              provider: webform
+              webform_id: contact
+              default_data: ''
+              redirect: 0
+              lazy: 0
+              context_mapping: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }

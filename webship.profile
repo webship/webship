@@ -7,6 +7,8 @@
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\path_alias\Entity\PathAlias;
+use Drupal\Core\Recipe\Recipe;
+use Drupal\Core\Recipe\RecipeRunner;
 
  /**
  * Implements hook_form_FORM_ID_alter() for install_configure_form().
@@ -46,10 +48,11 @@ function webship_preprocess_install_page(&$variables) {
  * @param array $install_state
  *   The current install state.
  *
- * @return array
- *   A renderable array with a redirect header.
  */
 function webship_after_install_finished(array &$install_state) {
+
+  $default_recipe = Recipe::createFromDirectory(__DIR__ . '/recipes/default');
+  RecipeRunner::processRecipe($default_recipe);
 
   // Set front page to "/home".
   try {

@@ -1,6 +1,0 @@
-logo:
-  use_default: false
-  path: themes/contrib/webtheme/logo-blue.svg
-brand_image:
-  use_default: false
-  path: 'themes/contrib/webtheme/ImageLogin.png'

@@ -48,7 +48,6 @@
     "drupal/webdoc": "11.0.x-dev",
     "drupal/webnewsletter": "11.0.x-dev",
     "drupal/webshare": "1.0.x-dev",
-    "drupal/webship_default_content": "11.0.x-dev",
     "drupal/webform": "~6.3.0"
   },
   "conflict": {
@@ -95,6 +94,9 @@
       "web/themes/contrib/{$name}": [
         "type:drupal-theme"
       ],
+      "web/recipes/contrib/{$name}": [
+        "type:drupal-recipe"
+      ],
       "web/libraries/{$name}": [
         "type:drupal-library",
         "type:bower-asset",
@@ -111,17 +113,13 @@
       ]
     },
     "installer-types": [
+      "drupal-recipe",
       "bower-asset",
       "npm-asset"
     ],
     "drupal-libraries": {
       "library-directory": "web/libraries",
       "libraries": []
-    },
-    "enable-patching": true,
-    "composer-exit-on-patch-failure": true,
-    "patchLevel": {
-      "drupal/core": "-p2"
     }
   }
 }
