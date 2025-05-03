@@ -32,94 +32,22 @@
     "drupal/core-composer-scaffold": "~11",
     "drupal/core": "~11.1.0",
     "drush/drush": "~13",
-    "drupal/webpatches": "~11.0.0",
-    "drupal/webconfig": "~11.0.0",
-    "drupal/webdev": "~11.0.0",
-    "drupal/webadmin": "~11.0.0",
-    "drupal/websecurity": "~11.0.0",
-    "drupal/webeditor": "~11.0.0",
-    "drupal/webseo": "~11.0.0",
-    "drupal/webpage": "~11.0.0",
-    "drupal/webtheme": "~11.0.0",
-    "drupal/webtheme_admin": "~11.0.0",
-    "drupal/webassets": "~11.0.0",
-    "drupal/webblog": "~11.0.0",
-    "drupal/webreleases": "~11.0.0",
-    "drupal/webdoc": "~11.0.0",
-    "drupal/webnewsletter": "~11.0.0",
-    "drupal/webshare": "~1.0.0",
+    "drupal/webpatches": "11.0.x-dev",
+    "drupal/webconfig": "11.0.x-dev",
+    "drupal/webdev": "11.0.x-dev",
+    "drupal/webadmin": "11.0.x-dev",
+    "drupal/websecurity": "11.0.x-dev",
+    "drupal/webeditor": "11.0.x-dev",
+    "drupal/webseo": "11.0.x-dev",
+    "drupal/webpage": "11.0.x-dev",
+    "drupal/webtheme": "11.0.x-dev",
+    "drupal/webtheme_admin": "11.0.x-dev",
+    "drupal/webassets": "11.0.x-dev",
+    "drupal/webblog": "11.0.x-dev",
+    "drupal/webreleases": "11.0.x-dev",
+    "drupal/webdoc": "11.0.x-dev",
+    "drupal/webnewsletter": "11.0.x-dev",
+    "drupal/webshare": "1.0.x-dev",
     "drupal/webform": "~6.3.0"
-  },
-  "conflict": {
-    "drupal/drupal": "*"
-  },
-  "config": {
-    "bin-dir": "bin/",
-    "secure-http": false,
-    "optimize-autoloader": true,
-    "preferred-install": {
-      "drupal/core": "dist"
-    },
-    "allow-plugins": {
-      "composer/installers": true,
-      "symplify/vendor-patches": true,
-      "cweagans/composer-configurable-plugin": true,
-      "cweagans/composer-patches": true,
-      "oomphinc/composer-installers-extender": true,
-      "drupal/core-composer-scaffold": true,
-      "dealerdirect/phpcodesniffer-composer-installer": true
-    }
-  },
-  "extra": {
-    "drupal-scaffold": {
-      "allowed-packages": [
-        "drupal/core",
-        "webship/webship"
-      ],
-      "gitignore": true,
-      "locations": {
-        "web-root": "web/"
-      }
-    },
-    "installer-paths": {
-      "web/core": [
-        "type:drupal-core"
-      ],
-      "web/profiles/contrib/{$name}": [
-        "type:drupal-profile"
-      ],
-      "web/modules/contrib/{$name}": [
-        "type:drupal-module"
-      ],
-      "web/themes/contrib/{$name}": [
-        "type:drupal-theme"
-      ],
-      "web/recipes/contrib/{$name}": [
-        "type:drupal-recipe"
-      ],
-      "web/libraries/{$name}": [
-        "type:drupal-library",
-        "type:bower-asset",
-        "type:npm-asset"
-      ],
-      "web/modules/custom/{$name}": [
-        "type:drupal-custom-module"
-      ],
-      "web/themes/custom/{$name}": [
-        "type:drupal-custom-theme"
-      ],
-      "drush/contrib/{$name}": [
-        "type:drupal-drush"
-      ]
-    },
-    "installer-types": [
-      "drupal-recipe",
-      "bower-asset",
-      "npm-asset"
-    ],
-    "drupal-libraries": {
-      "library-directory": "web/libraries",
-      "libraries": []
-    }
   }
 }
