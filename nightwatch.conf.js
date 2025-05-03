@@ -19,7 +19,23 @@ module.exports = {
       parallel: 2,
     },
   },
-
+  globals: {
+    "assets_folder" : "/assets/",
+    users: {
+      "admin":{
+        "email": "admin@webship.co",
+        "password": "dD.123123ddd"
+      },
+      "Authenticated user": {
+        "email": "test.authenticated@webship.co",
+        "password": "dD.123123ddd"
+      },
+      "Content admin":{
+        "email": "test.content_admin@vardot.com",
+        "password": "dD.123123ddd"
+      }
+    }
+  },
   test_settings: {
     default: {
       launch_url: 'http://webship.test/wd/hub',

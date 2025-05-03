@@ -1,38 +1,79 @@
-# 9.0.0-alpha3
+# 11.0.0-alpha1
 
-* Issue [#3183877](https://www.drupal.org/i/3183877):
-        Fixed Webship composer and .info.yml to work with Drupal 9 ( ^9.0 ) only.
-        To work with Composer 2.0 , PHP7.4, and MySQL 8
-* Issue [#3171875](https://www.drupal.org/i/3171875):
-        Fixed travis-ci automated functional acceptance testing for Webship
-* Issue [#3187982](https://www.drupal.org/i/3187982):
-        Updated Webtheme to use latest Vartheme BS4 9.0.0-alpha3
-* Issue [#3185360](https://www.drupal.org/i/3185360):
-        Fixed WebAdmin composer and .info.yml to work with Drupal 9 ( ^9.0 ) only
-* Issue [#3185362](https://www.drupal.org/i/3185362):
-        Fixed WebDev composer and .info.yml to work with Drupal 9 ( ^9.0 ) only
-* Issue [#3185370](https://www.drupal.org/i/3185370):
-        Fixed Webpage composer and .info.yml to work with Drupal 9 ( ^9.0 ) only
-* Issue [#3187779](https://www.drupal.org/i/3187779):
-        Fixed WebTEST composer and .info.yml to work with Drupal 9 ( ^9.0 ) only
+### Highlighted important changes
+* Issue [#3449844](https://www.drupal.org/3449844):
+         Started an `11.0.x` branch for the **Webship** profile to ensure compatibility with **Drupal 11**
 
-----------------------------------------------------------------------------
+### Added:
+* Issue [#3439036](https://www.drupal.org/3439036):
+         Added **Web Releases** module and enable it
+* Issue [#3494051](https://www.drupal.org/3494051):
+         Added the **Webshare** module and enable it
+* Issue [#3504280](https://www.drupal.org/3504280):
+         Added `social-image.png` in the **Webtheme** theme
 
-# 9.0.0-alpha2
+### Changed:
+* Issue [#3382850](https://www.drupal.org/3382850):
+         Changed team size in contact page from text to select form
+* Issue [#3518460](https://www.drupal.org/3518460):
+         Removed Admin Toolbar module from **Webadmin** module in **Drupal 10** and **11**
+* Issue [#3518445](https://www.drupal.org/3518445):
+         Removed enabling **Admin Toolbar Search** module
+* Issue [#3517535](https://www.drupal.org/3517535):
+         Removed enabling Dashboards statistic module
+* Issue [#3512753](https://www.drupal.org/3512753):
+         Changed **Folder Structure** and **File Names** for Automated Testing Feature Files for Webship
+* Issue [#3511403](https://www.drupal.org/3511403):
+         Changed admin login webship testing feature
+* Issue [#3517528](https://www.drupal.org/3517528):
+         Removed leftover field product name
+* Issue [#3449837](https://www.drupal.org/3449837):
+         Started an `11.0.x` branch for the **Webtheme Admin** theme to ensure compatibility with **Drupal 11**
+* Issue [#3449834](https://www.drupal.org/3449834):
+         Started an `11.0.x` branch for the **Webtheme** theme to ensure compatibility with **Drupal 11**
+* Issue [#3449842](https://www.drupal.org/3449842):
+         Started an `11.0.x` branch for the **Webship Default Content module** to ensure compatibility with **Drupal 11**
+* Issue [#3449828](https://www.drupal.org/3449828):
+         Started an `11.0.x` branch for the **Webtheme Default Content** module to ensure compatibility with **Drupal 11**
+* Issue [#3449820](https://www.drupal.org/3449820):
+         Started an `11.0.x` branch for the **Webpage** module to ensure compatibility with **Drupal 11**
+* Issue [#3449810](https://www.drupal.org/3449810):
+         Started an `11.0.x` branch for the **Web SEO** module to ensure compatibility with **Drupal 11**
+* Issue [#3449805](https://www.drupal.org/3449805):
+         Started an `11.0.x` branch for the **Web Security** module to ensure compatibility with **Drupal 11**
+* Issue [#3449797](https://www.drupal.org/3449797):
+         Started an `11.0.x` branch for the **Web Releases** module to ensure compatibility with **Drupal 11**
+* Issue [#3447997](https://www.drupal.org/3447997):
+         Started an `11.0.x` branch for the **Web Patches** module to ensure compatibility with **Drupal 11**
+* Issue [#3449779](https://www.drupal.org/3449779):
+         Started an `11.0.x` branch for the **Web Newsletter** module to ensure compatibility with **Drupal 11**
+* Issue [#3449766](https://www.drupal.org/3449766):
+         Started an `11.0.x` branch for the **Web Editor** module to ensure compatibility with **Drupal 11**
+* Issue [#3449754](https://www.drupal.org/3449754):
+         Started an `11.0.x` branch for the **Web Doc** module to ensure compatibility with **Drupal 11**
+* Issue [#3448039](https://www.drupal.org/3448039):
+         Started an `11.0.x` branch for the **Web Development** module to ensure compatibility with **Drupal 11**
+* Issue [#3448024](https://www.drupal.org/3448024):
+         Started an `11.0.x` branch for the **Web Blog** module to ensure compatibility with **Drupal 11**
+* Issue [#3448009](https://www.drupal.org/3448009):
+         Started an `11.0.x` branch for the **Web Assets** module to ensure compatibility with **Drupal 11**
+* Issue [#3448004](https://www.drupal.org/3448004):
+         Started an `11.0.x` branch for the **Web Admin** module to ensure compatibility with **Drupal 11**
 
-* Issue [#3162711](https://www.drupal.org/i/3162711): Added Webtheme ~9.0 to work with Drupal 9 Based on Bootstrap 4 framework using SASS, and extending Vartheme (Bootstrap 4 - SASS)
+### Updates:
+* Issue [#3492384](https://www.drupal.org/3492384):
+         Updated **Drush from `~12` to `~13`
+* Issue [#3385781](https://www.drupal.org/3385781):
+         Updated **google chrome browser** , **chrome driver** and **Selenium**
+* Issue [#3492385](https://www.drupal.org/3492385):
+         Updated **Webformv module from `~6.2.0` to `~6.3.0`
+* Issue [#3520953](https://www.drupal.org/3520953):
+         Updated **Field Group** module from `~3.0` to `~4.0`
+* Issue [#3487160](https://www.drupal.org/3487160):
+         Updated **Metatag** module from `~2.0.0` to `~2.1.0`
+* Issue [#3492398](https://www.drupal.org/3492398):
+         Updated **Better Exposed Filters** from `~6.0` to `~7.0`
 
-----------------------------------------------------------------------------
-
-# 9.0.0-alpha1
-
-* Issue [#3145902](https://www.drupal.org/i/3145902):
-        Started a 9.0.x branch for Webship and Webship Project to integrate
-        with Drupal 9 with Drupal coding standard and practice
-* Issue [#3161430](https://www.drupal.org/i/3161430):
-        Added [Vartheme BS4] theme and use it as the default front-end theme
-* Issue [#3155329](https://www.drupal.org/i/3155329):
-        Added [Vartheme Claro] administration theme and use it as the default
-        install, back-end, and front-end theme
-* Issue [#3161494](https://www.drupal.org/i/3161494):
-         Updated [Webship] module from ~5.0 to ~6.0
+### Fixes:
+* Issue [#3510470](https://www.drupal.org/3510470):
+         Fixed CircleCI report file to work with the latest versions

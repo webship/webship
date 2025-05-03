@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/webship/webship/tree/11.0.x.svg?style=svg)](https://circleci.com/gh/webship/webship/tree/11.0.x) 11.0.x
+[![CircleCI](https://circleci.com/gh/webship/webship/tree/11.0.x.svg?style=svg)](https://circleci.com/gh/webship/webship/tree/11.0.x) 11.0.0-alpha1
 
 # Webship
 
@@ -16,8 +16,13 @@ for your setup.
 
 After that you can create the project:
 
+To install the latest version of Webship ~11.0.0 run this command:
+```
+composer create-project webship/webship-project:11.0.0-alpha1 WEBSITE_NAME --stability dev --no-interaction
+```
 
-To install the dev version of Webship 11.0.x run this command:
+
+To install the development version of Webship 11.0.x run this command:
 ```
 composer create-project webship/webship-project:11.0.x-dev WEBSITE_NAME --stability dev --no-interaction
 ```

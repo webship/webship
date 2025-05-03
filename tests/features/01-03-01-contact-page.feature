@@ -1,10 +1,11 @@
 Feature: Check the contact page
-  As an anonymous user
-  I want to be able to visit the contact page
-  So that I know that the webship.co site is working
+      As an anonymous user
+      I want to be able to visit the contact page
+      So that I will able to see the address and fill in the contact form.
 
-  Scenario: Check contact
-    Given I am on "/contact"
+  Scenario: Check the Contact page
+    Given I am an anonymous user
+     When I go to "/contact"
      Then I should see "Contact"
       And I should see "Your Name"
       And I should see "Company name"
