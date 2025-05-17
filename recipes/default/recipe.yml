@@ -14,7 +14,7 @@ config:
         use_admin_theme: true
     system.theme:
       simpleConfigUpdate:
-        admin: webtheme_admin
+        admin: gin
         default: webtheme
     gin.settings:
       simpleConfigUpdate:

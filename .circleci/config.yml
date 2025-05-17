@@ -174,13 +174,9 @@ commands:
             cd /var/www/html/test/
             sudo chmod 775 .
             sudo chown www-data:circleci .
-            git clone --branch '11.0.x' https://github.com/webship/webship.git /var/www/html/test/webship-code
-            cp -r /var/www/html/test/webship-code /var/www/html/test/webship
+            git clone --branch '11.0.x' https://github.com/webship/webship-project.git /var/www/html/test/webship
             cd /var/www/html/test/webship
             composer install --no-interaction -vvv
-            cp -r /var/www/html/test/webship-code /var/www/html/test/webship/web/profiles/webship
-            cd /var/www/html/test/webship
-            sudo rm -rf config css images scripts tests webship.info.yml webship.install webship.libraries.yml webship.profile yarn.lock
             sudo chmod 775 -R .
             sudo chown www-data:circleci -R .
             cp /var/www/html/test/webship/web/sites/default/default.settings.php /var/www/html/test/webship/web/sites/default/settings.php
