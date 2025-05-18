@@ -10,7 +10,7 @@ default:
       value: true
   info:
     -
-      value: 'Webtheme footer logo'
+      value: 'Footer logo'
   reusable:
     -
       value: true

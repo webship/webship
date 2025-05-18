@@ -10,7 +10,7 @@ default:
       value: true
   info:
     -
-      value: 'Webtheme copyright'
+      value: 'Copyright'
   reusable:
     -
       value: true
@@ -19,6 +19,6 @@ default:
       value: true
   body:
     -
-      value: '<p>©&nbsp;Copyright&nbsp;[date:custom:Y] Webship</p>'
+      value: '<sub>©&nbsp;Copyright&nbsp;[date:custom:Y] Webship.co</sub>'
       format: restricted_html
       summary: ''
