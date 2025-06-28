@@ -225,7 +225,7 @@ commands:
       - run:
           name: Add testing users.
           command: |
-            cd /var/www/html/test/webship/web/profiles/webship/scripts
+            cd /var/www/html/test/webship/web/profiles/contrib/webship/scripts
             bash add-testing-users.sh
 
 jobs:
@@ -238,7 +238,7 @@ jobs:
           name: Automated Functional Acceptance Testing
           no_output_timeout: 30m
           command: |
-            cd /var/www/html/test/webship/web/profiles/webship
+            cd /var/www/html/test/webship/web/profiles/contrib/webship
             yarn install
             yarn test
 
