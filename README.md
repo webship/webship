@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/webship/webship/tree/11.0.x.svg?style=svg)](https://app.circleci.com/pipelines/github/webship/webship/157/workflows/c4265b78-a56b-4064-b24e-fe14e5162da1) 11.0.0-alpha1
+[![CircleCI](https://circleci.com/gh/webship/webship/tree/11.0.x.svg?style=svg)](https://app.circleci.com/pipelines/github/webship/webship/161/workflows/a092496a-59d6-4c4b-b978-1f500770eb20) 11.0.0-beta1
 
 # Webship
 
@@ -18,7 +18,7 @@ After that you can create the project:
 
 To install the latest version of Webship ~11.0.0 run this command:
 ```
-composer create-project webship/webship-project:11.0.0-alpha1 WEBSITE_NAME --stability dev --no-interaction
+composer create-project webship/webship-project:11.0.0-beta1 WEBSITE_NAME --stability dev --no-interaction
 ```
 
 

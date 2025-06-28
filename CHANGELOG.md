@@ -1,3 +1,71 @@
+# 11.0.0-beta1
+
+### Highlighted important changes
+* Issue [#3532000](https://www.drupal.org/3532000):
+         Updated **Drupal Core** from `~11.1.0` to `~11.2.0` for Webship
+* Issue [#3531974](https://www.drupal.org/3531974):
+         Updated **Gin Admin** Theme from `~4.0` to `~5.0`
+
+### Added:
+* N/A
+
+### Changed:
+* Issue [#3532270](https://www.drupal.org/3532270):
+         Removed patch Call to a member function getEntityTypeId() on null (Layout Builder)
+* Issue [#3525081](https://www.drupal.org/3525081):
+         Removed the **Webtheme** Default Content module from the **Webtheme** project as we moved to recipes
+* Issue [#3525139](https://www.drupal.org/3525139):
+         Change default content for the **Webship profile** for better testing cases
+* Issue [#3525138](https://www.drupal.org/3525138):
+         Removed the Default Content module importing default content is in
+         Drupal Core's Recipes API
+
+### Updates:
+* Issue [#3531634](https://www.drupal.org/3531634):
+         Updated **Drupal Core** from `~11.1.0` to `~11.2.0` for **Web Admin** module
+* Issue [#3531992](https://www.drupal.org/3531992):
+         Updated **Gin Toolbar** from `~1.0` to `~3.0`
+* Issue [#3531637](https://www.drupal.org/3531637):
+         Updated **Drupal Core** from `~11.1.0` to `~11.2.0` for **Web Assets** module
+* Issue [#3526731](https://www.drupal.org/3526731):
+         Updated **Media Directories** Module from `~2.1.0` to `~2.2.0`
+* Issue [#3531638](https://www.drupal.org/3531638):
+         Updated **Drupal Core** from `~11.1.0` to `~11.2.0` for **Web Blog** module
+* Issue [#3531640](https://www.drupal.org/3531640):
+         Updated **Drupal Core** from `~11.1.0` to `~11.2.0` for **Web Config** module
+* Issue [#3530755](https://www.drupal.org/3530755):
+         Updated **Diff** module from `~1.0` to `~2.0`
+* Issue [#3531772](https://www.drupal.org/3531772):
+         Updated **Drupal Core** from `~11.1.0` to `~11.2.0` for **Web Development** module
+* Issue [#3531774](https://www.drupal.org/3531774):
+         Update **Drupal Core** from `~11.1.0` to `~11.2.0` for **Web Doc** module
+* Issue [#3531776](https://www.drupal.org/3531776):
+         Updated **Drupal Core** from `~11.1.0` to `~11.2.0` for **Web Editor** module
+* Issue [#3531777](https://www.drupal.org/3531777):
+         Updated **Drupal Core** from `~11.1.0` to `~11.2.0` for **Web Newsletter** module
+* Issue [#3531779](https://www.drupal.org/3531779):
+         Update **Drupal Core** from `~11.1.0` to `~11.2.0` for **Web Patches** module
+* Issue [#3531784](https://www.drupal.org/3531784):
+         Updated **Drupal Core** from `~11.1.0` to `~11.2.0` for **Web Releases** module
+* Issue [#3531787](https://www.drupal.org/3531787):
+         Updated **Drupal Core** from `~11.1.0` to `~11.2.0` for **Web Security** module
+* Issue [#3531791](https://www.drupal.org/3531791):
+         Updated **Drupal Core** from `~11.1.0` to `~11.2.0` for **Web SEO** module
+* Issue [#3531793](https://www.drupal.org/3531793):
+         Updated **Drupal Core** from `~11.1.0` to `~11.2.0` for **Webpage** module
+* Issue [#3531795](https://www.drupal.org/3531795):
+         Updated **Drupal Core** from `~11.1.0` to `~11.2.0` for **Webtheme** module
+### Fixes:
+* Issue [#3525086](https://www.drupal.org/3525086):
+         Fixed User warning: The following theme is missing from the file system: classy
+
+
+
+
+
+
+--------
+
 # 11.0.0-alpha1
 
 ### Highlighted important changes
