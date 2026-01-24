@@ -30,7 +30,7 @@
     "composer/installers": "~2",
     "oomphinc/composer-installers-extender": "~2",
     "drupal/core-composer-scaffold": "~11",
-    "drupal/core": "~11.2.0",
+    "drupal/core": "~11.3.0",
     "drush/drush": "~13",
     "drupal/webpatches": "11.0.x-dev",
     "drupal/webconfig": "11.0.x-dev",
