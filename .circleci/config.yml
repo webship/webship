@@ -2,14 +2,8 @@ version: 2.1
 
 defaults: &defaults
   docker:
-    - image: cimg/base:2022.09
-      auth:
-        username: mydockerhub-user
-        password: $DOCKERHUB_PASSWORD
-    - image: circleci/mysql:8.0.23
-      auth:
-        username: mydockerhub-user
-        password: $DOCKERHUB_PASSWORD
+    - image: cimg/base:current
+    - image: cimg/mysql:8.0
       entrypoint:
         [
           "docker-entrypoint.sh",
@@ -47,14 +41,16 @@ commands:
 
             sudo a2enmod php8.3 headers rewrite env mime expires ssl
             sudo update-alternatives --set php /usr/bin/php8.3
-            echo -e "memory_limit = -1" | sudo tee /etc/php/8.3/apache2/php.ini > /dev/null
-            echo -e "max_execution_time = 1200" | sudo tee /etc/php/8.3/apache2/php.ini > /dev/null
-            echo -e "error_reporting = E_ALL" | sudo tee /etc/php/8.3/apache2/php.ini > /dev/null
-            echo -e "max_input_time = 180" | sudo tee /etc/php/8.3/apache2/php.ini > /dev/null
-            echo -e "max_input_vars = 10000" | sudo tee /etc/php/8.3/apache2/php.ini > /dev/null
-            echo -e "post_max_size = 64M" | sudo tee /etc/php/8.3/apache2/php.ini > /dev/null
-            echo -e "upload_max_filesize = 32M" | sudo tee /etc/php/8.3/apache2/php.ini > /dev/null
-            echo -e "max_file_uploads = 40" | sudo tee /etc/php/8.3/apache2/php.ini > /dev/null
+            {
+              echo "memory_limit = -1"
+              echo "max_execution_time = 1200"
+              echo "error_reporting = E_ALL"
+              echo "max_input_time = 180"
+              echo "max_input_vars = 10000"
+              echo "post_max_size = 64M"
+              echo "upload_max_filesize = 32M"
+              echo "max_file_uploads = 40"
+            } | sudo tee -a /etc/php/8.3/apache2/php.ini > /dev/null
             sudo service apache2 restart
 
       # Wait for MySQL
