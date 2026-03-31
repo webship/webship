@@ -90,7 +90,7 @@ commands:
           command: |
             sudo rm -rf /var/www/html/test -vvv || true
             sudo mkdir -p /var/www/html/test
-            sudo chown -R $USER:$USER /var/www/html/test
+            sudo chown -R $(id -u):$(id -g) /var/www/html/test
 
             cd /var/www/html/test
             git clone --branch '11.0.x' https://github.com/webship/webship-project.git webship
