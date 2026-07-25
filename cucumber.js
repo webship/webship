@@ -1,7 +1,7 @@
 module.exports = {
   default: {
     timeout: 30000,
-    requireModule: ['ts-node/register'],
+    requireModule: ['tsx/cjs'],
     require: [
       'node_modules/webship-js/tests/step-definitions/**/*.js',
       'tests/step-definitions/**/*.js',
@@ -24,7 +24,7 @@ module.exports = {
       },
     },
     worldParameters: {
-      launchUrl: 'http://webship.test/wd/hub',
+      launchUrl: process.env.LAUNCH_URL || 'http://localhost',
       minWaitTime: {
         page: 3000,
         before_scenario: 0,
@@ -33,17 +33,22 @@ module.exports = {
         after_step: 0,
       },
       assets_folder: "/assets/",
+      // Keep these in sync with scripts/webship.users.yml, the source of
+      // truth for the usernames add-testing-users.sh actually creates.
       users: {
-        admin: {
-          email: "admin@webship.co",
+        Admin: {
+          name: "Admin",
+          email: "test.admin@webship.org",
           password: "dD.123123ddd"
         },
         "Authenticated user": {
-          email: "test.authenticated@webship.co",
+          name: "Authenticated user",
+          email: "test.authenticated@webship.org",
           password: "dD.123123ddd"
         },
-        "Content admin": {
-          email: "test.content_admin@vardot.com",
+        "Content editor": {
+          name: "Content editor",
+          email: "test.content_editor@webship.org",
           password: "dD.123123ddd"
         }
       }
