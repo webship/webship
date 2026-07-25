@@ -5,10 +5,10 @@
  * Site configuration for webship.co portal site installation.
  */
 
+use Drupal\Component\Serialization\Yaml;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Recipe\Recipe;
 use Drupal\Core\Recipe\RecipeRunner;
-use Drupal\Core\Serialization\Yaml;
 use Drupal\path_alias\Entity\PathAlias;
 
 /**
