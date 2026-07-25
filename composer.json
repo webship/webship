@@ -1,5 +1,5 @@
 {
-  "name": "drupal/webship",
+  "name": "webship/webship",
   "description": "The Webship.co portal site was built on top of Drupal, as it has many options, tools, frameworks, and configuration management, which are needed in building solutions.",
   "type": "drupal-profile",
   "license": "GPL-2.0-or-later",
