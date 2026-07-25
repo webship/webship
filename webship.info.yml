@@ -2,7 +2,7 @@ name: Webship
 type: profile
 description: Webship helps in speeding up the work of web developers to ship websites in a swift way.
 core_version_requirement: ~11.4.0
-version: 11.0.0-rc1
+version: 11.0.x-dev
 package: Webship
 distribution:
   name: Webship
