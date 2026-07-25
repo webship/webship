@@ -1,5 +1,5 @@
 {
-  "name": "webship/webship",
+  "name": "drupal/webship",
   "description": "The Webship.co portal site was built on top of Drupal, as it has many options, tools, frameworks, and configuration management, which are needed in building solutions.",
   "type": "drupal-profile",
   "license": "GPL-2.0-or-later",
@@ -9,6 +9,19 @@
   },
   "minimum-stability": "dev",
   "prefer-stable": true,
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true,
+      "oomphinc/composer-installers-extender": true,
+      "drupal/core-composer-scaffold": true,
+      "drupal/core-project-message": true,
+      "cweagans/composer-patches": true,
+      "php-http/discovery": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "phpstan/extension-installer": true,
+      "tbachert/spi": true
+    }
+  },
   "authors": [
     {
       "name": "webship.co",
@@ -26,7 +39,7 @@
     "composer/installers": "~2",
     "oomphinc/composer-installers-extender": "~2",
     "drupal/core-composer-scaffold": "~11",
-    "drupal/core": "~11.3.0",
+    "drupal/core": "~11.4.0",
     "drush/drush": "~13",
     "drupal/webpatches": "11.0.x-dev",
     "drupal/webconfig": "11.0.x-dev",
