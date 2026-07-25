@@ -6,11 +6,12 @@
  */
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\path_alias\Entity\PathAlias;
 use Drupal\Core\Recipe\Recipe;
 use Drupal\Core\Recipe\RecipeRunner;
+use Drupal\Core\Serialization\Yaml;
+use Drupal\path_alias\Entity\PathAlias;
 
- /**
+/**
  * Implements hook_form_FORM_ID_alter() for install_configure_form().
  *
  * Allows the profile to alter the site configuration form.
@@ -123,7 +124,7 @@ function webship_install_default_roles() {
     }
 
     try {
-      $values = \Drupal\Core\Serialization\Yaml::decode(file_get_contents($file));
+      $values = Yaml::decode(file_get_contents($file));
       unset($values['dependencies']);
       $role_storage->create($values)->save();
     }
@@ -151,7 +152,6 @@ function webship_preprocess_install_page(&$variables) {
  *
  * @param array $install_state
  *   The current install state.
- *
  */
 function webship_after_install_finished(array &$install_state) {
 
