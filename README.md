@@ -1,4 +1,6 @@
-[![CircleCI](https://circleci.com/gh/webship/webship/tree/11.0.x.svg?style=svg)](https://app.circleci.com/pipelines/github/webship/webship/170/workflows/c4dbf5c8-4d74-4a81-ad68-c150307bb564) 11.0.0-beta1
+[![pipeline status](https://git.drupalcode.org/project/webship/badges/11.0.x/pipeline.svg)](https://git.drupalcode.org/project/webship/-/pipelines)
+[![Webship](https://img.shields.io/badge/Webship-11.0.0--rc1-0d6efc?labelColor=001d38&style=flat-square)](https://git.drupalcode.org/project/webship/-/pipelines?ref=11.0.0-rc1)
+[![Automated Functional Testing](https://git.drupalcode.org/project/webship_project/badges/11.0.x/pipeline.svg)](https://git.drupalcode.org/project/webship_project/-/pipelines)
 
 # Webship
 
@@ -18,7 +20,7 @@ After that you can create the project:
 
 To install the latest version of Webship ~11.0.0 run this command:
 ```
-composer create-project webship/webship-project:11.0.0-beta1 WEBSITE_NAME --stability dev --no-interaction
+composer create-project webship/webship-project:11.0.0-rc1 WEBSITE_NAME --stability dev --no-interaction
 ```
 
 
