@@ -1,0 +1,7 @@
+services:
+  _defaults:
+    autowire: true
+  Drupal\webship\Silencer:
+    public: false
+    decorates: messenger
+  Drupal\webship\RecipeHandler: ~

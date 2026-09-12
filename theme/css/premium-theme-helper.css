@@ -1,0 +1,80 @@
+/*
+ * @file
+ * Styling for premium site templates.
+ */
+.site-template--premium {
+  .description  {
+    p:has(+ .price) {
+      margin-bottom: 0;
+    }
+  }
+
+  .price {
+    font-size: .875rem;
+  }
+}
+
+.badge {
+  --text-color: white;
+
+  position: absolute;
+  inset-inline-end: var(--gin-spacing-m);
+  inset-block-end: var(--gin-spacing-m);
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  padding: 12px;
+  border: solid 1px white;
+  border-radius: var(--gin-border-m);
+  background: rgb(30, 30, 30, .7);
+  color: var(--text-color);
+  font-size: var(--gin-font-size-xs);
+
+  &.premium-badge {
+    padding: 6px;
+
+    &::before {
+      mask-image: url('../images/premium.svg');
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      position: relative;
+      background: var(--text-color);
+      content: "";
+      width: 12px;
+      height: 12px;
+    }
+  }
+}
+
+.site-template__purchase-wrapper,
+.site-template__links-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+
+  a,
+  .button--small {
+    font-size: var(--gin-font-size-s);
+    margin-block: var(--space-s) var(--space-xs);
+  }
+}
+
+.site-template__enter-key-button.button--link.button--small {
+  margin-block-start: 0;
+  font-size: var(--gin-font-size-xxs);
+}
+
+/* This is the indicator that shows the license key validation state. */
+.site-template__license-key-matches:not([hidden]) {
+  display: inline-block;
+  vertical-align: text-bottom;
+  mask-image: url('../images/check-circle.svg');
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  position: relative;
+  background: green;
+  content: "";
+  width: 15px;
+  height: 15px;
+}

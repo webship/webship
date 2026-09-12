@@ -1,0 +1,10 @@
+name: Webship Installer Theme
+type: theme
+core_version_requirement: '^11.4 || ^12'
+description: 'Themes the Webship installer. Not to be used in production.'
+base theme: claro
+libraries-extend:
+  claro/maintenance-page:
+    - webship_installer_theme/maintenance-page
+  core/drupal.progress:
+    - webship_installer_theme/drupal.progress

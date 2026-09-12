@@ -1,0 +1,121 @@
+/*
+ * @file
+ * Styling for license key dialog.
+ */
+.license-dialog {
+  gap: var(--gin-spacing-s);
+  place-content: center;
+  border-radius: var(--gin-border-xl);
+  padding: var(--gin-spacing-xxxl);
+
+  &[open] {
+    display: grid;
+  }
+
+  &::backdrop {
+    background-color: var(--gin-tooltip-bg);
+    opacity: 0.8;
+  }
+
+  > * {
+    margin-block: 0;
+  }
+}
+
+.license-dialog__close {
+  position: absolute;
+  inset-block-start: 10px;
+  inset-inline-end: 10px;
+  width: 50px;
+  height: 50px;
+  background: none;
+  border: none;
+}
+
+.license-dialog__close-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 20px;
+  height: 20px;
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 50%;
+    width: 100%;
+    translate: -50% -50%;
+    height: 0;
+    border-top: solid 2px currentColor;
+    rotate: 45deg;
+    content: "";
+  }
+
+  &::after {
+    rotate: -45deg;
+  }
+}
+
+.license-dialog__input-wrapper {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 12px;
+
+  [type="text"] {
+    height: 50px; /* Match button. */
+  }
+
+  .form-item {
+    margin: 0;
+  }
+}
+
+.license-dialog__instructions {
+  max-width: 500px;
+}
+
+.license-dialog__save {
+  visibility: hidden;
+
+  .license-dialog__input-wrapper:has(.license-dialog__status--valid) & {
+    visibility: visible;
+  }
+}
+
+.license-dialog__status {
+    --icon: none;
+    --icon-color: transparent;
+
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    &::before {
+      display: block;
+      width: 30px;
+      height: 30px;
+      content: "";
+      mask-image: var(--icon);
+      mask-repeat: no-repeat;
+      mask-position: center;
+      mask-size: contain;
+      background-color: var(--icon-color);
+    }
+  }
+
+  .license-dialog__status--thinking {
+    --icon: url('../images/spinner.svg');;
+    --icon-color: blue;
+  }
+
+  .license-dialog__status--invalid {
+    --icon: url('../images/x-circle.svg');
+    --icon-color: red;
+  }
+
+  .license-dialog__status--valid {
+    --icon: url('../images/check-circle.svg');;
+    --icon-color: green;
+  }

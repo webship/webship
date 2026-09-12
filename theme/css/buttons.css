@@ -1,0 +1,65 @@
+.cms-installer {}
+
+.button {
+  all: revert;
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  border: solid 1px transparent;
+  background: transparent;
+  font-family: inherit;
+  line-height: 1;
+  font-size: var(--gin-font-size-l);
+  color: var(--gin-color-primary);
+  padding: var(--gin-spacing-m);
+  border-radius: var(--gin-border-m);
+  font-weight: 600;
+  box-shadow: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+}
+
+.button--primary {
+  transition: var(--gin-transition);
+  background-color: var(--gin-color-primary);
+  color: var(--gin-color-button-text);
+
+  &:active {
+    background-color: var(--gin-color-primary-active);
+  }
+
+  &:hover {
+    background-color: var(--gin-color-primary-hover);
+  }
+}
+
+.button--small {
+  padding: calc(var(--space-xs) - 1px) calc(var(--space-m) - 1px);
+
+  &.button--link {
+    padding-inline: 0;
+  }
+}
+
+.button--next {
+  padding-inline-end: 2.5rem;
+  background-image: url('../images/arrow-right.svg');
+  background-repeat: no-repeat;
+  background-position: center right 1rem;
+}
+
+.button--link {
+  background: transparent;
+  border: 0;
+  color: var(--gin-color-text-light);
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    color: var(--gin-color-primary-hover);
+  }
+}

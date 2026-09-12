@@ -1,0 +1,21 @@
+maintenance-page:
+  css:
+    theme:
+      css/gin-variables.css: {}
+      css/fonts.css: {}
+      css/installer-styles.css: {}
+      css/add-ons.css: {}
+      css/premium-theme-helper.css: {}
+      css/buttons.css: {}
+      css/license-key-dialog.css: {}
+  js:
+    js/language-switcher.js: {}
+    js/premium-helper.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupal.debounce
+    - core/once
+
+drupal.progress:
+  js:
+    js/progress.js: {}

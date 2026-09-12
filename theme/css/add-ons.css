@@ -1,0 +1,177 @@
+html {
+  scroll-behavior: smooth;
+
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: revert;
+  }
+}
+
+#edit-add-ons {
+  display: flex;
+  gap: var(--gin-spacing-m);
+  padding-block: 1px;
+}
+
+#edit-add-ons .form-item {
+  display: inline-block;
+  margin: 0;
+  position: relative;
+}
+
+#edit-add-ons input {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  inline-size: 1px;
+  block-size: 1px;
+  word-wrap: normal;
+}
+
+#edit-add-ons label {
+  position: relative; /* Anchor badge. */
+  display: inline-block;
+  border: 4px solid transparent;
+  padding: 4px;
+  margin: 0;
+  border-radius: var(--gin-border-xl);
+  font-weight: 600;
+  line-height: 0;
+  user-select: none;
+
+  img {
+    border-radius: var(--gin-border-l);
+    border: 1px solid #D8DADE;
+    width: 100%;
+    aspect-ratio: 5 / 4;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+#edit-add-ons label:hover {
+  color: var(--gin-color-primary);
+  border-color: var(--gin-color-primary);
+}
+
+#edit-add-ons [type="radio"]:focus-visible + label {
+  outline: 4px solid var(--gin-color-green-light);
+  outline-offset: 4px;
+}
+
+#edit-add-ons :checked + label {
+  position: relative;
+  border-color: var(--gin-color-primary);
+  border-width: 4px;
+}
+
+#edit-add-ons :checked+label:before {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  display: block;
+  inline-size: 1.25rem;
+  block-size: 1.25rem;
+  transform: translate(-50%, -50%); /* RTL */
+  text-align: center;
+  content: url('../images/check-circle.svg');
+  background-color: var(--gin-color-primary);
+  color: white;
+  border-radius: 50%;
+  line-height: 1.2;
+
+  &:dir(rtl) {
+    transform: translate(50%, -50%);
+  }
+}
+
+@media (forced-colors: active) {
+  #edit-add-ons :checked+label:before {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content: "✓";
+    border: solid 2px;
+    font-weight: bold;
+  }
+}
+
+.cms-installer__form-group {
+  /* Size the site template columns on the width left for the step. */
+  container-type: inline-size;
+
+  div#edit-add-ons {
+    display: grid;
+
+    @container (width > 540px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @container (width > 860px) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .form-radios {
+    h3 {
+      padding: 0 8px;
+      margin-block-start: .5rem;
+      margin-block-end: .25rem;
+    }
+
+    .description {
+      padding: 0 8px;
+      hyphens: none;
+      margin-block-start: .25rem;
+      margin-block-end: .5rem;
+
+      /* Adds an arrow up-right link to the end of the link */
+      a::after {
+        display: inline-block;
+        vertical-align: middle;
+        mask-image: url('../images/arrow-up-right.svg');
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        background: currentColor;
+        content: "";
+        width: 12px;
+        height: 12px;
+        margin-inline-start: 2px;
+
+        @media (forced-colors: active) {
+          background: linkText;
+        }
+      }
+
+      ul {
+        padding-block: 0;
+      }
+
+      p {
+        margin: .5rem 0;
+        font-size: var(--gin-font-size-s);
+      }
+
+      a:where(:not(.button)) {
+        font-weight: 600;
+        color: var(--gin-color-text-light);
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      .button {
+        text-decoration: none;
+      }
+    }
+
+    h3 a {
+      text-decoration: none;
+    }
+
+    .creator {
+      font-size: var(--gin-font-size-xs);
+      color: var(--gin-color-text-light);
+    }
+  }
+}

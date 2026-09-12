@@ -1,61 +1,11 @@
 {
-  "name": "webship/webship",
-  "description": "The Webship.co portal site was built on top of Drupal, as it has many options, tools, frameworks, and configuration management, which are needed in building solutions.",
-  "type": "drupal-profile",
-  "license": "GPL-2.0-or-later",
-  "support": {
-    "issues": "http://drupal.org/project/issues/webship",
-    "source": "http://cgit.drupalcode.org/webship"
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "config": {
-    "allow-plugins": {
-      "composer/installers": true,
-      "oomphinc/composer-installers-extender": true,
-      "drupal/core-composer-scaffold": true,
-      "drupal/core-project-message": true,
-      "cweagans/composer-patches": true,
-      "php-http/discovery": true,
-      "dealerdirect/phpcodesniffer-composer-installer": true,
-      "phpstan/extension-installer": true,
-      "tbachert/spi": true
+    "name": "drupal/webship",
+    "type": "drupal-profile",
+    "description": "The Webship installer: choose a site template, like the Webship Starter or the Website Starter. Webship uses the UI Suite UIkit theme (UIkit and HTMX) on top of Drupal and Display Builder. Not to be used in production.",
+    "homepage": "https://www.drupal.org/project/webship",
+    "license": "GPL-2.0-or-later",
+    "require": {
+        "composer/composer": "^2.8",
+        "drupal/core": "^11.4 || ^12"
     }
-  },
-  "authors": [
-    {
-      "name": "webship.co",
-      "homepage": "https://www.drupal.org/webship",
-      "role": "Maintainer"
-    }
-  ],
-  "repositories": {
-    "drupal": {
-      "type": "composer",
-      "url": "https://packages.drupal.org/8"
-    }
-  },
-  "require": {
-    "composer/installers": "~2",
-    "oomphinc/composer-installers-extender": "~2",
-    "drupal/core-composer-scaffold": "~11",
-    "drupal/core": "~11.4.0",
-    "drush/drush": "~13",
-    "drupal/webpatches": "11.0.x-dev",
-    "drupal/webconfig": "11.0.x-dev",
-    "drupal/webdev": "11.0.x-dev",
-    "drupal/webadmin": "11.0.x-dev",
-    "drupal/websecurity": "11.0.x-dev",
-    "drupal/webeditor": "11.0.x-dev",
-    "drupal/webseo": "11.0.x-dev",
-    "drupal/webpage": "11.0.x-dev",
-    "drupal/webtheme": "11.0.x-dev",
-    "drupal/webassets": "11.0.x-dev",
-    "drupal/webblog": "11.0.x-dev",
-    "drupal/webreleases": "11.0.x-dev",
-    "drupal/webdoc": "11.0.x-dev",
-    "drupal/webnewsletter": "11.0.x-dev",
-    "drupal/webshare": "1.0.x-dev",
-    "drupal/webform": "~6.3.0"
-  }
 }

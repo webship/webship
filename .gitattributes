@@ -1,0 +1,4 @@
+/tests export-ignore
+# Read from the canonical URL by the released installer.
+# @see \Drupal\webship\Form\SiteTemplateForm::getCuratedList()
+/site-templates.yml export-ignore

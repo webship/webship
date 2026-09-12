@@ -1,64 +1,18 @@
-name: Webship
+name: Webship Installer
 type: profile
-description: Webship helps in speeding up the work of web developers to ship websites in a swift way.
-core_version_requirement: ~11.4.0
-version: 11.0.x-dev
-package: Webship
+core_version_requirement: '^11.4 || ^12'
+description: 'The Webship installer: choose a site template built with recipes, Display Builder and UI Suite UIkit. Not to be used in production.'
+
+# Use the `distribution` key to skip the installer's profile selection step.
 distribution:
   name: Webship
   install:
-    theme: claro
-themes:
-  - claro
-  - gin
-  - webtheme
-install:
-  - system
-  - config
-  - syslog
-  - dblog
-  - user
-  - node
-  - taxonomy
-  - block
-  - block_content
-  - views
-  - views_ui
-  - menu_ui
-  - menu_link_content
-  - field
-  - field_ui
-  - help
-  - breakpoint
-  - text
-  - datetime
-  - datetime_range
-  - options
-  - contextual
-  - filter
-  - page_cache
-  - dynamic_page_cache
-  - automated_cron
-  - search
-  - layout_discovery
-  - ctools_block
-  - ctools_views
-  - gin_toolbar
-  - gin_login
-  - dashboards
-  - dashboards_views
-  - webconfig
-  - webdev
-  - webadmin
-  - websecurity
-  - webassets
-  - webeditor
-  - webseo
-  - webpage
-  - webblog
-  - webreleases
-  - webdoc
-  - webnewsletter
-  - webshare
-  - webform
-  - webform_ui
+    theme: webship_installer_theme
+    # When done, redirect to the dashboards of the Web Dashboard module, from
+    # the webdash recipe. It opens the first dashboard the user can view.
+    finish_url: 'admin/webdashboard'
+
+# Explicitly provide an empty list of themes -- this prevents the installer from
+# injecting Stark into it.
+# @see install_profile_info()
+themes: []

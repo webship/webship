@@ -1,0 +1,5 @@
+name: 'Webship Test Feature'
+description: 'A recipe that is not a site template, for the tests of the Webship installer.'
+type: 'Feature'
+install:
+  - update

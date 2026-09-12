@@ -1,7 +1,0 @@
-install-page:
-  css:
-    theme:
-      css/theme/install-page.css: { }
-  dependencies:
-    - system/maintenance
-    - claro/install-page

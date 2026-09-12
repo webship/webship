@@ -1,0 +1,67 @@
+{#
+/**
+ * @file
+ * Theme implementation for the license key form element.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - errors: (optional) Any errors for this form element.
+ * - prefix: (optional) The form element prefix.
+ * - suffix: (optional) The form element suffix.
+ * - required: The required marker, or empty if not required.
+ * - type: The type of the element.
+ * - name: The name of the element.
+ * - label: A rendered label element.
+ * - label_display: Label display setting.
+ * - description: Description properties containing content and attributes.
+ * - description_display: Description display setting.
+ * - disabled: True if the element is disabled.
+ * - children: The rendered form element (the textfield input).
+ *
+ * @see template_preprocess_form_element()
+ */
+#}
+{% set classes = [
+  'license-dialog',
+  disabled == 'disabled' ? 'form-disabled',
+  errors ? 'form-item--error',
+] %}
+
+<dialog{{ attributes.addClass(classes).setAttribute('id', 'license-key-dialog') }}>
+  <h3 class="license-dialog__title">{{ 'License key' }}</h3>
+  <div class="license-dialog__instructions">
+    {% trans %}
+      This premium site template requires a license key, which you can obtain from the seller.
+    {% endtrans %}
+  </div>
+
+  <div class="license-dialog__input-wrapper">
+    <span class="visually-hidden">
+      {{ label }}
+    </span>
+    {{ children }}
+    <button class="license-dialog__save button button--primary" type="button">
+      {{ 'Save license key'|t }}
+    </button>
+    <div class="license-dialog__status">
+      {# Status injected here. #}
+    </div>
+  </div>
+
+  <div class="license-dialog__error" hidden></div>
+
+  {% if errors %}
+    <div class="form-item--error-message">{{ errors }}</div>
+  {% endif %}
+
+  {% if description.content %}
+    <div {{ description.attributes.addClass('license-dialog__description') }}>
+      {{ description.content }}
+    </div>
+  {% endif %}
+
+  <button class="license-dialog__close" type="button">
+    <span class="visually-hidden">{{ 'Close'|t }}</span>
+    <div class="license-dialog__close-icon"></div>
+  </button>
+</dialog>

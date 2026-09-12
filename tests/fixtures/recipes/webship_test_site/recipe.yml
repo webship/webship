@@ -1,0 +1,13 @@
+name: 'Webship Test Site'
+description: 'A site template for the tests of the Webship installer, with core themes only.'
+type: 'Site'
+install:
+  - update
+  - claro
+  - olivero
+config:
+  actions:
+    system.theme:
+      simpleConfigUpdate:
+        default: olivero
+        admin: claro
