@@ -81,4 +81,23 @@ final class SiteTemplateTest extends KernelTestBase {
     $this->assertNull($template->authorization);
   }
 
+  /**
+   * Tests creating a site template from a recipe without a screenshot.
+   */
+  public function testCreateFromRecipeWithoutScreenshot(): void {
+    // The fallback must hold with assertions enabled, like in DDEV.
+    $this->assertSame('1', ini_get('zend.assertions'));
+
+    $path = dirname(__DIR__, 2) . '/fixtures/recipes/webship_test_site_no_screenshot';
+    $this->assertFileDoesNotExist($path . '/screenshot.webp');
+
+    $template = SiteTemplate::createFromRecipe(Recipe::createFromDirectory($path));
+    $default = dirname(__DIR__, 3) . '/default-screenshot.webp';
+    $this->assertFileExists($default);
+    $this->assertSame(
+      'data:image/webp;base64,' . base64_encode(file_get_contents($default)),
+      $template->getScreenshot(),
+    );
+  }
+
 }

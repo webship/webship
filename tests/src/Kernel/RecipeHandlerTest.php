@@ -38,7 +38,9 @@ final class RecipeHandlerTest extends KernelTestBase {
     $this->assertSame($fixtures . '/webship_test_site', $recipes['webship_test_site']);
     $this->assertSame($fixtures . '/webship_test_feature', $recipes['webship_test_feature']);
     // Only the site templates are listed by type.
-    $this->assertSame(['webship_test_site'], array_keys(iterator_to_array($handler->scan('Site'))));
+    $site_templates = array_keys(iterator_to_array($handler->scan('Site')));
+    sort($site_templates);
+    $this->assertSame(['webship_test_site', 'webship_test_site_no_screenshot'], $site_templates);
 
     // A Composer-managed package path should be returned as-is.
     $this->assertSame(InstalledVersions::getInstallPath('drupal/core'), $handler->getPath('drupal/core'));

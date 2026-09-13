@@ -153,9 +153,13 @@ final readonly class SiteTemplate {
   public static function createFromRecipe(Recipe $recipe): self {
     $extra = $recipe->getExtra('drupal_cms_installer');
 
+    // A recipe without a screenshot gets the default one, so a missing image
+    // in one site template does not break the installer.
+    $screenshot = $recipe->path . DIRECTORY_SEPARATOR . 'screenshot.webp';
+
     return new self(
       $recipe->name,
-      $recipe->path . DIRECTORY_SEPARATOR . 'screenshot.webp',
+      file_exists($screenshot) ? $screenshot : NULL,
       $recipe->path,
       [],
       $recipe->description,

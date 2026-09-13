@@ -1,0 +1,5 @@
+name: 'Webship Test Site Without Screenshot'
+description: 'A site template without a screenshot, for the tests of the Webship installer.'
+type: 'Site'
+install:
+  - update
