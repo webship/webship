@@ -64,20 +64,18 @@ final class SiteTemplateForm extends FormBase {
       $this->getCuratedList(),
     );
 
-    $blank = 'webship_starter';
-    // Must be called `add_ons` to agree with the theme.
+    $starter = 'webship_starter';
+    // Must be called `add_ons` to agree with the theme. In the interactive
+    // installer no site template is selected: the user chooses one.
     $form['add_ons'] = [
       '#options' => [],
       '#type' => 'radios',
       '#required' => TRUE,
-      '#default_value' => array_key_exists($blank, $all_choices) ? $blank : array_key_first($all_choices),
     ];
     // If installing non-interactively (e.g., via Drush), choose Starter by
-    // default, because if you don't know what to expect, Blank looks like an
-    // error.
-    $starter = 'webship_starter';
-    if (empty($install_state['interactive']) && array_key_exists($starter, $all_choices)) {
-      $form['add_ons']['#default_value'] = $starter;
+    // default, or the first site template when Starter is not available.
+    if (empty($install_state['interactive'])) {
+      $form['add_ons']['#default_value'] = array_key_exists($starter, $all_choices) ? $starter : array_key_first($all_choices);
     }
 
     // Premium site templates may require an access (license) key.
@@ -116,7 +114,7 @@ final class SiteTemplateForm extends FormBase {
         '#access' => $choice->price > 0,
       ];
     }
-    $form['add_ons'][$blank]['#weight'] = -100;
+    $form['add_ons'][$starter]['#weight'] = -100;
 
     $form['actions'] = [
       'submit' => [

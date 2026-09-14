@@ -55,10 +55,10 @@ class InteractiveInstallTest extends InstallerTestBase {
     $assert_session->pageTextContains('Choose a site template');
 
     // The site template of the site-templates.php file should be available,
-    // and selected by default.
+    // and no site template should be selected by default.
     $template = static::$fixtureSiteTemplate;
-    $assert_session->fieldValueEquals('add_ons', $template);
-    $assert_session->elementAttributeContains('named', ['field', 'add_ons'], 'value', $template);
+    $assert_session->elementExists('css', 'input[name="add_ons"][value="' . $template . '"]');
+    $assert_session->elementNotExists('css', 'input[name="add_ons"][checked]');
 
     $choice = $assert_session->elementExists('css', 'input[value="' . $template . '"]')
       ->getParent();
