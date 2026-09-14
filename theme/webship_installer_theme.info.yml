@@ -6,5 +6,3 @@ base theme: claro
 libraries-extend:
   claro/maintenance-page:
     - webship_installer_theme/maintenance-page
-  core/drupal.progress:
-    - webship_installer_theme/drupal.progress

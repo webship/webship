@@ -8,6 +8,9 @@ use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\DependencyInjection\AutowireTrait;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Htmx\Htmx;
+use Drupal\Core\Messenger\MessengerInterface;
+use Drupal\Core\Url;
 use Drupal\webship\ComposerExecutor;
 use Drupal\webship\RecipeHandler;
 use Drupal\webship\SiteTemplate;
@@ -46,6 +49,17 @@ final class SiteTemplateForm extends FormBase {
   /**
    * {@inheritdoc}
    */
+  public function __wakeup(): void {
+    parent::__wakeup();
+    // This form comes back from the form cache after HTMX updates the license
+    // key panel. The messenger restored with it does not change the messages of
+    // the session, so use the current messenger again.
+    $this->messenger = NULL;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function getFormId(): string {
     return 'installer_site_template_form';
   }
@@ -71,6 +85,7 @@ final class SiteTemplateForm extends FormBase {
       '#options' => [],
       '#type' => 'radios',
       '#required' => TRUE,
+      '#required_error' => $this->t('Choose a site template.'),
     ];
     // If installing non-interactively (e.g., via Drush), choose Starter by
     // default, or the first site template when Starter is not available.
@@ -78,12 +93,32 @@ final class SiteTemplateForm extends FormBase {
       $form['add_ons']['#default_value'] = array_key_exists($starter, $all_choices) ? $starter : array_key_first($all_choices);
     }
 
-    // Premium site templates may require an access (license) key.
-    $form['access_key'] = [
-      '#type' => 'container',
-      '#theme_wrappers' => ['container__access_key'],
-      '#tree' => TRUE,
-    ];
+    // The site template chosen so far: the submitted one, or the default one.
+    $input = $form_state->getUserInput();
+    $chosen = $input['add_ons'] ?? $form['add_ons']['#default_value'] ?? NULL;
+    if (!is_string($chosen) || !isset($all_choices[$chosen])) {
+      $chosen = NULL;
+    }
+
+    // Choosing a site template updates the license key panel on the server.
+    // HTMX posts the form to the installer and swaps only the panel, so the
+    // installer needs no custom JavaScript. Without HTMX, the panel is updated
+    // when the form is shown again, for example after pressing Next.
+    // @see \Drupal\Core\Form\FormBuilder::elementTriggeredScriptedSubmission()
+    $htmx = NULL;
+    if (!empty($install_state['interactive'])) {
+      $htmx = (new Htmx())
+        ->post(Url::fromUri('base:install.php', [
+          'query' => $install_state['parameters'] ?? [],
+          'script' => '',
+        ]))
+        ->trigger('change')
+        ->vals(['_triggering_element_name' => 'add_ons'])
+        ->select('#site-template-license')
+        ->target('#site-template-license')
+        ->swap('outerHTML');
+    }
+
     foreach ($all_choices as $key => $choice) {
       assert($choice instanceof SiteTemplate);
 
@@ -94,27 +129,37 @@ final class SiteTemplateForm extends FormBase {
         '#description' => $choice->description,
         '#locator' => $choice->locator,
         '#repository' => $choice->repository,
+        '#price' => $choice->price,
       ];
+      $htmx?->applyTo($form['add_ons'][$key]);
       $form['add_ons']['#options'][$key] = $choice->name;
-
-      $form['access_key'][$key] = [
-        '#type' => 'textfield',
-        // Only visible when the associated site template is chosen.
-        '#states' => [
-          'visible' => ['input[name="add_ons"]' => ['value' => $key]],
-        ],
-        '#attributes' => [
-          'data-for' => $key,
-          'data-validation-url' => $choice->keyValidationUrl?->toString(),
-          // Pattern is required for JS .checkValidity() function.
-          'pattern' => '[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}',
-          // Placeholder is required for CSS's show/hide functionality to work.
-          'placeholder' => 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX',
-        ],
-        '#access' => $choice->price > 0,
-      ];
     }
     $form['add_ons'][$starter]['#weight'] = -100;
+
+    // Premium site templates need an access (license) key. Only the chosen
+    // site template's key field is shown.
+    $form['license'] = [
+      '#type' => 'container',
+      '#attributes' => [
+        'id' => 'site-template-license',
+        'class' => ['site-template-license'],
+        'aria-live' => 'polite',
+      ],
+      'access_key' => ['#tree' => TRUE],
+    ];
+    if ($chosen && $all_choices[$chosen]->price > 0) {
+      $form['license']['#attributes']['class'][] = 'site-template-license--required';
+      $form['license']['access_key'][$chosen] = [
+        '#type' => 'textfield',
+        '#title' => $this->t('License key for %name', ['%name' => $all_choices[$chosen]->name]),
+        '#description' => $this->t('This premium site template needs a license key, which you can get from the seller.'),
+        '#maxlength' => 36,
+        '#attributes' => [
+          'autocomplete' => 'off',
+          'placeholder' => 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX',
+        ],
+      ];
+    }
 
     $form['actions'] = [
       'submit' => [
@@ -135,7 +180,33 @@ final class SiteTemplateForm extends FormBase {
    */
   public function validateForm(array &$form, FormStateInterface $form_state): void {
     parent::validateForm($form, $form_state);
+
+    // Choosing a site template only updates the license key panel. Validate the
+    // choice when a button (Next) is pressed.
+    if (empty($form_state->getTriggeringElement()['#is_button'])) {
+      // The installer saves the session of this request after the response is
+      // sent, which can be after Next is pressed. Remove the errors of this
+      // step, already shown, so they do not show again on the next pages.
+      $this->messenger()->deleteByType(MessengerInterface::TYPE_ERROR);
+      return;
+    }
     $choice = $form_state->getValue('add_ons');
+
+    // Ask for a site template when none is chosen. The error of the required
+    // radios comes first, and this one covers any other empty or unknown value.
+    if (!is_string($choice) || $choice === '' || !isset($form['add_ons'][$choice])) {
+      $form_state->setErrorByName('add_ons', $this->t('Choose a site template.'));
+      return;
+    }
+
+    // A premium site template needs a license key.
+    $access_key = trim((string) $form_state->getValue(['access_key', $choice], ''));
+    if (($form['add_ons'][$choice]['#price'] ?? 0) > 0 && $access_key === '') {
+      $form_state->setErrorByName("access_key][$choice", $this->t('Enter the license key for %name.', [
+        '%name' => $form['add_ons']['#options'][$choice],
+      ]));
+      return;
+    }
 
     // If the package is provided by an alternate repository (i.e., not
     // Packagist or packages.drupal.org), make Composer aware of it.
@@ -150,8 +221,7 @@ final class SiteTemplateForm extends FormBase {
 
     // Alternate repositories might require an access key. If one was entered,
     // configure Composer to use it for this repository.
-    $access_key = trim($form_state->getValue(['access_key', $choice]));
-    if (empty($access_key)) {
+    if ($access_key === '') {
       return;
     }
 
@@ -176,6 +246,11 @@ final class SiteTemplateForm extends FormBase {
   public function submitForm(array &$form, FormStateInterface $form_state): void {
     $choice = $form_state->getValue('add_ons');
     $locator = $form['add_ons'][$choice]['#locator'];
+
+    // The installer does not save the session after it shows this form again
+    // with errors, so the errors of this step, already shown, would show again
+    // on the next pages. Remove them.
+    $this->messenger()->deleteByType(MessengerInterface::TYPE_ERROR);
 
     $this->recipeHandler->enqueue($locator);
     // Mark the task as finished.

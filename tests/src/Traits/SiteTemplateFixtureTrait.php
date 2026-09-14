@@ -33,10 +33,12 @@ trait SiteTemplateFixtureTrait {
    *
    * @param string $site_path
    *   The absolute path of the site directory.
+   * @param bool $premium
+   *   Whether to also list a premium site template, which needs a license key.
    *
    * @see \Drupal\webship\Form\SiteTemplateForm::getCuratedList()
    */
-  protected function writeSiteTemplatesFile(string $site_path): void {
+  protected function writeSiteTemplatesFile(string $site_path, bool $premium = FALSE): void {
     $path = static::getFixtureSiteTemplatePath();
     $list = [
       static::$fixtureSiteTemplate => [
@@ -46,6 +48,18 @@ trait SiteTemplateFixtureTrait {
         'screenshot' => $path . '/screenshot.webp',
       ],
     ];
+    if ($premium) {
+      $list['webship_test_premium'] = [
+        'name' => 'Webship Test Premium',
+        'description' => 'A premium site template for the tests of the Webship installer.',
+        'package' => 'drupal/webship_test_premium',
+        'screenshot' => $path . '/screenshot.webp',
+        'purchase' => [
+          'price' => 99,
+          'url' => 'https://www.example.com/buy',
+        ],
+      ];
+    }
     if (!is_dir($site_path)) {
       mkdir($site_path, 0777, TRUE);
     }

@@ -48,9 +48,29 @@ html {
   }
 }
 
-#edit-add-ons label:hover {
+#edit-add-ons label:hover,
+#edit-add-ons .site-template:hover > .site-template__label {
   color: var(--gin-color-primary);
   border-color: var(--gin-color-primary);
+}
+
+/* A label covering the whole card, so a click anywhere on it chooses it. */
+#edit-add-ons label.site-template__select {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--gin-border-xl);
+  cursor: pointer;
+}
+
+/* Keep the links and buttons of a card usable above that label. */
+#edit-add-ons .site-template :is(a, button, .button) {
+  position: relative;
+  z-index: 1;
 }
 
 #edit-add-ons [type="radio"]:focus-visible + label {

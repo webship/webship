@@ -114,12 +114,11 @@
     {% endif %}
 
     {% if purchase_url %}
-      <button class="site-template__enter-key-button button--link button--small" type="button">
-        {{ 'Already purchased? Enter license key'|t }}
-      </button>
-      <div class="site-template__license-key-matches" hidden>
-        <span class="visually-hidden">{{ 'Correct format'|t }}</span>
-      </div>
+      <p class="site-template__license-key-hint">{{ 'Already purchased? Choose this site template to enter the license key.'|t }}</p>
     {% endif %}
   </div>
+  {# Covers the whole card, so a click anywhere on it chooses the site template. #}
+  <label class="site-template__select" for="{{ id }}">
+    <span class="visually-hidden">{{ 'Choose @name'|t({'@name': name}) }}</span>
+  </label>
 </div>

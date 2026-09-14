@@ -60,21 +60,23 @@
   }
 }
 
-.site-template__enter-key-button.button--link.button--small {
-  margin-block-start: 0;
+.site-template__license-key-hint {
   font-size: var(--gin-font-size-xxs);
 }
 
-/* This is the indicator that shows the license key validation state. */
-.site-template__license-key-matches:not([hidden]) {
-  display: inline-block;
-  vertical-align: text-bottom;
-  mask-image: url('../images/check-circle.svg');
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  position: relative;
-  background: green;
-  content: "";
-  width: 15px;
-  height: 15px;
+/* The license key of the chosen premium site template, updated on the server. */
+.site-template-license--required {
+  margin-block: var(--gin-spacing-l);
+  padding: var(--gin-spacing-l);
+  border: 1px solid var(--gin-border-color, #d8dade);
+  border-radius: var(--gin-border-l);
+
+  .form-item {
+    margin-block: 0;
+  }
+
+  [type="text"] {
+    max-inline-size: 28rem;
+    font-family: monospace;
+  }
 }

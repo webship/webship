@@ -223,11 +223,34 @@ select.webship-installer__language-switcher {
 
 .select-wrapper {
   display: flex;
+  align-items: center;
+  margin: 0;
 
   & svg {
     display: block;
     margin: auto;
   }
+}
+
+/*
+ * The language form works without scripts through its button. When scripts
+ * run, HTMX changes the language as soon as another one is selected.
+ */
+@media (scripting: enabled) {
+  .webship-installer__language-form .webship-installer__language-submit {
+    display: none;
+  }
+}
+
+/* The progress bar of the installer shows only the bar. */
+.webship-installer .progress__percentage,
+.webship-installer .progress__description {
+  position: absolute !important;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  inline-size: 1px;
+  block-size: 1px;
+  word-wrap: normal;
 }
 
 /**

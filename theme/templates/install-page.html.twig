@@ -6,24 +6,50 @@
  * All available variables are mirrored in page.html.twig.
  * Some may be blank but they are provided for consistency.
  *
+ * Additional variables:
+ * - languages: The languages of the language switcher, keyed by langcode, or
+ *   empty while a batch job runs.
+ * - current_langcode: The langcode of the installer.
+ * - direction: The direction of the installer language.
+ * - language_url: The URL of the current installer page, without the query.
+ * - language_query: The query parameters of the installer to keep when the
+ *   language changes.
+ * - batch_in_progress: Whether a batch job runs.
+ *
  * @see template_preprocess_install_page()
+ * @see \Drupal\webship_installer_theme\Hook\InstallPageHooks::preprocessInstallPage()
  */
 #}
-<div class="webship-installer">
+<div class="webship-installer" dir="{{ direction }}">
   <header class="webship-installer__header">
     <h1 class="webship-installer__heading">
       {{ 'Webship'|t }}
     </h1>
     {% if languages %}
-     <div class="select-wrapper">
+      {#
+        A plain GET form: the button changes the language without scripts, and
+        HTMX changes it as soon as another language is selected.
+      #}
+      <form method="get" action="{{ language_url }}" class="select-wrapper webship-installer__language-form"
+        data-hx-get="{{ language_url }}"
+        data-hx-trigger="change"
+        data-hx-target=".webship-installer"
+        data-hx-select=".webship-installer"
+        data-hx-swap="outerHTML"
+        data-hx-push-url="true">
+        {% for name, value in language_query %}
+          <input type="hidden" name="{{ name }}" value="{{ value }}">
+        {% endfor %}
         {% include active_theme_path() ~ "/images/translate.svg" %}
-        <select name="langcode" class="webship-installer__language-switcher">
+        <label for="webship-installer-langcode" class="visually-hidden">{{ 'Language'|t }}</label>
+        <select id="webship-installer-langcode" name="langcode" class="webship-installer__language-switcher">
           {% for langcode, language in languages %}
-            <option dir={{ language.direction }} value="{{ langcode }}">{{ language.name }}</option>
+            <option dir="{{ language.direction }}" value="{{ langcode }}"{{ langcode == current_langcode ? ' selected' }}>{{ language.name }}</option>
           {% endfor %}
         </select>
         {% include active_theme_path() ~ "/images/chevron-down.svg" %}
-      </div>
+        <button type="submit" class="webship-installer__language-submit button button--small">{{ 'Change language'|t }}</button>
+      </form>
     {% endif %}
   </header>
   <div class="webship-installer__wrapper">
@@ -32,6 +58,9 @@
 
       {% if title %}
         <h2 class="webship-installer__main-heading">{{ title }}</h2>
+      {% endif %}
+      {% if batch_in_progress %}
+        <p class="webship-installer__subhead">{{ 'This will only take a moment.'|t }}</p>
       {% endif %}
       {{ page.highlighted }}
       {{ page.content }}

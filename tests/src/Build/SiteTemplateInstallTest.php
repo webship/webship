@@ -166,7 +166,11 @@ final class SiteTemplateInstallTest extends QuickStartTestBase {
     $assert_session->elementAttributeContains('named', ['link', 'Buy for $99'], 'href', 'https://www.example.com/buy');
 
     $auth_file = new JsonFile("$dir/auth.json");
+    // Choosing the premium site template and going on without a license key
+    // asks for it, and shows its license key field.
     $page->selectFieldOption('add_ons', 'test_auth');
+    $page->pressButton('Next');
+    $assert_session->pageTextContains('Enter the license key for Testing Authorization.');
     // An invalid access key should produce an error, and auth.json should exist
     // but not have the invalid key. The repository should have been added (the
     // name is the xxh3 hash of the host and port).
