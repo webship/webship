@@ -9,15 +9,15 @@
  * @see template_preprocess_install_page()
  */
 #}
-<div class="cms-installer">
-  <header class="cms-installer__header">
-    <h1 class="cms-installer__heading">
+<div class="webship-installer">
+  <header class="webship-installer__header">
+    <h1 class="webship-installer__heading">
       {{ 'Webship'|t }}
     </h1>
     {% if languages %}
      <div class="select-wrapper">
         {% include active_theme_path() ~ "/images/translate.svg" %}
-        <select name="langcode" class="cms-installer__language-switcher">
+        <select name="langcode" class="webship-installer__language-switcher">
           {% for langcode, language in languages %}
             <option dir={{ language.direction }} value="{{ langcode }}">{{ language.name }}</option>
           {% endfor %}
@@ -26,25 +26,25 @@
       </div>
     {% endif %}
   </header>
-  <div class="cms-installer__wrapper">
+  <div class="webship-installer__wrapper">
 
-    <main class="cms-installer__main">
+    <main class="webship-installer__main">
 
       {% if title %}
-        <h2 class="cms-installer__main-heading">{{ title }}</h2>
+        <h2 class="webship-installer__main-heading">{{ title }}</h2>
       {% endif %}
       {{ page.highlighted }}
       {{ page.content }}
     </main>
 
     {% if page.sidebar_second %}
-      <aside class="cms-installer__sidebar-second">
+      <aside class="webship-installer__sidebar-second">
         {{ page.sidebar_second }}
       </aside>
     {% endif %}
 
     {% if page.page_bottom %}
-      <footer class="cms-installer__footer">
+      <footer class="webship-installer__footer">
         {{ page.page_bottom }}
       </footer>
     {% endif %}

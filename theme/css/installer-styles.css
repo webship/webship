@@ -40,7 +40,7 @@ body.install-page {
   height: 100%;
 }
 
-.cms-installer {
+.webship-installer {
   font-family: "Inter", system-ui;
   padding-block: 30px;
   padding-inline: 33px;
@@ -51,7 +51,7 @@ body.install-page {
   }
 }
 
-.cms-installer__header {
+.webship-installer__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -69,7 +69,7 @@ body.install-page {
   }
 }
 
-.cms-installer__wrapper {
+.webship-installer__wrapper {
   display: flex;
   place-items: center;
 
@@ -82,7 +82,7 @@ body.install-page {
   }
 }
 
-.cms-installer__main {
+.webship-installer__main {
   inline-size: 100%;
   max-inline-size: 1200px;
   min-block-size: 500px;
@@ -95,7 +95,7 @@ body.install-page {
   }
 }
 
-.cms-installer__heading {
+.webship-installer__heading {
   margin-block: 0;
 
   @media (max-width: 48em) {
@@ -103,7 +103,7 @@ body.install-page {
   }
 }
 
-.cms-installer__step {
+.webship-installer__step {
   color: #6D7583;
   font-size: 0.8125rem;
   font-weight: 500;
@@ -112,37 +112,37 @@ body.install-page {
   margin: 0;
 }
 
-.cms-installer .cms-installer__main-heading {
+.webship-installer .webship-installer__main-heading {
   font-size: 2.75rem;
   font-weight: 700;
   margin-block-start: 0;
 }
 
-.cms-installer__subhead {
+.webship-installer__subhead {
   color: var(--gin-color-text-light);
   font-size: var(--gin-font-size);
   margin-block-start: 0;
 }
 
-.cms-installer .form-actions {
+.webship-installer .form-actions {
   display: flex;
   align-items: center;
   gap:  var(--gin-spacing-xs);
 }
 
-.cms-installer__form-group {
+.webship-installer__form-group {
   --input-border-radius-size: var(--gin-border-m);
   --input-border-size: 1.5px;
 
   margin-block: 2.5rem;
 }
 
-.cms-installer__form-group label {
+.webship-installer__form-group label {
   font-size: var(--gin-font-size);
   margin-block-end: var(--space-xs);
 }
 
-.cms-installer__info {
+.webship-installer__info {
   flex: 1 1 100%;
   color: var(--gin-color-text-light);
   font-size: var(--gin-font-size);
@@ -170,19 +170,19 @@ body.install-page {
   margin-block: 2.5rem;
 }
 
-.cms-installer .progress__track {
+.webship-installer .progress__track {
   border: 0;
   overflow: hidden;
 }
 
-.cms-installer .progress__bar {
+.webship-installer .progress__bar {
   border-end-end-radius: 0;
   border-start-end-radius: 0;
   border: 0;
   background-color: var(--gin-color-primary);
 }
 
-.cms-installer__pattern {
+.webship-installer__pattern {
   margin-block-start: 4.5rem;
   display: block !important;
   position: fixed;
@@ -203,7 +203,7 @@ body.install-page {
   }
 }
 
-.cms-installer__pattern svg {
+.webship-installer__pattern svg {
   @media (min-width: 78em) {
     position: absolute;
     inset-block-start: 0;
@@ -212,7 +212,7 @@ body.install-page {
   }
 }
 
-select.cms-installer__language-switcher {
+select.webship-installer__language-switcher {
   z-index: 5;
   border: none;
   appearance: none;
@@ -239,14 +239,14 @@ select.cms-installer__language-switcher {
 }
 
 /* Webship: a text title instead of a logo, and the step artwork. */
-.cms-installer__heading {
+.webship-installer__heading {
   color: #001d38;
   font-size: 1.75rem;
   font-weight: 700;
   letter-spacing: -0.02em;
 }
 
-.cms-installer__pattern svg {
+.webship-installer__pattern svg {
   border-radius: 1.5rem;
 
   @media (min-width: 78em) {

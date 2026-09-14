@@ -95,7 +95,7 @@ html {
   }
 }
 
-.cms-installer__form-group {
+.webship-installer__form-group {
   /* Size the site template columns on the width left for the step. */
   container-type: inline-size;
 

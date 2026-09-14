@@ -1,6 +1,13 @@
 name: 'Webship Test Site'
 description: 'A site template for the tests of the Webship installer, with core themes only.'
 type: 'Site'
+extra:
+  webship_installer:
+    creator: 'Webship'
+    links:
+      - 'https://www.drupal.org/project/webship'
+      - text: 'Documentation'
+        url: 'https://www.drupal.org/docs/extending-drupal/contributed-modules/contributed-module-documentation/webship'
 install:
   - update
   - claro

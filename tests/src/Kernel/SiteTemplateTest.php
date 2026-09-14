@@ -73,7 +73,17 @@ final class SiteTemplateTest extends KernelTestBase {
     $this->assertSame($recipe->path, $template->locator);
     $this->assertSame($recipe->description, $template->description);
     $this->assertStringStartsWith('data:image/webp;base64,', $template->getScreenshot());
-    $this->assertSame([], $template->links);
+
+    // The metadata comes from extra.webship_installer in recipe.yml.
+    $extra = $recipe->getExtra('webship_installer');
+    $this->assertSame('Webship', $extra['creator']);
+    $this->assertSame($extra['creator'], $template->creator);
+    $this->assertCount(2, $template->links);
+    $this->assertSame('More Info', (string) $template->links[0]->getText());
+    $this->assertSame($extra['links'][0], $template->links[0]->getUrl()->toString());
+    $this->assertSame('Documentation', (string) $template->links[1]->getText());
+    $this->assertSame($extra['links'][1]['url'], $template->links[1]->getUrl()->toString());
+
     $this->assertSame(0.0, $template->price);
     $this->assertNull($template->purchaseUrl);
     $this->assertNull($template->keyValidationUrl);
@@ -98,6 +108,10 @@ final class SiteTemplateTest extends KernelTestBase {
       'data:image/webp;base64,' . base64_encode(file_get_contents($default)),
       $template->getScreenshot(),
     );
+
+    // The Webship installer metadata is optional.
+    $this->assertNull($template->creator);
+    $this->assertSame([], $template->links);
   }
 
 }

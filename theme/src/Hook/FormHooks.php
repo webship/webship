@@ -26,13 +26,13 @@ final class FormHooks {
   #[Hook('form_installer_site_name_form_alter')]
   public function siteNameFormAlter(array &$form, FormStateInterface $form_state): void {
     $form['help'] = [
-      '#prefix' => '<p class="cms-installer__subhead">',
+      '#prefix' => '<p class="webship-installer__subhead">',
       '#markup' => $this->t('You can change this later.'),
       '#suffix' => '</p>',
       '#weight' => -100,
     ];
     $form['site_name'] += [
-      '#prefix' => '<div class="cms-installer__form-group">',
+      '#prefix' => '<div class="webship-installer__form-group">',
       '#suffix' => '</div>',
     ];
     $form['svg'] = [
@@ -49,13 +49,13 @@ final class FormHooks {
   #[Hook('form_installer_site_template_form_alter')]
   public function siteTemplateFormAlter(array &$form, FormStateInterface $form_state): void {
     $form['help'] = [
-      '#prefix' => '<p class="cms-installer__subhead">',
+      '#prefix' => '<p class="webship-installer__subhead">',
       '#markup' => $this->t("Site templates provide a starting point with styling and features already included. You can customize the look and feel and add new features using Drupal's powerful extensibility."),
       '#suffix' => '</p>',
       '#weight' => -100,
     ];
     $form['add_ons'] += [
-      '#prefix' => '<div class="cms-installer__form-group">',
+      '#prefix' => '<div class="webship-installer__form-group">',
       '#suffix' => '</div>',
     ];
     $form['svg'] = [
@@ -72,7 +72,7 @@ final class FormHooks {
   #[Hook('form_install_settings_form_alter')]
   public function installSettingsFormAlter(array &$form, FormStateInterface $form_state): void {
     $form['help'] = [
-      '#prefix' => '<p class="cms-installer__subhead">',
+      '#prefix' => '<p class="webship-installer__subhead">',
       '#markup' => $this->t("You don't need to change anything here unless you want to use a different database type."),
       '#suffix' => '</p>',
       '#weight' => -50,
@@ -93,7 +93,7 @@ final class FormHooks {
     $form['#title'] = $this->t('Create your account');
 
     $form['help'] = [
-      '#prefix' => '<p class="cms-installer__subhead">',
+      '#prefix' => '<p class="webship-installer__subhead">',
       '#markup' => $this->t('Creating an account allows you to log in to your site.'),
       '#suffix' => '</p>',
       '#weight' => -40,
@@ -103,13 +103,13 @@ final class FormHooks {
     // structure of this form in a minor release.
     if (isset($form['admin_account']['account']['name'])) {
       $form['admin_account']['account']['mail'] += [
-        '#prefix' => '<div class="cms-installer__form-group">',
+        '#prefix' => '<div class="webship-installer__form-group">',
         '#suffix' => '</div>',
       ];
     }
     if (isset($form['admin_account']['account']['pass'])) {
       $form['admin_account']['account']['pass'] += [
-        '#prefix' => '<div class="cms-installer__form-group">',
+        '#prefix' => '<div class="webship-installer__form-group">',
         '#suffix' => '</div>',
       ];
     }

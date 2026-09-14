@@ -147,11 +147,14 @@ final readonly class SiteTemplate {
   /**
    * Constructs an instance of this class from a recipe.
    *
+   * Site templates declare their Webship installer metadata, such as the
+   * creator and the links, under `extra.webship_installer` in recipe.yml.
+   *
    * @param \Drupal\Core\Recipe\Recipe $recipe
    *   The recipe.
    */
   public static function createFromRecipe(Recipe $recipe): self {
-    $extra = $recipe->getExtra('drupal_cms_installer');
+    $extra = $recipe->getExtra('webship_installer');
 
     // A recipe without a screenshot gets the default one, so a missing image
     // in one site template does not break the installer.

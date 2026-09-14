@@ -11,8 +11,8 @@ parameters:
   ignoreErrors:
     # new static() is a best practice in Drupal.
     - "#^Unsafe usage of new static#"
-    # The installer replaces the database settings form of core on purpose,
-    # like the Drupal CMS installer it is forked from.
+    # The Webship installer extends the database settings form of core on
+    # purpose.
     -
       identifier: classExtendsInternalClass.classExtendsInternalClass
       path: */src/Form/SiteSettingsForm.php
