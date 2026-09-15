@@ -68,7 +68,7 @@ final class SiteTemplateForm extends FormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state, ?array $install_state = NULL): array {
-    // @see webship_choose_template()
+    // @see \Drupal\webship\Installer\InstallTasks::chooseTemplate()
     $all_choices = $install_state['recipes'] ?? [];
 
     // Load additional choices. If any of them are already in the code base, the
