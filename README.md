@@ -6,9 +6,8 @@
 
 Webship helps web developers ship websites in a swift way.
 
-On 12.0.x, Webship is the installer profile of the [Website](https://www.drupal.org/project/website) project,
-forked from the [Drupal CMS installer](https://www.drupal.org/project/drupal_cms_installer) 2.1.x. It lists the `Site`
-recipes of the project, applies the chosen site template, then uninstalls itself:
+On 12.0.x, Webship is the installer profile of the [Website](https://www.drupal.org/project/website) project.
+It lists the `Site` recipes of the project, applies the chosen site template, then uninstalls itself:
 
 - [Webship Starter](https://www.drupal.org/project/webship_starter): the Webship site template, with documentation,
   products and releases, a newsletter and social sharing. It holds what the Webship 11.0.x distribution installed.
@@ -32,20 +31,23 @@ No Layout Builder and no Drupal Canvas.
 
 ## Install
 
+Composer runs inside DDEV, so nothing is needed on your machine but DDEV itself:
+
 ```shell
-composer create-project drupal/website my_site
-cd my_site
-ddev config --project-type=drupal --docroot=web
+mkdir -p ~/workspace/projects/my-website
+cd ~/workspace/projects/my-website
+ddev config --project-type=drupal11 --docroot=web --php-version=8.4
 ddev start
+ddev composer create-project drupal/website:^1.0@alpha
 ddev launch
 ```
 
 The installer asks for the site name, the site template and the administrator account.
 
-From the command line, the Webship Starter site template is applied:
+Or install from the command line, with the site template of your choice:
 
 ```shell
-ddev drush site:install webship -y
+ddev drush si -y webship --account-name=webmaster --site-name="My Website" installer_site_template_form.add_ons=webship_starter
 ```
 
 ## Tests
