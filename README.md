@@ -47,7 +47,7 @@ The installer asks for the site name, the site template and the administrator ac
 Or install from the command line, with the site template of your choice:
 
 ```shell
-ddev drush si -y webship --account-name=webmaster --site-name="My Website" installer_site_template_form.add_ons=webship_starter
+ddev drush site:install ../recipes/webship_starter -y --account-name=webmaster --site-name="My Website"
 ```
 
 ## Tests
