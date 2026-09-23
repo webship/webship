@@ -31,16 +31,27 @@ No Layout Builder and no Drupal Canvas.
 
 ## Install
 
-Composer runs inside DDEV, so nothing is needed on your machine but DDEV itself:
+### With the project template (recommended)
+
+Start from the [Website](https://www.drupal.org/project/website) project
+template: it requires this installer and its site templates, so nothing is
+downloaded during the install. Composer, PHP, Drush and the database all run
+inside [DDEV](https://ddev.readthedocs.io/en/stable/users/install/ddev-installation/),
+so nothing is needed on your machine but DDEV itself:
 
 ```shell
-mkdir -p ~/workspace/projects/my-website
-cd ~/workspace/projects/my-website
-ddev config --project-type=drupal11 --docroot=web --php-version=8.4
+mkdir my-website && cd my-website
+ddev config --project-type=drupal --docroot=web
 ddev start
-ddev composer create-project drupal/website:^1.0@alpha
+ddev composer create-project drupal/website:^1.0
+ddev restart
 ddev launch
 ```
+
+`ddev restart` picks up the `.ddev/config.yaml` the template ships, which
+replaces the one `ddev config` wrote. The project name is not in that file:
+DDEV takes it from the directory, so the site is at
+`https://<directory>.ddev.site`.
 
 The installer asks for the site name, the site template and the administrator account.
 
@@ -49,6 +60,28 @@ Or install from the command line, with the site template of your choice:
 ```shell
 ddev drush site:install ../recipes/webship_starter -y --account-name=webmaster --site-name="My Website"
 ```
+
+The path is relative to the Drupal root.
+
+### On an existing DDEV project
+
+Add the installer to a Drupal project of your own, then install its profile:
+
+```shell
+ddev composer require webship/webship:~12.0
+ddev drush site:install webship -y --account-name=webmaster --site-name="My Website"
+```
+
+The site template it applies has to be in the project's recipes directory, or
+be one of the curated entries in `site-templates.yml`, which are required with
+Composer during the install.
+
+### Without DDEV
+
+The same two paths work with a Composer, PHP and database stack of your own —
+PHP 8.4 and a MySQL or MariaDB database: `composer create-project
+drupal/website:^1.0 my-website`, then `vendor/bin/drush site:install
+../recipes/webship_starter -y`.
 
 ## Tests
 
