@@ -8,9 +8,9 @@ include:
       - "/includes/include.drupalci.workflows.yml"
 
 variables:
-  # For now, build and test with Drupal 11.4 and PHP 8.4.
+  # For now, build and test with Drupal 11.4 and PHP 8.5.
   DRUPAL_CORE: "11.4.x-dev"
-  _TARGET_PHP: "8.4"
+  _TARGET_PHP: "8.5"
   IGNORE_PROJECT_DRUPAL_CORE_VERSION: "1"
   # The installer theme ships the compiled CSS and JavaScript as they are.
   SKIP_STYLELINT: "1"
